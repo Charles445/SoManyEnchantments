@@ -1,0 +1,30 @@
+{
+	"attack_wateraspect_hit": {
+		"category": "player",
+		"sounds": [
+			"somanyenchantments:wateraspect/hit"
+		],
+	"subtitle": "subtitle.somanyenchantments.wateraspect.hit"
+	},
+               "attack_culling_failed": {
+		"category": "player",
+		"sounds": [
+			"somanyenchantments:culling/failed"
+		],
+	"subtitle": "subtitle.somanyenchantments.culling.failed"
+	},
+               "attack_culling_finished": {
+		"category": "player",
+		"sounds": [
+			"somanyenchantments:culling/finished"
+		],
+	"subtitle": "subtitle.somanyenchantments.culling.finished"
+	},
+               "attack_crit_hit": {
+		"category": "player",
+		"sounds": [
+			"somanyenchantments:crit/hit"
+		],
+	"subtitle": "subtitle.somanyenchantments.crit.hit"
+	}
+}

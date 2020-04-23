@@ -1,0 +1,20 @@
+[
+{
+"modid": "somanyenchantments",
+"name": "Rin's So Many Enchantments?",
+"description": "A recreated more balanced version of 1.8.9, this mod adds in various of enchantments to help you or curse you.",
+"version": "0.4.4",
+"credits": "Other mod creators who shared their source codes...",
+"logoFile": "",
+"mcversion": "1.12.2",
+"url": "https://minecraft.curseforge.com/projects/so-many-enchantments",
+"updateUrl": "",
+"authorList":["Rin"],
+"parent":"",
+"screenshots": [],
+"dependencies": [
+]
+
+}
+]
+

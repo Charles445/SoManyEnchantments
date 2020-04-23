@@ -1,0 +1,80 @@
+package com.Shultrea.Rin.Ench0_4_0;
+
+import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
+
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemStack;
+
+public class EnchantmentBrutality extends Enchantment{
+
+	public EnchantmentBrutality() {
+		super(Rarity.RARE, EnumList.COMBAT_AXE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+		this.setName("Brutality");
+		this.setRegistryName("Brutality");
+	}
+	
+	@Override
+	public int getMaxLevel()
+    {
+        return 5;
+    }
+	
+	@Override
+    public int getMinEnchantability(int par1)
+    {
+        return 15 + 15 * (par1 - 1);
+    }
+
+    @Override
+    public int getMaxEnchantability(int par1)
+    {
+        return super.getMinEnchantability(par1) + 50;
+    }
+    
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack)
+    {
+        return somanyenchantments.config.Brutality && stack.getItem().canApplyAtEnchantingTable(stack, this);
+    }
+    
+    @Override
+    public boolean isAllowedOnBooks()
+    {
+        return somanyenchantments.config.Brutality;
+    }
+    
+    @Override
+    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    {
+    	if(!somanyenchantments.config.Brutality)
+    		return;
+    	
+    	if(!(target instanceof EntityLivingBase))
+    		return;
+    	
+    	EntityLivingBase victim = (EntityLivingBase) target;
+    	
+    	Iterable<ItemStack> iter = victim.getArmorInventoryList();
+  
+    	int x = 5;
+    	
+    	for(ItemStack item : iter){
+    		x--;
+    	}
+    	
+    	for(ItemStack item : iter){
+    		ItemStack armor = item;
+    		armor.damageItem((int) (armor.getMaxDamage() * (0.0025f * x) + EnchantmentsUtility.RANDOM.nextInt(x + 2)) + 1, victim);
+    	}
+    	
+    }
+    
+	
+
+}
