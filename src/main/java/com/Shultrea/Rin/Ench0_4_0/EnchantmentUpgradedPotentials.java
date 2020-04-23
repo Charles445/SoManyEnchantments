@@ -1,5 +1,7 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import java.util.Map;
+
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
@@ -95,48 +97,63 @@ public class EnchantmentUpgradedPotentials extends Enchantment {
     {
         return somanyenchantments.config.Upgrade;
     }
-    
-    @SubscribeEvent
-    public void onAnvilAttach(AnvilUpdateEvent fEvent){
-    	int level = EnchantmentsUtility.getInput2EnchLevel(fEvent.getRight(), Smc_040.upgrade);
-    	//System.out.println("level: " + level);
-    	if(level <= 0)
-    		return;
-    	
-    	//if(fEvent.getOutput() == ItemStack.EMPTY)
-    		//return;
-    	
-    	//if(fEvent.getResult() == Event.Result.DENY || fEvent.isCanceled())
-    		//return
-    	
-    	ItemStack weapon = fEvent.getLeft();
-    	
-    	int decision = EnchantmentHelper.getEnchantmentLevel(Smc_040.upgrade, weapon);
-    	
-    	if(decision > 0){
-    		fEvent.setCanceled(true);
-    		return;
-    	}
-    	
-    	int estimate = 0;
-    	
-    	int cost = weapon.getRepairCost();
-    	
-    	estimate = cost / 4 - 20;
-    	
-    	if(estimate < 0)
-    		estimate = 0;
-
-    	//weapon.setRepairCost(estimate);
-    
-    	ItemStack finalOutput = weapon.copy();
-    	finalOutput.setRepairCost(estimate);
-
-    	fEvent.setCost(10);
-    	
-    	finalOutput.addEnchantment(Smc_040.upgrade, 1);
-    
-    	fEvent.setOutput(finalOutput);
-    	//System.out.println("Cost: " + fEvent.getCost());	
-    }
+	
+	@SubscribeEvent
+	public void onAnvilAttach(AnvilUpdateEvent event)
+	{
+		ItemStack left = event.getLeft();
+		ItemStack right = event.getRight();
+		if(left.isEmpty() || right.isEmpty())
+		{
+			//This isn't actually necessary? Doing it anyway
+			return;
+		}
+		if(right.getItem()==Items.ENCHANTED_BOOK)
+		{
+			//Right is an enchanted book
+			Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(right);
+			if(enchantments.containsKey(this) && enchantments.get(this) >= 1)
+			{
+				//Right has Upgraded Potentials book
+				
+				if(left.isStackable())
+				{
+					//Left is stackable, right slot has upgraded potentials, set output to empty and return
+					event.setOutput(ItemStack.EMPTY);
+					return;
+				}
+				
+				//Left is currently not stackable
+				
+				if(EnchantmentHelper.getEnchantments(left).size()==0)
+				{
+					//No enchantments on the left, exiting
+					event.setOutput(ItemStack.EMPTY);
+					return;
+				}
+				
+				if(EnchantmentHelper.getEnchantmentLevel(this, left) >= 1)
+				{
+					//Left already has upgraded potentials, set output to empty and return
+					event.setOutput(ItemStack.EMPTY);
+					return;
+				}
+				
+				//Left is currently not stackable and does not have upgraded potentials
+				
+				//Repair cost tweaking
+				int cost = left.getRepairCost();
+				cost = Math.max(0, (cost / 4) - 20);
+				
+				//Build a copy of the left with upgraded potentials and the modified repair cost
+				ItemStack output = left.copy();
+				output.setRepairCost(cost);
+				output.addEnchantment(this, 1);
+				
+				//Set the result in the anvil
+				event.setOutput(output);
+				event.setCost(10);
+			}
+		}
+	}
 }

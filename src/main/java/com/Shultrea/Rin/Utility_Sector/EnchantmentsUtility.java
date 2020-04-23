@@ -332,26 +332,34 @@ public class EnchantmentsUtility {
     /** An improved vanilla knockback mechanic that ignores the knockback resistance of a mob*/
     public static void ImprovedKnockBack(Entity entityIn, float strength, double xRatio, double zRatio)
     {
+        entityIn.isAirBorne = true;
+        float f = MathHelper.sqrt(xRatio * xRatio + zRatio * zRatio);
+        entityIn.motionX /= 2.0D;
+        entityIn.motionZ /= 2.0D;
+        entityIn.motionX -= xRatio / (double)f * (double)strength;
+        entityIn.motionZ -= zRatio / (double)f * (double)strength;
         
+        //Protection from non-finite XZ
+        if(!Double.isFinite(entityIn.motionX))
+        	entityIn.motionX = 0;
+        
+        if(!Double.isFinite(entityIn.motionZ))
+        	entityIn.motionZ = 0;
+        
+        if (entityIn.onGround)
         {
-            entityIn.isAirBorne = true;
-            float f = MathHelper.sqrt(xRatio * xRatio + zRatio * zRatio);
-            entityIn.motionX /= 2.0D;
-            entityIn.motionZ /= 2.0D;
-            entityIn.motionX -= xRatio / (double)f * (double)strength;
-            entityIn.motionZ -= zRatio / (double)f * (double)strength;
+        	entityIn.motionY /= 2.0D;
+        	entityIn.motionY += (double)strength;
 
-            if (entityIn.onGround)
+            if (entityIn.motionY > 0.4000000059604645D)
             {
-            	entityIn.motionY /= 2.0D;
-            	entityIn.motionY += (double)strength;
-
-                if (entityIn.motionY > 0.4000000059604645D)
-                {
-                	entityIn.motionY = 0.4000000059604645D;
-                }
+            	entityIn.motionY = 0.4000000059604645D;
             }
         }
+        
+        //Protection from non-finite Y
+        if(!Double.isFinite(entityIn.motionY))
+        	entityIn.motionY = 0;
         
         entityIn.velocityChanged = true;
     }

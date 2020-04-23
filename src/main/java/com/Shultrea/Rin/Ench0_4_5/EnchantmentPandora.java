@@ -166,18 +166,14 @@ public class EnchantmentPandora extends Enchantment implements IEnchantmentGreat
 					curse.addEnchantment(list.get(random), randLevel + 1);
 				
 			}
-	}
-    
-}
+		}
+    }
+	
 	@Override
 	public String getTranslatedName(int level)
 	{
 		String s = I18n.translateToLocal(this.getName());
 	    s = TextFormatting.DARK_RED + s;       
-	    
-	    if(Minecraft.getMinecraft().player != null)
-	    if(Minecraft.getMinecraft().player.isCreative())
-	    	return s;
 	    
 	    if(level >= 5)
 	    return s;
@@ -185,6 +181,4 @@ public class EnchantmentPandora extends Enchantment implements IEnchantmentGreat
 	    return "";
 	   
 	}
-		    
-		  
-	}
+}
