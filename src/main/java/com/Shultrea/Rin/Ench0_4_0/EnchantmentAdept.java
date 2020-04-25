@@ -102,7 +102,7 @@ public class EnchantmentAdept extends Enchantment{
     	//System.out.println(fEvent.getDroppedExperience() + " - Altered EXP");
     	
     	//stack.damageItem(1, player);
-    	System.out.println(fEvent.getOriginalExperience() + " - Orig EXP");
-    	System.out.println(fEvent.getDroppedExperience() + " - Orig EXP");
+    	//System.out.println(fEvent.getOriginalExperience() + " - Orig EXP");
+    	//System.out.println(fEvent.getDroppedExperience() + " - Orig EXP");
     }
 }

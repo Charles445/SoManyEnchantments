@@ -84,6 +84,6 @@ public class EnchantmentDarkShadows extends Enchantment implements IConditionalD
     	if(attacker.getBrightness() <= 0.1f && e.getEntityLiving().getBrightness() <= 0.1f)
     	e.setAmount(e.getAmount() + level * 0.75f);
     	
-    	System.out.println("TEST");
+    	//System.out.println("TEST");
     }
 }

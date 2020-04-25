@@ -112,6 +112,7 @@ public class EnchantmentPurification extends Enchantment implements IPotionDebuf
     		eBase.setSilent(true);
     		eBase.setDead();
     		EntityVillager villager = new EntityVillager(eBase.world);
+    		villager.copyLocationAndAnglesFrom(eBase);
     		villager.setProfession((((EntityZombieVillager) eBase).getForgeProfession()));
     		villager.setLookingForHome();
     		villager.finalizeMobSpawn(eBase.world.getDifficultyForLocation(new BlockPos(eBase)), (IEntityLivingData)null, false);

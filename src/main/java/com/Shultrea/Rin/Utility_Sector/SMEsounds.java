@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.google.common.collect.Lists;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 
@@ -44,7 +42,7 @@ public class SMEsounds {
 	}
 	   
 	   private static SoundEvent registerSound(String name){
-			ResourceLocation res = new ResourceLocation(RefStrings.MODID, name);
+			ResourceLocation res = new ResourceLocation(somanyenchantments.MODID, name);
 			SoundEvent evt = new SoundEvent(res).setRegistryName(res);
 			SMEsounds.INSTANCE.SOUND_EVENTS.add(evt);
 			return evt;

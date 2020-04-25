@@ -177,8 +177,8 @@ public class EnchantmentRune_StarFall extends Enchantment {
 					
 					// System.out.println("MIDDLEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 			   boolean flag = properties.didStarFall();
-			   System.out.println(flag);
-			   System.out.println(properties.getLevel());
+			   //System.out.println(flag);
+			   //System.out.println(properties.getLevel());
 			   
 			   if(properties.getIsStarFallMade() == true)
 				   return;

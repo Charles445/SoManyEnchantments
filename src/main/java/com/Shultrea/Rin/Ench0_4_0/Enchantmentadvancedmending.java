@@ -1,25 +1,17 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.event.entity.item.ItemTossEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Enchantmentadvancedmending extends Enchantment{
@@ -76,34 +68,35 @@ public class Enchantmentadvancedmending extends Enchantment{
     {
     	return fTest.getItem() instanceof Item ? super.canApply(fTest) : false;
     }
+    
     @SubscribeEvent
-    public void onXP(PlayerPickupXpEvent fEvent){
+    public void onXP(PlayerPickupXpEvent event)
+    {
+    	EntityPlayer player = event.getEntityPlayer();
+    	EntityXPOrb orb = event.getOrb();
     	
-    	 if(EnchantmentHelper.getEnchantmentLevel(Enchantments.MENDING,fEvent.getEntityPlayer().getHeldItemMainhand()) > 0)
-    		 return;
-    	 
-    	 if(EnchantmentHelper.getEnchantmentLevel(Enchantments.MENDING,fEvent.getEntityPlayer().getHeldItemOffhand()) > 0)
-    		 return;
-    	 	 
-    	 ItemStack itemstack = EnchantmentHelper.getEnchantedItem(this, fEvent.getEntityPlayer());
-    	 
-    	 System.out.println(fEvent.getOrb().xpValue + " - Picked Up XP");
-    	 
-    	 //if(EnchantmentHelper.getEnchantmentLevel(this, itemstack) <= 0)
-    		// return;
-    	 
-    	  if (!itemstack.isEmpty() && itemstack.isItemDamaged())
-          {
-              int i = Math.min(this.xpToDurability(fEvent.getOrb().xpValue), itemstack.getItemDamage());
-              fEvent.getOrb().xpValue -= i / 2;
-              itemstack.setItemDamage(itemstack.getItemDamage() - i);
-          }
+    	//TODO config for double XP glitch
+    	if(orb.xpValue > 0)
+    	{
+    		player.addExperience(orb.xpValue);
+    	}
+    	
+		//Get a random item on the player that has advanced mending
+		ItemStack itemstack = EnchantmentHelper.getEnchantedItem(this, player);
 
-          if (fEvent.getOrb().xpValue > 0)
-          {
-             fEvent.getEntityPlayer().addExperience(fEvent.getOrb().xpValue);
+		//Attempt to repair it using some of the XP from the orb itself
+		if(!itemstack.isEmpty() && itemstack.isItemDamaged())
+		{
+			int value = Math.min(orb.xpValue * 3, itemstack.getItemDamage());
+			itemstack.setItemDamage(itemstack.getItemDamage() - value);
+
+			orb.xpValue -= value/2;
+			//There is a chance that the orb.xpValue has become negative (for example, an orb.xpValue of 2 can become -1)
+			if(orb.xpValue < 0)
+				orb.xpValue = 0;
+			
+		}
     }
-}
  
    
 

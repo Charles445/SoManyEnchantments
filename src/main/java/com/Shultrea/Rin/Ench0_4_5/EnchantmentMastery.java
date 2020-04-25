@@ -93,17 +93,17 @@ public class EnchantmentMastery extends Enchantment {
 		if(!stack.hasTagCompound())
 			stack.setTagCompound(new NBTTagCompound());
 		
+		int level = EnchantmentHelper.getEnchantmentLevel(this, stack);
+		
+		if(EnchantmentHelper.getEnchantmentLevel(this, stack) <= 0)
+			return;
+		
 		if(stack.getTagCompound().getBoolean("flag")) {
 			stack.getTagCompound().setBoolean("flag", false);
 			return;
 		}
 		
 		stack.getTagCompound().setBoolean("flag", true);
-		
-		int level = EnchantmentHelper.getEnchantmentLevel(this, stack);
-		
-		if(EnchantmentHelper.getEnchantmentLevel(this, stack) <= 0)
-			return;
 		
 		if(EnchantmentsUtility.isLevelMax(stack, this) || EnchantmentsUtility.RANDOM.nextInt(3) < level - 1)
 		if(stack.getItem() instanceof ItemSword && attacker instanceof EntityPlayer) {

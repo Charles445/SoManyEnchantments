@@ -1,18 +1,13 @@
 package com.Shultrea.Rin.Utility_Sector;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
+import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesHandler;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
 import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
 import com.Shultrea.Rin.Prop_Sector.PlayerPropertiesProvider;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,12 +21,9 @@ import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -280,7 +272,7 @@ public class OtherHandler {
 	{
 		if (event.getObject() instanceof EntityArrow && !event.getObject().hasCapability(ArrowPropertiesProvider.ARROWPROPERTIES_CAP, null))
 		{
-			event.addCapability(new ResourceLocation(RefStrings.MODID + ":arrow_capabilities"), new ArrowPropertiesProvider());	
+			event.addCapability(new ResourceLocation(somanyenchantments.MODID + ":arrow_capabilities"), new ArrowPropertiesProvider());	
 		}		
 	}
 	
@@ -289,7 +281,7 @@ public class OtherHandler {
 	{
 		if (!event.getObject().hasCapability(PlayerPropertiesProvider.PLAYERPROPERTIES_CAP, null))
 		{
-			event.addCapability(new ResourceLocation(RefStrings.MODID + ":player_capabilities"), new PlayerPropertiesProvider());
+			event.addCapability(new ResourceLocation(somanyenchantments.MODID + ":player_capabilities"), new PlayerPropertiesProvider());
 		}
 	}
 }

@@ -178,6 +178,12 @@ public class EnchantmentPandora extends Enchantment implements IEnchantmentGreat
 	    if(level >= 5)
 	    return s;
 	    
+	    EntityPlayer player = somanyenchantments.proxy.getClientPlayer();
+	    if(player!=null && player.isCreative())
+	    {
+	    	return s;
+	    }
+	    
 	    return "";
 	   
 	}
