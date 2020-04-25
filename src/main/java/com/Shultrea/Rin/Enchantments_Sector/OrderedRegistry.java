@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Enchantments_Sector;
 
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -11,50 +12,50 @@ public class OrderedRegistry {
 
 	public static void orderedRegister() {
 		
-		if(somanyenchantments.config.Instability)
+		if(ModConfig.enabled.Instability)
 			MinecraftForge.EVENT_BUS.register(Smc_040.Instability);
 		
-		if(somanyenchantments.config.LuckMagnification)
+		if(ModConfig.enabled.LuckMagnification)
 			MinecraftForge.EVENT_BUS.register(Smc_040.LuckMagnification);
 		
-		if(somanyenchantments.config.CursedEdgeEnable)
+		if(ModConfig.enabled.CursedEdgeEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_010.CursedEdge);
 		
-		if(somanyenchantments.config.AshDestroyerEnable)
+		if(ModConfig.enabled.AshDestroyerEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_030.AshDestroyer);
 		
-		if(somanyenchantments.config.CriticalStrikeEnable)
+		if(ModConfig.enabled.CriticalStrikeEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_030.CriticalStrike);
 		
-		if(somanyenchantments.config.ReviledBladeEnable)
+		if(ModConfig.enabled.ReviledBladeEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_010.ReviledBlade);
 		
-		if(somanyenchantments.config.CursedEdgeEnable)
+		if(ModConfig.enabled.CursedEdgeEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_040.difficultyscaled);
 		
 		
-		if(somanyenchantments.config.NaturalBlocking)
+		if(ModConfig.enabled.NaturalBlocking)
 			MinecraftForge.EVENT_BUS.register(Smc_040.NaturalBlocking);
 		
-		if(somanyenchantments.config.NaturalBlocking)
+		if(ModConfig.enabled.NaturalBlocking)
 			MinecraftForge.EVENT_BUS.register(Smc_040.NaturalBlocking);
 		
-		if(somanyenchantments.config.Rune_PiercingArrows)
+		if(ModConfig.enabled.Rune_PiercingArrows)
 			MinecraftForge.EVENT_BUS.register(Smc_040.Rune_PiercingArrows);
 		
-		//if(somanyenchantments.config.)
+		//if(ModConfig.enabled.)
 		//	MinecraftForge.EVENT_BUS.register(Smc_040.Swiper);
 		
-		if(somanyenchantments.config.Swiper)
+		if(ModConfig.enabled.Swiper)
 			MinecraftForge.EVENT_BUS.register(Smc_040.Swiper);
 		
-		if(somanyenchantments.config.Rune_MagicalBlessingEnable)
+		if(ModConfig.enabled.Rune_MagicalBlessingEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_020.Rune_MagicalBlessing);
 		
-		if(somanyenchantments.config.Rune_PiercingCapabilitiesEnable)
+		if(ModConfig.enabled.Rune_PiercingCapabilitiesEnable)
 			MinecraftForge.EVENT_BUS.register(Smc_010.Rune_PiercingCapabilities);   
 		
-		if(somanyenchantments.config.AncientSwordMastery)
+		if(ModConfig.enabled.AncientSwordMastery)
 		MinecraftForge.EVENT_BUS.register(Smc_040.EnchantmentMastery); 
 		
 

@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_4_5;
 
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -50,13 +51,13 @@ public class EnchantmentInstability extends Enchantment implements IDamageMultip
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Instability && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Instability && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Instability;
+        return ModConfig.enabled.Instability;
     }
     
     @Override

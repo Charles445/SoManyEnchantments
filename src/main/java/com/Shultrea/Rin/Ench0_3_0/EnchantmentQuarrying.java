@@ -3,6 +3,7 @@ package com.Shultrea.Rin.Ench0_3_0;
 import java.util.List;
 
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.Block;
@@ -95,11 +96,11 @@ public class EnchantmentQuarrying extends Enchantment{
 				if(stack.isEmpty() || block == origBlock)
 					continue;
 				
-				if(somanyenchantments.config.QuarryingOreOnly)
+				if(ModConfig.miscellaneous.QuarryingOreOnly)
 					if(!(origBlock instanceof BlockOre))
 						return;
 						
-				if(!somanyenchantments.config.harvestTile) {
+				if(!ModConfig.miscellaneous.harvestTile) {
 					if(origBlock.hasTileEntity(origState)) {
 						return;
 					}

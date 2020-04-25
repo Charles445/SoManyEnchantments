@@ -21,9 +21,7 @@ import com.Shultrea.Rin.Utility_Sector.RefStrings;
 import com.Shultrea.Rin.Utility_Sector.SMEsounds;
 
 import net.minecraft.util.DamageSource;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -73,7 +71,7 @@ public class somanyenchantments {
 
 	
 	// Config
-	public static Config config;
+	//public static ConfigOld config;
 	
     @EventHandler
     public void preInit(FMLPreInitializationEvent fEvent)
@@ -81,7 +79,7 @@ public class somanyenchantments {
     	CapabilityManager.INSTANCE.register(IArrowProperties.class, new ArrowPropertiesStorage(), ArrowProperties :: new);
     	CapabilityManager.INSTANCE.register(IPlayerProperties.class, new PlayerPropertiesStorage(), PlayerProperties :: new);
     	
-    	config = new Config(new Configuration(fEvent.getSuggestedConfigurationFile()));
+    	//config = new ConfigOld(new Configuration(fEvent.getSuggestedConfigurationFile()));
     	
     	proxy.preInit(fEvent);
     	

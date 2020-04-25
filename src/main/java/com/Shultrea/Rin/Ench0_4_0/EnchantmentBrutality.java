@@ -1,14 +1,13 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
 public class EnchantmentBrutality extends Enchantment{
@@ -40,19 +39,19 @@ public class EnchantmentBrutality extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Brutality && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Brutality && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Brutality;
+        return ModConfig.enabled.Brutality;
     }
     
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
-    	if(!somanyenchantments.config.Brutality)
+    	if(!ModConfig.enabled.Brutality)
     		return;
     	
     	if(!(target instanceof EntityLivingBase))

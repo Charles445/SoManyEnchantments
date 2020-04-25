@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.Block;
@@ -57,13 +58,13 @@ public class EnchantmentWellTilled extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.WellTilled && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.WellTilled && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.WellTilled;
+        return ModConfig.enabled.WellTilled;
     }
     
     @Override

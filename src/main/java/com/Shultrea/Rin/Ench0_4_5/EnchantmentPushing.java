@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.Shultrea.Rin.Ench0_3_0.EnchantmentStrafe;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -63,13 +64,13 @@ public class EnchantmentPushing extends Enchantment
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Pushing && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Pushing && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Pushing;
+        return ModConfig.enabled.Pushing;
     }
     
     @Override

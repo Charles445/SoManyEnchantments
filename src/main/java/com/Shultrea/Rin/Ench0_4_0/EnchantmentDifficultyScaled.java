@@ -2,7 +2,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
@@ -56,13 +56,13 @@ public class EnchantmentDifficultyScaled extends Enchantment implements IDamageM
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.DifficultyScaled;
+        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.DifficultyScaled;
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.DifficultyScaled;
+        return ModConfig.enabled.DifficultyScaled;
     }
     
     @Override

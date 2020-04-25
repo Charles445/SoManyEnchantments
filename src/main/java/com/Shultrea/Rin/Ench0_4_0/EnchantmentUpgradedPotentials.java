@@ -5,6 +5,7 @@ import java.util.Map;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
@@ -89,13 +90,13 @@ public class EnchantmentUpgradedPotentials extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Upgrade && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Upgrade && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Upgrade;
+        return ModConfig.enabled.Upgrade;
     }
 	
 	@SubscribeEvent

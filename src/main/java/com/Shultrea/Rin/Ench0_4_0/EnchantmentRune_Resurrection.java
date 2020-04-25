@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Prop_Sector.IPlayerProperties;
 import com.Shultrea.Rin.Prop_Sector.PlayerPropertiesProvider;
 
@@ -16,7 +16,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -65,13 +64,13 @@ public class EnchantmentRune_Resurrection extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Rune_Resurrection && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Rune_Resurrection && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Rune_Resurrection;
+        return ModConfig.enabled.Rune_Resurrection;
     }
       
     @SubscribeEvent(priority = EventPriority.HIGHEST)

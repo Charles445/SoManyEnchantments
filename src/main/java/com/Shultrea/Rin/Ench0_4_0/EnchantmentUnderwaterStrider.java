@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import java.util.UUID;
 
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.material.Material;
@@ -63,13 +64,13 @@ public class EnchantmentUnderwaterStrider extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.UnderwaterStrider && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.UnderwaterStrider && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.UnderwaterStrider;
+        return ModConfig.enabled.UnderwaterStrider;
     }
     
     @SubscribeEvent

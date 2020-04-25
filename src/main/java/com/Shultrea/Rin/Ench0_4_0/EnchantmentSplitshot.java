@@ -2,14 +2,12 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import java.util.Random;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Enchantments;
@@ -66,13 +64,13 @@ public class EnchantmentSplitshot extends Enchantment
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.SplitShot && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.SplitShot && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.SplitShot;
+        return ModConfig.enabled.SplitShot;
     }
 	
 	@SubscribeEvent(priority=EventPriority.LOWEST, receiveCanceled=true)

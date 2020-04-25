@@ -1,6 +1,7 @@
 package com.Shultrea.Rin.Ench0_4_5;
 
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
@@ -50,13 +51,13 @@ public class EnchantmentUnsheathing extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Unsheathing && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Unsheathing && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Unsheathing;
+        return ModConfig.enabled.Unsheathing;
     }
     
     @Override

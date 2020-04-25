@@ -1,38 +1,11 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityEvoker;
-import net.minecraft.entity.monster.EntityIllusionIllager;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntitySnowman;
-import net.minecraft.entity.monster.EntityVindicator;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Enchantmentflametier extends Enchantment{
 	private static final String[] DAMAGE_NAMES = new String[] {"lfl", "afl","sfl"};
@@ -130,11 +103,11 @@ public class Enchantmentflametier extends Enchantment{
     {
     	switch(this.damageType) {
     	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.LesserFlame;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserFlame;
     	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.AdvancedFlame;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.AdvancedFlame;
     	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.SupremeFlame;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeFlame;
     	default:
     		return false;
     	}
@@ -146,11 +119,11 @@ public class Enchantmentflametier extends Enchantment{
     {
     	switch(this.damageType) {
     	case 0:
-    		return somanyenchantments.config.LesserFireAspect;
+    		return ModConfig.enabled.LesserFireAspect;
     	case 1:
-    		return somanyenchantments.config.AdvancedFireAspect;
+    		return ModConfig.enabled.AdvancedFireAspect;
     	case 2:
-    		return somanyenchantments.config.SupremeFireAspect;
+    		return ModConfig.enabled.SupremeFireAspect;
     	default:
     		return false;
     	}

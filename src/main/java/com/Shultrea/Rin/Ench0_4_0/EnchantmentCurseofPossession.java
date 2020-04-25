@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -64,7 +64,7 @@ public class EnchantmentCurseofPossession extends Enchantment implements IEnchan
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.CurseofPossession;
+        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseofPossession;
     }
     
     @Override

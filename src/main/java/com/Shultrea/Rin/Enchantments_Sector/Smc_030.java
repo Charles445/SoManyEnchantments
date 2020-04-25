@@ -38,6 +38,7 @@ import com.Shultrea.Rin.Ench0_3_0.EnchantmentRune_Revival;
 //import com.Shultrea.Rin.Ench0_3_0.EnchantmentRune_Resurrection;
 import com.Shultrea.Rin.Ench0_3_0.EnchantmentSmelter;
 import com.Shultrea.Rin.Ench0_3_0.EnchantmentStrafe;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.ExtraEvent;
 import com.Shultrea.Rin.Utility_Sector.LivingAttackFixerHandler;
@@ -97,112 +98,112 @@ public class Smc_030 {
 	
 	
 	public static void init(){
-		if(somanyenchantments.config.ClearskyEnable)
+		if(ModConfig.enabled.ClearskyEnable)
 			Clearsky = new EnchantmentClearsky();
 		
-		if(somanyenchantments.config.MoonlightEnable)
+		if(ModConfig.enabled.MoonlightEnable)
 			Moonlight = new EnchantmentMoonlight();
 		
-		if(somanyenchantments.config.RainingEnable)
+		if(ModConfig.enabled.RainingEnable)
 			Raining = new EnchantmentRaining();
 		
-		if(somanyenchantments.config.SunshineEnable)
+		if(ModConfig.enabled.SunshineEnable)
 			Sunshine = new EnchantmentSunshine();
 		
-		if(somanyenchantments.config.ThunderstormEnable)
+		if(ModConfig.enabled.ThunderstormEnable)
 			Thunderstorm = new EnchantmentThunderstorm();
 		
-		if(somanyenchantments.config.WinterEnable)
+		if(ModConfig.enabled.WinterEnable)
 			Winter = new EnchantmentWinter();
 		
-		if(somanyenchantments.config.SmelterEnable)
+		if(ModConfig.enabled.SmelterEnable)
 			Smelter = new EnchantmentSmelter();
 		
-		if(somanyenchantments.config.EmpoweredDefenceEnable)
+		if(ModConfig.enabled.EmpoweredDefenceEnable)
 			EmpoweredDefence = new EnchantmentEmpoweredDefence();
 		
-		if(somanyenchantments.config.StrafeEnable)
+		if(ModConfig.enabled.StrafeEnable)
 			Strafe = new EnchantmentStrafe();
 		
-		if(somanyenchantments.config.CriticalStrikeEnable)
+		if(ModConfig.enabled.CriticalStrikeEnable)
 			CriticalStrike = new EnchantmentCriticalStrike();
 		
-		//if(somanyenchantments.config.ExtremeFortuneEnable)
+		//if(ModConfig.enabled.ExtremeFortuneEnable)
 		//	ExtremeFortune = new EnchantmentExtremeFortune();
 	
-		//if(somanyenchantments.config.Rune_RessurectionEnable)
+		//if(ModConfig.enabled.Rune_RessurectionEnable)
 			//Rune_Resurrection = new EnchantmentRune_Resurrection();
 		
-		if(somanyenchantments.config.AdvancedLootingEnable)
+		if(ModConfig.enabled.AdvancedLootingEnable)
 			AdvancedLooting = new EnchantmentAdvancedLooting();
 		
-		if(somanyenchantments.config.LevitatorEnable)
+		if(ModConfig.enabled.LevitatorEnable)
 			Levitator = new EnchantmentLevitator();
 		
-		if(somanyenchantments.config.MagicProtectionEnable)
+		if(ModConfig.enabled.MagicProtectionEnable)
 			MagicProtection = new EnchantmentMagicProtection();
 		
-		if(somanyenchantments.config.PhysicalProtectionEnable)
+		if(ModConfig.enabled.PhysicalProtectionEnable)
 			PhysicalProtection = new EnchantmentPhysicalProtection();
 		
-		if(somanyenchantments.config.AshDestroyerEnable)
+		if(ModConfig.enabled.AshDestroyerEnable)
 			AshDestroyer = new EnchantmentAshDestroyer();
 		
-		if(somanyenchantments.config.DesolatorEnable)
+		if(ModConfig.enabled.DesolatorEnable)
 			Desolator = new EnchantmentDesolator();
 		
-		if(somanyenchantments.config.DisorientationEnable)
+		if(ModConfig.enabled.DisorientationEnable)
 			Disorientation = new EnchantmentDisorientation();
 		
-		if(somanyenchantments.config.PurgingBladeEnable)
+		if(ModConfig.enabled.PurgingBladeEnable)
 			PurgingBlade = new EnchantmentPurgingBlade();
 		
-		if(somanyenchantments.config.ViperEnable)
+		if(ModConfig.enabled.ViperEnable)
 			Viper = new EnchantmentViper();
 		
-		if(somanyenchantments.config.AdvancedPowerEnable)
+		if(ModConfig.enabled.AdvancedPowerEnable)
 			AdvancedPower = new EnchantmentAdvancedPower();
 		
-		if(somanyenchantments.config.EnvenomedEnable)
+		if(ModConfig.enabled.EnvenomedEnable)
 			Envenomed = new EnchantmentEnvenomed();
 		
-		if(somanyenchantments.config.PowerlessEnable)
+		if(ModConfig.enabled.PowerlessEnable)
 			Powerless = new EnchantmentPowerless();
 		
-		if(somanyenchantments.config.RevivalEnable)
+		if(ModConfig.enabled.RevivalEnable)
 		    Rune_Revival = new EnchantmentRune_Revival();
 		
-		if(somanyenchantments.config.AdvancedPunch)
+		if(ModConfig.enabled.AdvancedPunch)
 			AdvancedPunch = new EnchantmentAdvancedPunch();
 		
-		if(somanyenchantments.config.AdvancedLure)
+		if(ModConfig.enabled.AdvancedLure)
 			AdvancedLure = new EnchantmentAdvancedLure();
 		
-		if(somanyenchantments.config.AdvancedLuckOfTheSea)
+		if(ModConfig.enabled.AdvancedLuckOfTheSea)
 			AdvancedLuckOfTheSea = new EnchantmentAdvancedLuckOfTheSea();
 		
-		if(somanyenchantments.config.AdvancedFeatherFalling)
+		if(ModConfig.enabled.AdvancedFeatherFalling)
 			AdvancedFeatherFalling = new EnchantmentAdvancedFeatherFalling();
 		
-		if(somanyenchantments.config.AdvancedThorns)
+		if(ModConfig.enabled.AdvancedThorns)
 			AdvancedThorns = new EnchantmentAdvancedThorns();
 		
-		if(somanyenchantments.config.BurningThorns)
+		if(ModConfig.enabled.BurningThorns)
 			BurningThorns = new EnchantmentBurningThorns();
 		
-	    if(somanyenchantments.config.AdvancedProtection)
+	    if(ModConfig.enabled.AdvancedProtection)
 	    	AdvancedProtection = new EnchantmentAdvancedProtection();
 	    
-	    if(somanyenchantments.config.AdvancedFireProtection)
+	    if(ModConfig.enabled.AdvancedFireProtection)
 	    	AdvancedFireProtection = new EnchantmentAdvancedFireProtection();
 	    
-	    if(somanyenchantments.config.AdvancedBlastProtection)
+	    if(ModConfig.enabled.AdvancedBlastProtection)
 	    	AdvancedBlastProtection = new EnchantmentAdvancedBlastProtection();
 	    
-	    if(somanyenchantments.config.AdvancedProjectileProtection)
+	    if(ModConfig.enabled.AdvancedProjectileProtection)
 	    	AdvancedProjectileProtection = new EnchantmentAdvancedProjectileProtection();
 	
-		if(somanyenchantments.config.Quarrying)
+		if(ModConfig.enabled.Quarrying)
 			Quarrying = new EnchantmentQuarrying();
 		    //Debug = new EnchantmentDebug();
 	}
@@ -213,112 +214,112 @@ public class Smc_030 {
 	        @SubscribeEvent
 	        public static void registerEnchantment(RegistryEvent.Register<net.minecraft.enchantment.Enchantment> event) {
 	        	
-	        	if(somanyenchantments.config.ClearskyEnable)
+	        	if(ModConfig.enabled.ClearskyEnable)
 	    			event.getRegistry().register(Clearsky);
 	    		
-	    		if(somanyenchantments.config.MoonlightEnable)
+	    		if(ModConfig.enabled.MoonlightEnable)
 	    			event.getRegistry().register(Moonlight);
 	    		
-	    		if(somanyenchantments.config.RainingEnable)
+	    		if(ModConfig.enabled.RainingEnable)
 	    			event.getRegistry().register(Raining);
 	    		
-	    		if(somanyenchantments.config.SunshineEnable)
+	    		if(ModConfig.enabled.SunshineEnable)
 	    			event.getRegistry().register(Sunshine);
 	    		
-	    		if(somanyenchantments.config.ThunderstormEnable)
+	    		if(ModConfig.enabled.ThunderstormEnable)
 	    			event.getRegistry().register(Thunderstorm);
 	    		
-	    		if(somanyenchantments.config.WinterEnable)
+	    		if(ModConfig.enabled.WinterEnable)
 	    			event.getRegistry().register(Winter);
 	    		
-	    		if(somanyenchantments.config.SmelterEnable)
+	    		if(ModConfig.enabled.SmelterEnable)
 	    			event.getRegistry().register(Smelter);
 	    		
-	    		if(somanyenchantments.config.EmpoweredDefenceEnable)
+	    		if(ModConfig.enabled.EmpoweredDefenceEnable)
 	    			event.getRegistry().register(EmpoweredDefence);
 	    		
-	    		if(somanyenchantments.config.StrafeEnable)
+	    		if(ModConfig.enabled.StrafeEnable)
 	    			event.getRegistry().register(Strafe);
 	    		
-	    		if(somanyenchantments.config.CriticalStrikeEnable)
+	    		if(ModConfig.enabled.CriticalStrikeEnable)
 	    			event.getRegistry().register(CriticalStrike);
 	    		
-	    		//if(somanyenchantments.config.ExtremeFortuneEnable)
+	    		//if(ModConfig.enabled.ExtremeFortuneEnable)
 	    		//	event.getRegistry().register(ExtremeFortune);
 	    		
-	    		//if(somanyenchantments.config.Rune_RessurectionEnable)
+	    		//if(ModConfig.enabled.Rune_RessurectionEnable)
 	    		//	event.getRegistry().register(Rune_Resurrection);
 	    		
-	    		if(somanyenchantments.config.AdvancedLootingEnable)
+	    		if(ModConfig.enabled.AdvancedLootingEnable)
 	    			event.getRegistry().register(AdvancedLooting);
 	    		
-	    		if(somanyenchantments.config.LevitatorEnable)
+	    		if(ModConfig.enabled.LevitatorEnable)
 	    			event.getRegistry().register(Levitator);
 	    		
-	    		if(somanyenchantments.config.MagicProtectionEnable)
+	    		if(ModConfig.enabled.MagicProtectionEnable)
 	    			event.getRegistry().register(MagicProtection);
 	    		
-	    		if(somanyenchantments.config.PhysicalProtectionEnable)
+	    		if(ModConfig.enabled.PhysicalProtectionEnable)
 	    			event.getRegistry().register(PhysicalProtection);
 	    		
-	    		if(somanyenchantments.config.AshDestroyerEnable)
+	    		if(ModConfig.enabled.AshDestroyerEnable)
 	    			event.getRegistry().register(AshDestroyer);
 	    		
-	    		if(somanyenchantments.config.DesolatorEnable)
+	    		if(ModConfig.enabled.DesolatorEnable)
 	    			event.getRegistry().register(Desolator);
 	    		
-	    		if(somanyenchantments.config.DisorientationEnable)
+	    		if(ModConfig.enabled.DisorientationEnable)
 	    			event.getRegistry().register(Disorientation);
 	    		
-	    		if(somanyenchantments.config.PurgingBladeEnable)
+	    		if(ModConfig.enabled.PurgingBladeEnable)
 	    			event.getRegistry().register(PurgingBlade);
 	    		
-	    		if(somanyenchantments.config.ViperEnable)
+	    		if(ModConfig.enabled.ViperEnable)
 	    			event.getRegistry().register(Viper);
 	    		
-	    		if(somanyenchantments.config.AdvancedPowerEnable)
+	    		if(ModConfig.enabled.AdvancedPowerEnable)
 	    			event.getRegistry().register(AdvancedPower);
 	    		
-	    		if(somanyenchantments.config.EnvenomedEnable)
+	    		if(ModConfig.enabled.EnvenomedEnable)
 	    			event.getRegistry().register(Envenomed);
 	    		
-	    		if(somanyenchantments.config.PowerlessEnable)
+	    		if(ModConfig.enabled.PowerlessEnable)
 	    			event.getRegistry().register(Powerless);
 	    		
-	    		if(somanyenchantments.config.RevivalEnable)
+	    		if(ModConfig.enabled.RevivalEnable)
 	    			event.getRegistry().register(Rune_Revival);
 	    		
-	    	    if(somanyenchantments.config.AdvancedPunch)
+	    	    if(ModConfig.enabled.AdvancedPunch)
 	    	    	event.getRegistry().register(AdvancedPunch);
 	    	    	
-	    	    if(somanyenchantments.config.AdvancedLure)
+	    	    if(ModConfig.enabled.AdvancedLure)
 	    	    	event.getRegistry().register(AdvancedLure);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedLuckOfTheSea)
+	    	    if(ModConfig.enabled.AdvancedLuckOfTheSea)
 	    	    	event.getRegistry().register(AdvancedLuckOfTheSea);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedFeatherFalling)
+	    	    if(ModConfig.enabled.AdvancedFeatherFalling)
 	    	    	event.getRegistry().register(AdvancedFeatherFalling);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedThorns)
+	    	    if(ModConfig.enabled.AdvancedThorns)
 	    	    	event.getRegistry().register(AdvancedThorns);
 	    	    
-	    	    if(somanyenchantments.config.BurningThorns)
+	    	    if(ModConfig.enabled.BurningThorns)
 	    	    	event.getRegistry().register(BurningThorns);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedProtection)
+	    	    if(ModConfig.enabled.AdvancedProtection)
 	    	    	event.getRegistry().register(AdvancedProtection);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedFireProtection)
+	    	    if(ModConfig.enabled.AdvancedFireProtection)
 	    	    	event.getRegistry().register(AdvancedFireProtection);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedBlastProtection)
+	    	    if(ModConfig.enabled.AdvancedBlastProtection)
 	    	    	event.getRegistry().register(AdvancedBlastProtection);
 	    	    
-	    	    if(somanyenchantments.config.AdvancedProjectileProtection)
+	    	    if(ModConfig.enabled.AdvancedProjectileProtection)
 	    	    	event.getRegistry().register(AdvancedProjectileProtection);
 	    	    
-	    	    if(somanyenchantments.config.Quarrying)
+	    	    if(ModConfig.enabled.Quarrying)
 	    	    	event.getRegistry().register(Quarrying);
 	            		
 	    	  //GameRegistry.register(Debug);
@@ -328,109 +329,109 @@ public class Smc_030 {
 	  
 	//Registers the enchantment itself and not its effect (event).
 	public static void register(){
-	/**	if(somanyenchantments.config.ClearskyEnable)
+	/**	if(ModConfig.enabled.ClearskyEnable)
 			GameRegistry.register(Clearsky);
 		
-		if(somanyenchantments.config.MoonlightEnable)
+		if(ModConfig.enabled.MoonlightEnable)
 			GameRegistry.register(Moonlight);
 		
-		if(somanyenchantments.config.RainingEnable)
+		if(ModConfig.enabled.RainingEnable)
 			GameRegistry.register(Raining);
 		
-		if(somanyenchantments.config.SunshineEnable)
+		if(ModConfig.enabled.SunshineEnable)
 			GameRegistry.register(Sunshine);
 		
-		if(somanyenchantments.config.ThunderstormEnable)
+		if(ModConfig.enabled.ThunderstormEnable)
 			GameRegistry.register(Thunderstorm);
 		
-		if(somanyenchantments.config.WinterEnable)
+		if(ModConfig.enabled.WinterEnable)
 			GameRegistry.register(Winter);
 		
-		if(somanyenchantments.config.SmelterEnable)
+		if(ModConfig.enabled.SmelterEnable)
 			GameRegistry.register(Smelter);
 		
-		if(somanyenchantments.config.EmpoweredDefenceEnable)
+		if(ModConfig.enabled.EmpoweredDefenceEnable)
 			GameRegistry.register(EmpoweredDefence);
 		
-		if(somanyenchantments.config.StrafeEnable)
+		if(ModConfig.enabled.StrafeEnable)
 			GameRegistry.register(Strafe);
 		
-		if(somanyenchantments.config.CriticalStrikeEnable)
+		if(ModConfig.enabled.CriticalStrikeEnable)
 			GameRegistry.register(CriticalStrike);
 		
-		//if(somanyenchantments.config.ExtremeFortuneEnable)
+		//if(ModConfig.enabled.ExtremeFortuneEnable)
 		//	GameRegistry.register(ExtremeFortune);
 		
-		//if(somanyenchantments.config.Rune_RessurectionEnable)
+		//if(ModConfig.enabled.Rune_RessurectionEnable)
 		//	GameRegistry.register(Rune_Resurrection);
 		
-		if(somanyenchantments.config.ExtremeLootingEnable)
+		if(ModConfig.enabled.ExtremeLootingEnable)
 			GameRegistry.register(ExtremeLooting);
 		
-		if(somanyenchantments.config.LevitatorEnable)
+		if(ModConfig.enabled.LevitatorEnable)
 			GameRegistry.register(Levitator);
 		
-		if(somanyenchantments.config.MagicProtectionEnable)
+		if(ModConfig.enabled.MagicProtectionEnable)
 			GameRegistry.register(MagicProtection);
 		
-		if(somanyenchantments.config.PhysicalProtectionEnable)
+		if(ModConfig.enabled.PhysicalProtectionEnable)
 			GameRegistry.register(PhysicalProtection);
 		
-		if(somanyenchantments.config.AshDestroyerEnable)
+		if(ModConfig.enabled.AshDestroyerEnable)
 			GameRegistry.register(AshDestroyer);
 		
-		if(somanyenchantments.config.DesolatorEnable)
+		if(ModConfig.enabled.DesolatorEnable)
 			GameRegistry.register(Desolator);
 		
-		if(somanyenchantments.config.DisorientationEnable)
+		if(ModConfig.enabled.DisorientationEnable)
 			GameRegistry.register(Disorientation);
 		
-		if(somanyenchantments.config.PurgingBladeEnable)
+		if(ModConfig.enabled.PurgingBladeEnable)
 			GameRegistry.register(PurgingBlade);
 		
-		if(somanyenchantments.config.ViperEnable)
+		if(ModConfig.enabled.ViperEnable)
 			GameRegistry.register(Viper);
 		
-		if(somanyenchantments.config.ExtremePowerEnable)
+		if(ModConfig.enabled.ExtremePowerEnable)
 			GameRegistry.register(ExtremePower);
 		
-		if(somanyenchantments.config.EnvenomedEnable)
+		if(ModConfig.enabled.EnvenomedEnable)
 			GameRegistry.register(Envenomed);
 		
-		if(somanyenchantments.config.PowerlessEnable)
+		if(ModConfig.enabled.PowerlessEnable)
 			GameRegistry.register(Powerless);
 		
-		if(somanyenchantments.config.RevivalEnable)
+		if(ModConfig.enabled.RevivalEnable)
 			GameRegistry.register(Rune_Revival);
 		
-	    if(somanyenchantments.config.ExtremePunch)
+	    if(ModConfig.enabled.ExtremePunch)
 	    	GameRegistry.register(ExtremePunch);
 	    	
-	    if(somanyenchantments.config.AdvancedLure)
+	    if(ModConfig.enabled.AdvancedLure)
 	    	GameRegistry.register(AdvancedLure);
 	    
-	    if(somanyenchantments.config.AdvancedLuckOfTheSea)
+	    if(ModConfig.enabled.AdvancedLuckOfTheSea)
 	    	GameRegistry.register(AdvancedLuckOfTheSea);
 	    
-	    if(somanyenchantments.config.AdvancedFeatherFalling)
+	    if(ModConfig.enabled.AdvancedFeatherFalling)
 	    	GameRegistry.register(AdvancedFeatherFalling);
 	    
-	    if(somanyenchantments.config.AdvancedThorns)
+	    if(ModConfig.enabled.AdvancedThorns)
 	    	GameRegistry.register(AdvancedThorns);
 	    
-	    if(somanyenchantments.config.BurningThorns)
+	    if(ModConfig.enabled.BurningThorns)
 	    	GameRegistry.register(BurningThorns);
 	    
-	    if(somanyenchantments.config.AdvancedProtection)
+	    if(ModConfig.enabled.AdvancedProtection)
 	    	GameRegistry.register(AdvancedProtection);
 	    
-	    if(somanyenchantments.config.AdvancedFireProtection)
+	    if(ModConfig.enabled.AdvancedFireProtection)
 	    	GameRegistry.register(AdvancedFireProtection);
 	    
-	    if(somanyenchantments.config.AdvancedBlastProtection)
+	    if(ModConfig.enabled.AdvancedBlastProtection)
 	    	GameRegistry.register(AdvancedBlastProtection);
 	    
-	    if(somanyenchantments.config.AdvancedProjectileProtection)
+	    if(ModConfig.enabled.AdvancedProjectileProtection)
 	    	GameRegistry.register(AdvancedProjectileProtection);
 	    
 	    
@@ -440,97 +441,97 @@ public class Smc_030 {
 	}
 	//Registers the effect of an enchantment and not the enchantment.
 	public static void enchHandler(){
-		if(somanyenchantments.config.ClearskyEnable)
+		if(ModConfig.enabled.ClearskyEnable)
 			MinecraftForge.EVENT_BUS.register(Clearsky);
 		
-		if(somanyenchantments.config.MoonlightEnable)
+		if(ModConfig.enabled.MoonlightEnable)
 			MinecraftForge.EVENT_BUS.register(Moonlight);
 		
-		if(somanyenchantments.config.RainingEnable)
+		if(ModConfig.enabled.RainingEnable)
 			MinecraftForge.EVENT_BUS.register(Raining);
 		
-		if(somanyenchantments.config.SunshineEnable)
+		if(ModConfig.enabled.SunshineEnable)
 			MinecraftForge.EVENT_BUS.register(Sunshine);
 		
-		if(somanyenchantments.config.ThunderstormEnable)
+		if(ModConfig.enabled.ThunderstormEnable)
 			MinecraftForge.EVENT_BUS.register(Thunderstorm);
 		
-		if(somanyenchantments.config.WinterEnable)
+		if(ModConfig.enabled.WinterEnable)
 			MinecraftForge.EVENT_BUS.register(Winter);
 		
-		if(somanyenchantments.config.SmelterEnable)
+		if(ModConfig.enabled.SmelterEnable)
 			MinecraftForge.EVENT_BUS.register(Smelter);
 		
-		if(somanyenchantments.config.EmpoweredDefenceEnable)
+		if(ModConfig.enabled.EmpoweredDefenceEnable)
 			MinecraftForge.EVENT_BUS.register(EmpoweredDefence);
 		
-		if(somanyenchantments.config.StrafeEnable)
+		if(ModConfig.enabled.StrafeEnable)
 			MinecraftForge.EVENT_BUS.register(Strafe);
 		
-		//if(somanyenchantments.config.CriticalStrikeEnable)
+		//if(ModConfig.enabled.CriticalStrikeEnable)
 		//	MinecraftForge.EVENT_BUS.register(CriticalStrike);
 		
-		//if(somanyenchantments.config.ExtremeFortuneEnable)
+		//if(ModConfig.enabled.ExtremeFortuneEnable)
 		//	MinecraftForge.EVENT_BUS.register(ExtremeFortune);
 		
-	//	if(somanyenchantments.config.Rune_RessurectionEnable)
+	//	if(ModConfig.enabled.Rune_RessurectionEnable)
 		//	MinecraftForge.EVENT_BUS.register(Rune_Resurrection);
 		
-		if(somanyenchantments.config.AdvancedLootingEnable)
+		if(ModConfig.enabled.AdvancedLootingEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedLooting);
 		
-		//if(somanyenchantments.config.AshDestroyerEnable)
+		//if(ModConfig.enabled.AshDestroyerEnable)
 		//	MinecraftForge.EVENT_BUS.register(AshDestroyer);
 		
-		if(somanyenchantments.config.DesolatorEnable)
+		if(ModConfig.enabled.DesolatorEnable)
 			MinecraftForge.EVENT_BUS.register(Desolator);
 		
-		if(somanyenchantments.config.DisorientationEnable)
+		if(ModConfig.enabled.DisorientationEnable)
 			MinecraftForge.EVENT_BUS.register(Disorientation);
 		
-		if(somanyenchantments.config.PurgingBladeEnable)
+		if(ModConfig.enabled.PurgingBladeEnable)
 			MinecraftForge.EVENT_BUS.register(PurgingBlade);
 		
-		if(somanyenchantments.config.ViperEnable)
+		if(ModConfig.enabled.ViperEnable)
 			MinecraftForge.EVENT_BUS.register(Viper);
 		
-		if(somanyenchantments.config.AdvancedPowerEnable)
+		if(ModConfig.enabled.AdvancedPowerEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedPower);
 		
-		if(somanyenchantments.config.EnvenomedEnable)
+		if(ModConfig.enabled.EnvenomedEnable)
 			MinecraftForge.EVENT_BUS.register(Envenomed);
 		
-		if(somanyenchantments.config.PowerlessEnable)
+		if(ModConfig.enabled.PowerlessEnable)
 			MinecraftForge.EVENT_BUS.register(Powerless);
 		
-		if(somanyenchantments.config.RevivalEnable)
+		if(ModConfig.enabled.RevivalEnable)
 			MinecraftForge.EVENT_BUS.register(Rune_Revival);
 		
-		if(somanyenchantments.config.AdvancedPunch)
+		if(ModConfig.enabled.AdvancedPunch)
 			MinecraftForge.EVENT_BUS.register(AdvancedPunch);
 		
-		if(somanyenchantments.config.AdvancedLure)
+		if(ModConfig.enabled.AdvancedLure)
 			MinecraftForge.EVENT_BUS.register(AdvancedLure);
 		
-		if(somanyenchantments.config.AdvancedLuckOfTheSea)
+		if(ModConfig.enabled.AdvancedLuckOfTheSea)
 			MinecraftForge.EVENT_BUS.register(AdvancedLuckOfTheSea);
 		
-		if(somanyenchantments.config.AdvancedFireProtection)
+		if(ModConfig.enabled.AdvancedFireProtection)
 			MinecraftForge.EVENT_BUS.register(AdvancedFireProtection);
 		
-		if(somanyenchantments.config.AdvancedBlastProtection)
+		if(ModConfig.enabled.AdvancedBlastProtection)
 			MinecraftForge.EVENT_BUS.register(AdvancedBlastProtection);
 			
-		if(somanyenchantments.config.Quarrying)
+		if(ModConfig.enabled.Quarrying)
 			MinecraftForge.EVENT_BUS.register(Quarrying);
 		//MinecraftForge.EVENT_BUS.register(Debug);
 		
 	
 		
-		//if(somanyenchantments.config.MagicProtectionEnable)
+		//if(ModConfig.enabled.MagicProtectionEnable)
 			//MinecraftForge.EVENT_BUS.register(MagicProtection);
 	
-		//if(somanyenchantments.config.PhysicalProtectionEnable)
+		//if(ModConfig.enabled.PhysicalProtectionEnable)
 			//MinecraftForge.EVENT_BUS.register(PhysicalProtection);
 		
 	}

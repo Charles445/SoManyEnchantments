@@ -3,6 +3,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
@@ -144,17 +145,17 @@ public class EnchantmentTierDamage extends Enchantment implements IEnchantmentDa
     {
     	switch(this.damageType) {
     	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.LesserSharpness;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserSharpness;
     	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.SupremeSharpness;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeSharpness;
     	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.LesserSmite;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserSmite;
     	case 3:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.SupremeSmite;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeSmite;
     	case 4:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.LesserBaneOfArthropods;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserBaneOfArthropods;
     	case 5:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.SupremeBaneOfArthropods;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeBaneOfArthropods;
     	default:
     		return false;
     	}
@@ -166,17 +167,17 @@ public class EnchantmentTierDamage extends Enchantment implements IEnchantmentDa
     {
     	switch(this.damageType) {
     	case 0:
-    		return somanyenchantments.config.LesserSharpness;
+    		return ModConfig.enabled.LesserSharpness;
     	case 1:
-    		return somanyenchantments.config.SupremeSharpness;
+    		return ModConfig.enabled.SupremeSharpness;
     	case 2:
-    		return somanyenchantments.config.LesserSmite;
+    		return ModConfig.enabled.LesserSmite;
     	case 3:
-    		return somanyenchantments.config.SupremeSmite;
+    		return ModConfig.enabled.SupremeSmite;
     	case 4:
-    		return somanyenchantments.config.LesserBaneOfArthropods;
+    		return ModConfig.enabled.LesserBaneOfArthropods;
     	case 5:
-    		return somanyenchantments.config.SupremeBaneOfArthropods;
+    		return ModConfig.enabled.SupremeBaneOfArthropods;
     	default:
     		return false;
     	}

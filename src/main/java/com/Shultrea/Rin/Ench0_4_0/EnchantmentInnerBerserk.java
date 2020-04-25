@@ -1,6 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
@@ -55,13 +55,13 @@ public class EnchantmentInnerBerserk extends Enchantment
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.InnerBerserk && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.InnerBerserk && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.InnerBerserk;
+        return ModConfig.enabled.InnerBerserk;
     }
 	    
 	@SubscribeEvent(priority = EventPriority.LOW) 

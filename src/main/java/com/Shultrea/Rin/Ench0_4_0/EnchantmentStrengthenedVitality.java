@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -62,13 +62,13 @@ public class EnchantmentStrengthenedVitality extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.StrengthenedVitality && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.StrengthenedVitality && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.StrengthenedVitality;
+        return ModConfig.enabled.StrengthenedVitality;
     }
 		  
 	@SubscribeEvent(priority=EventPriority.HIGHEST)

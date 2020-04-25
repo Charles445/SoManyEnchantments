@@ -2,22 +2,17 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 import java.util.Random;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
-import com.Shultrea.Rin.Main_Sector.Config;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.SMEnetwork;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.MsgSP_Particle;
+import com.Shultrea.Rin.Utility_Sector.SMEnetwork;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemAir;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -72,7 +67,7 @@ public class EnchantmentSmelter extends Enchantment{
 	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onBlockDropSmelt(HarvestDropsEvent fEvent) {
-		if(fEvent.getHarvester() != null && somanyenchantments.config.SmelterEnable) {
+		if(fEvent.getHarvester() != null && ModConfig.enabled.SmelterEnable) {
 			int fortuneLevel = fEvent.getFortuneLevel();
 			
 			// get the held item and make sure it isn't null!

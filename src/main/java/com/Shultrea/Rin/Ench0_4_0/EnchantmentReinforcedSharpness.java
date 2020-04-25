@@ -3,6 +3,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -12,7 +13,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntityDamageSource;
 
@@ -53,7 +53,7 @@ public class EnchantmentReinforcedSharpness extends Enchantment implements IEnch
     @Override
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)
     {
-    	if(somanyenchantments.config.SharperEdge)
+    	if(ModConfig.enabled.SharperEdge)
     		return (0.75f * level + 0.5f);
     	
     	return 0;
@@ -62,20 +62,19 @@ public class EnchantmentReinforcedSharpness extends Enchantment implements IEnch
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.SharperEdge && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.SharperEdge && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.SharperEdge;
+        return ModConfig.enabled.SharperEdge;
     }
     
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
-    	if(somanyenchantments.config.SharperEdge)
-    	if(target instanceof EntityLivingBase && user instanceof EntityPlayer){
+    	if(ModConfig.enabled.SharperEdge && target instanceof EntityLivingBase && user instanceof EntityPlayer){
     		EntityLivingBase victim = (EntityLivingBase) target;
     		
     		int x = victim.getTotalArmorValue();
@@ -97,6 +96,5 @@ public class EnchantmentReinforcedSharpness extends Enchantment implements IEnch
     		else victim.attackEntityFrom(new EntityDamageSource("player", user), (20 - x) / (10 - level));
     	}
     	
-    }
-    }
-
+	}
+}

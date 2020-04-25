@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.UUID;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -56,7 +57,7 @@ public class LivingAttackFixerHandler{
 	    //fEvent.getEntityLiving().writeEntityToNBT(nbt);
       
 		if(fEvent.getEntityLiving().isPotionActive(MobEffects.WEAKNESS)){
-		if(somanyenchantments.config.EnableFixEnchantment){
+		if(ModConfig.miscellaneous.EnableFixEnchantment){
 		Potion potion = MobEffects.WEAKNESS;
 		
 		potyon = fEvent.getEntityLiving().getActivePotionEffect(potion);

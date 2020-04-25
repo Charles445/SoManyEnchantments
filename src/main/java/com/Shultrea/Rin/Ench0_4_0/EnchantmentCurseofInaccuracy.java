@@ -1,21 +1,18 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentTrueStrike;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -71,7 +68,7 @@ public class EnchantmentCurseofInaccuracy extends Enchantment implements IEnchan
 	 @Override
 	 public boolean canApplyAtEnchantingTable(ItemStack stack)
 	 {
-	     return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.CurseOfInaccuracy;
+	     return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseOfInaccuracy;
 	 }
 	    
 	 @Override

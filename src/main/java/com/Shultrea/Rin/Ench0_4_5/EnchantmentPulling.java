@@ -3,6 +3,7 @@ package com.Shultrea.Rin.Ench0_4_5;
 import com.Shultrea.Rin.Ench0_3_0.EnchantmentAdvancedPunch;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
 import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
@@ -61,13 +62,13 @@ public class EnchantmentPulling extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Pulling && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Pulling && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Pulling;
+        return ModConfig.enabled.Pulling;
     }
     
     @Override

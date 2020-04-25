@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Random;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.google.common.collect.Lists;
 
@@ -612,7 +613,7 @@ public class EnchantmentsUtility {
 }	
 		   
 	   public static void enchHandler(){
-		   if(somanyenchantments.config.EnableFixEnchantment){
+		   if(ModConfig.miscellaneous.EnableFixEnchantment){
 				MinecraftForge.EVENT_BUS.register(new HurtPatchHandler());
 				}
 	   }

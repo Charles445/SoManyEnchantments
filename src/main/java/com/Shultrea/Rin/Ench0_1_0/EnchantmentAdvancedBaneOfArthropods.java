@@ -3,6 +3,7 @@ package com.Shultrea.Rin.Ench0_1_0;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
@@ -76,7 +77,7 @@ public class EnchantmentAdvancedBaneOfArthropods extends Enchantment implements 
     public String getTranslatedName(int level)
     {
         String s = I18n.translateToLocal(this.getName());
-        if(!somanyenchantments.config.AdvancedBaneOfArthropodsEnable){
+        if(!ModConfig.enabled.AdvancedBaneOfArthropodsEnable){
         s = TextFormatting.STRIKETHROUGH + "" + TextFormatting.DARK_RED + s;       
         return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level) + "(Disabled)";
     }

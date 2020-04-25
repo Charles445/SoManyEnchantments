@@ -1,34 +1,19 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
-import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentInhumanity extends Enchantment implements IEnchantmentDamage {
 	public EnchantmentInhumanity()
@@ -73,19 +58,19 @@ public class EnchantmentInhumanity extends Enchantment implements IEnchantmentDa
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.Inhumane;
+        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Inhumane;
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Inhumane;
+        return ModConfig.enabled.Inhumane;
     }
     
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
     {
-    	if(!somanyenchantments.config.Inhumane)
+    	if(!ModConfig.enabled.Inhumane)
     		return;
     	
     	if(!(entiti instanceof EntityLivingBase))

@@ -252,9 +252,6 @@ enchantment.somanyenchantments.supremesmite.desc=Supreme version or the most pow
 enchantment.CurseofPossession=Curse of Possession
 enchantment.somanyenchantments.curseofpossession.desc=Items are unable to leave in the player's inventory
 
-enchantment.fieryshield=Fiery Shield
-enchantment.somanyenchantments.fieryshield.desc=While blocking, burns the attacker
-
 enchantment.flinging=Flinging
 enchantment.somanyenchantments.flinging.desc=Similar to Knockback, but the knockback is in a vertical motion.
 

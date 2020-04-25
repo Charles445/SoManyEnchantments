@@ -1,39 +1,15 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityEvoker;
-import net.minecraft.entity.monster.EntityIllusionIllager;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntitySnowman;
-import net.minecraft.entity.monster.EntityVindicator;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentFAtier extends Enchantment{
 	private static final String[] DAMAGE_NAMES = new String[] {"lfa", "afa","sfa"};
@@ -102,11 +78,11 @@ public class EnchantmentFAtier extends Enchantment{
     {
     	switch(this.damageType) {
     	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.LesserFireAspect;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserFireAspect;
     	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.AdvancedFireAspect;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.AdvancedFireAspect;
     	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.SupremeFireAspect;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeFireAspect;
     	default:
     		return false;
     	}
@@ -118,11 +94,11 @@ public class EnchantmentFAtier extends Enchantment{
     {
     	switch(this.damageType) {
     	case 0:
-    		return somanyenchantments.config.LesserFireAspect;
+    		return ModConfig.enabled.LesserFireAspect;
     	case 1:
-    		return somanyenchantments.config.AdvancedFireAspect;
+    		return ModConfig.enabled.AdvancedFireAspect;
     	case 2:
-    		return somanyenchantments.config.SupremeFireAspect;
+    		return ModConfig.enabled.SupremeFireAspect;
     	default:
     		return false;
     	}
@@ -149,15 +125,15 @@ public class EnchantmentFAtier extends Enchantment{
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
-    if(this.damageType == 2 && somanyenchantments.config.SupremeFireAspect){
+    if(this.damageType == 2 && ModConfig.enabled.SupremeFireAspect){
       if(level > 0)
     	  target.setFire(16 * level);
     }
-    if(this.damageType == 1 && somanyenchantments.config.AdvancedFireAspect){
+    if(this.damageType == 1 && ModConfig.enabled.AdvancedFireAspect){
         if(level > 0)
       	  target.setFire(8 * level);
       }
-    if(this.damageType == 0 && somanyenchantments.config.LesserFireAspect){
+    if(this.damageType == 0 && ModConfig.enabled.LesserFireAspect){
         if(level > 0)
       	  target.setFire(2 * level);
       }

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentGreaterCurse;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentLister;
 
@@ -82,13 +83,13 @@ public class EnchantmentPandora extends Enchantment implements IEnchantmentGreat
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Pandora && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Pandora && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Pandora;
+        return ModConfig.enabled.Pandora;
     }
 		 
 	@SubscribeEvent

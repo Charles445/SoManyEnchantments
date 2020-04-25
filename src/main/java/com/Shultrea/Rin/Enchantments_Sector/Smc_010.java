@@ -24,6 +24,7 @@ import com.Shultrea.Rin.Ench0_1_0.EnchantmentRusted;
 import com.Shultrea.Rin.Ench0_1_0.EnchantmentSpellBreaker;
 import com.Shultrea.Rin.Ench0_1_0.EnchantmentSwifterSlashes;
 import com.Shultrea.Rin.Ench0_1_0.EnchantmentWaterAspect;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.LivingAttackFixerHandler;
 
@@ -72,65 +73,65 @@ public class Smc_010 {
 	{	
 	    //ArrayList<Enchantment> enchArray = new ArrayList<Enchantment>();
 		
-		if(somanyenchantments.config.InefficentEnable){
+		if(ModConfig.enabled.InefficentEnable){
             Inefficient = new EnchantmentInefficient();
 		    //enchArray.add(Inefficient);
 		}
-		if(somanyenchantments.config.HeavyWeight)
+		if(ModConfig.enabled.HeavyWeight)
             HeavyWeight = new EnchantmentHeavyWeight();
 		
-		if(somanyenchantments.config.RustedEnable)
+		if(ModConfig.enabled.RustedEnable)
             Rusted = new EnchantmentRusted();
 		
-		if(somanyenchantments.config.RustedEnable)
+		if(ModConfig.enabled.RustedEnable)
             Rusted = new EnchantmentRusted();
 		
-		if(somanyenchantments.config.BluntnessEnable)
+		if(ModConfig.enabled.BluntnessEnable)
             Bluntness = new EnchantmentBluntness();
 		
-		if(somanyenchantments.config.AdvancedEfficencyEnable)
+		if(ModConfig.enabled.AdvancedEfficencyEnable)
             ExtremeEfficency = new EnchantmentAdvancedEfficiency();
 		
-     	if(somanyenchantments.config.BlessedEdgeEnable)
+     	if(ModConfig.enabled.BlessedEdgeEnable)
             BlessedEdge = new EnchantmentBlessedEdge();
      	
-     	if(somanyenchantments.config.ButcheringEnable)
+     	if(ModConfig.enabled.ButcheringEnable)
             Butchering = new EnchantmentButchering();
     	
-     	if(somanyenchantments.config.CursedEdgeEnable)
+     	if(ModConfig.enabled.CursedEdgeEnable)
             CursedEdge = new EnchantmentCursedEdge();
      	
-     	if(somanyenchantments.config.DefusionEnable)
+     	if(ModConfig.enabled.DefusionEnable)
             Defusion = new EnchantmentDefusion();
     	
-     	if(somanyenchantments.config.AdvancedBaneOfArthropodsEnable)
+     	if(ModConfig.enabled.AdvancedBaneOfArthropodsEnable)
             AdvancedBaneOfArthropods = new EnchantmentAdvancedBaneOfArthropods();
      	
-     	if(somanyenchantments.config.AdvancedSharpnessEnable)
+     	if(ModConfig.enabled.AdvancedSharpnessEnable)
             AdvancedSharpness = new EnchantmentAdvancedSharpness();
     	
-     	if(somanyenchantments.config.AdvancedSmiteEnable)
+     	if(ModConfig.enabled.AdvancedSmiteEnable)
             AdvancedSmite = new EnchantmentAdvancedSmite();
      	
-     	if(somanyenchantments.config.FieryEdgeEnable)
+     	if(ModConfig.enabled.FieryEdgeEnable)
             FieryEdge = new EnchantmentFieryEdge();
     	
-     	if(somanyenchantments.config.PurificationEnable)
+     	if(ModConfig.enabled.PurificationEnable)
             Purification = new EnchantmentPurification();
      	
-     	if(somanyenchantments.config.ReviledBladeEnable)
+     	if(ModConfig.enabled.ReviledBladeEnable)
             ReviledBlade = new EnchantmentReviledBlade();
     	
-     	if(somanyenchantments.config.Rune_PiercingCapabilitiesEnable)
+     	if(ModConfig.enabled.Rune_PiercingCapabilitiesEnable)
             Rune_PiercingCapabilities = new EnchantmentRune_PiercingCapabilities();
      	
-     	if(somanyenchantments.config.SpellBreakerEnable)
+     	if(ModConfig.enabled.SpellBreakerEnable)
             SpellBreaker = new EnchantmentSpellBreaker();
     	
-     	if(somanyenchantments.config.SwifterSlashesEnable)
+     	if(ModConfig.enabled.SwifterSlashesEnable)
             SwifterSlashes = new EnchantmentSwifterSlashes();
      	
-     	if(somanyenchantments.config.WaterAspectEnable)
+     	if(ModConfig.enabled.WaterAspectEnable)
             WaterAspect = new EnchantmentWaterAspect();
      	
      	
@@ -160,61 +161,61 @@ public class Smc_010 {
          */
         @SubscribeEvent
         public static void registerEnchantment(RegistryEvent.Register<net.minecraft.enchantment.Enchantment> event) {
-        	if(somanyenchantments.config.InefficentEnable)
+        	if(ModConfig.enabled.InefficentEnable)
         	event.getRegistry().register(Inefficient);
         	
-          	if(somanyenchantments.config.HeavyWeight)
+          	if(ModConfig.enabled.HeavyWeight)
         		event.getRegistry().register(HeavyWeight);
         		
-        	if(somanyenchantments.config.RustedEnable)
+        	if(ModConfig.enabled.RustedEnable)
         	    event.getRegistry().register(Rusted);
         		
-        	if(somanyenchantments.config.BluntnessEnable)
+        	if(ModConfig.enabled.BluntnessEnable)
         	    event.getRegistry().register(Bluntness);
         		
-       		if(somanyenchantments.config.BlessedEdgeEnable)
+       		if(ModConfig.enabled.BlessedEdgeEnable)
         		event.getRegistry().register(BlessedEdge);
         		
-        	if(somanyenchantments.config.ButcheringEnable)
+        	if(ModConfig.enabled.ButcheringEnable)
         		event.getRegistry().register(Butchering);
         		
-        	if(somanyenchantments.config.CursedEdgeEnable)
+        	if(ModConfig.enabled.CursedEdgeEnable)
         		event.getRegistry().register(CursedEdge);
         		
-        	if(somanyenchantments.config.DefusionEnable)
+        	if(ModConfig.enabled.DefusionEnable)
         		event.getRegistry().register(Defusion);
         		
-        	if(somanyenchantments.config.AdvancedBaneOfArthropodsEnable)
+        	if(ModConfig.enabled.AdvancedBaneOfArthropodsEnable)
         		event.getRegistry().register(AdvancedBaneOfArthropods);
         		
-        	if(somanyenchantments.config.AdvancedEfficencyEnable)
+        	if(ModConfig.enabled.AdvancedEfficencyEnable)
         	    event.getRegistry().register(ExtremeEfficency);
         		
-        	if(somanyenchantments.config.AdvancedSharpnessEnable)
+        	if(ModConfig.enabled.AdvancedSharpnessEnable)
         		event.getRegistry().register(AdvancedSharpness);
         		
-        	if(somanyenchantments.config.AdvancedSmiteEnable)
+        	if(ModConfig.enabled.AdvancedSmiteEnable)
         		event.getRegistry().register(AdvancedSmite);
         		
-        	if(somanyenchantments.config.FieryEdgeEnable)
+        	if(ModConfig.enabled.FieryEdgeEnable)
         		event.getRegistry().register(FieryEdge);
         		
-        	if(somanyenchantments.config.PurificationEnable)
+        	if(ModConfig.enabled.PurificationEnable)
         		event.getRegistry().register(Purification);
         		
-        	if(somanyenchantments.config.ReviledBladeEnable)
+        	if(ModConfig.enabled.ReviledBladeEnable)
         		event.getRegistry().register(ReviledBlade);
         		
-        	if(somanyenchantments.config.Rune_PiercingCapabilitiesEnable)
+        	if(ModConfig.enabled.Rune_PiercingCapabilitiesEnable)
         		event.getRegistry().register(Rune_PiercingCapabilities);
         	
-        	if(somanyenchantments.config.SpellBreakerEnable)
+        	if(ModConfig.enabled.SpellBreakerEnable)
         		event.getRegistry().register(SpellBreaker);
         		
-        	if(somanyenchantments.config.SwifterSlashesEnable)
+        	if(ModConfig.enabled.SwifterSlashesEnable)
         		event.getRegistry().register(SwifterSlashes);
         	
-        	if(somanyenchantments.config.WaterAspectEnable)
+        	if(ModConfig.enabled.WaterAspectEnable)
         		event.getRegistry().register(WaterAspect);
         	
         }
@@ -226,58 +227,58 @@ public class Smc_010 {
 	{
 /**
 		
-		if(somanyenchantments.config.HeavyWeight)
+		if(ModConfig.enabled.HeavyWeight)
 		GameRegistry.register(HeavyWeight);
 		
-		if(somanyenchantments.config.RustedEnable)
+		if(ModConfig.enabled.RustedEnable)
 	    GameRegistry.register(Rusted);
 		
-		if(somanyenchantments.config.BluntnessEnable)
+		if(ModConfig.enabled.BluntnessEnable)
 	    GameRegistry.register(Bluntness);
 		
-		if(somanyenchantments.config.BlessedEdgeEnable)
+		if(ModConfig.enabled.BlessedEdgeEnable)
 		GameRegistry.register(BlessedEdge);
 		
-		if(somanyenchantments.config.ButcheringEnable)
+		if(ModConfig.enabled.ButcheringEnable)
 		GameRegistry.register(Butchering);
 		
-		if(somanyenchantments.config.CursedEdgeEnable)
+		if(ModConfig.enabled.CursedEdgeEnable)
 		GameRegistry.register(CursedEdge);
 		
-		if(somanyenchantments.config.DefusionEnable)
+		if(ModConfig.enabled.DefusionEnable)
 		GameRegistry.register(Defusion);
 		
-		if(somanyenchantments.config.ExtremeBaneOfArthropodsEnable)
+		if(ModConfig.enabled.ExtremeBaneOfArthropodsEnable)
 		GameRegistry.register(ExtremeBaneOfArthropods);
 		
-		if(somanyenchantments.config.ExtremeEfficencyEnable)
+		if(ModConfig.enabled.ExtremeEfficencyEnable)
 	    GameRegistry.register(ExtremeEfficency);
 		
-		if(somanyenchantments.config.ExtremeSharpnessEnable)
+		if(ModConfig.enabled.ExtremeSharpnessEnable)
 		GameRegistry.register(ExtremeSharpness);
 		
-		if(somanyenchantments.config.ExtremeSmiteEnable)
+		if(ModConfig.enabled.ExtremeSmiteEnable)
 		GameRegistry.register(ExtremeSmite);
 		
-		if(somanyenchantments.config.FieryEdgeEnable)
+		if(ModConfig.enabled.FieryEdgeEnable)
 		GameRegistry.register(FieryEdge);
 		
-		if(somanyenchantments.config.PurificationEnable)
+		if(ModConfig.enabled.PurificationEnable)
 		GameRegistry.register(Purification);
 		
-		if(somanyenchantments.config.ReviledBladeEnable)
+		if(ModConfig.enabled.ReviledBladeEnable)
 		GameRegistry.register(ReviledBlade);
 		
-		if(somanyenchantments.config.Rune_PiercingCapabilitiesEnable)
+		if(ModConfig.enabled.Rune_PiercingCapabilitiesEnable)
 		GameRegistry.register(Rune_PiercingCapabilities);
 		
-		if(somanyenchantments.config.SpellBreakerEnable)
+		if(ModConfig.enabled.SpellBreakerEnable)
 		GameRegistry.register(SpellBreaker);
 		
-		if(somanyenchantments.config.SwifterSlashesEnable)
+		if(ModConfig.enabled.SwifterSlashesEnable)
 		GameRegistry.register(SwifterSlashes);
 	
-		if(somanyenchantments.config.WaterAspectEnable)
+		if(ModConfig.enabled.WaterAspectEnable)
 		GameRegistry.register(WaterAspect);
 		
     	
@@ -287,61 +288,61 @@ public class Smc_010 {
        
 	public static void enchHandler(){
      	
-		if(somanyenchantments.config.InefficentEnable)
+		if(ModConfig.enabled.InefficentEnable)
 			MinecraftForge.EVENT_BUS.register(Inefficient);    	
 		
-		if(somanyenchantments.config.HeavyWeight)
+		if(ModConfig.enabled.HeavyWeight)
 			MinecraftForge.EVENT_BUS.register(HeavyWeight);    	
 		
-		if(somanyenchantments.config.BlessedEdgeEnable)
+		if(ModConfig.enabled.BlessedEdgeEnable)
 			MinecraftForge.EVENT_BUS.register(BlessedEdge);    	
 		
-		if(somanyenchantments.config.ButcheringEnable)
+		if(ModConfig.enabled.ButcheringEnable)
 			MinecraftForge.EVENT_BUS.register(Butchering);    
 		
-		//if(somanyenchantments.config.CursedEdgeEnable)
+		//if(ModConfig.enabled.CursedEdgeEnable)
 		//	MinecraftForge.EVENT_BUS.register(CursedEdge);    
 		
-		if(somanyenchantments.config.DefusionEnable)
+		if(ModConfig.enabled.DefusionEnable)
 			MinecraftForge.EVENT_BUS.register(Defusion);    
 		
-		if(somanyenchantments.config.AdvancedBaneOfArthropodsEnable)
+		if(ModConfig.enabled.AdvancedBaneOfArthropodsEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedBaneOfArthropods);    
 		
-		if(somanyenchantments.config.AdvancedSharpnessEnable)
+		if(ModConfig.enabled.AdvancedSharpnessEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedSharpness);    
 		
-		if(somanyenchantments.config.AdvancedSmiteEnable)
+		if(ModConfig.enabled.AdvancedSmiteEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedSmite);    
 		
-		if(somanyenchantments.config.FieryEdgeEnable)
+		if(ModConfig.enabled.FieryEdgeEnable)
 			MinecraftForge.EVENT_BUS.register(FieryEdge);    
 		
-		if(somanyenchantments.config.PurificationEnable)
+		if(ModConfig.enabled.PurificationEnable)
 			MinecraftForge.EVENT_BUS.register(Purification);    
 		
-		//if(somanyenchantments.config.ReviledBladeEnable)
+		//if(ModConfig.enabled.ReviledBladeEnable)
 		//	MinecraftForge.EVENT_BUS.register(ReviledBlade);    
 		
-		//if(somanyenchantments.config.Rune_PiercingCapabilitiesEnable)
+		//if(ModConfig.enabled.Rune_PiercingCapabilitiesEnable)
 		//	MinecraftForge.EVENT_BUS.register(Rune_PiercingCapabilities);    
 		
-		if(somanyenchantments.config.SpellBreakerEnable)
+		if(ModConfig.enabled.SpellBreakerEnable)
 			MinecraftForge.EVENT_BUS.register(SpellBreaker);    
 		
-		if(somanyenchantments.config.SwifterSlashesEnable)
+		if(ModConfig.enabled.SwifterSlashesEnable)
 			MinecraftForge.EVENT_BUS.register(SwifterSlashes);    
 		
-		if(somanyenchantments.config.WaterAspectEnable)
+		if(ModConfig.enabled.WaterAspectEnable)
 			MinecraftForge.EVENT_BUS.register(WaterAspect);    
 		
-		if(somanyenchantments.config.AdvancedEfficencyEnable)
+		if(ModConfig.enabled.AdvancedEfficencyEnable)
 			MinecraftForge.EVENT_BUS.register(ExtremeEfficency);    
 		
-		if(somanyenchantments.config.BluntnessEnable)
+		if(ModConfig.enabled.BluntnessEnable)
 			MinecraftForge.EVENT_BUS.register(Bluntness);   
 		
-		if(somanyenchantments.config.RustedEnable)
+		if(ModConfig.enabled.RustedEnable)
 			MinecraftForge.EVENT_BUS.register(Rusted); 
 		
 		

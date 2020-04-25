@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_4_5;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
@@ -60,13 +61,13 @@ public class EnchantmentEvasion extends Enchantment
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Evasion && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Evasion && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Evasion;
+        return ModConfig.enabled.Evasion;
     }
 	    
     @SubscribeEvent(priority = EventPriority.LOW, receiveCanceled = false) 
@@ -108,7 +109,7 @@ public class EnchantmentEvasion extends Enchantment
 		randZ = victim.getRNG().nextBoolean() ? randZ * -1 : randZ;
 		
 		if(fEvent.getEntityLiving().world.rand.nextInt(100) < 5 + (level * 15)){
-			if(!attacker.world.isRemote && !somanyenchantments.config.EvasionKnockback)
+			if(!attacker.world.isRemote && ModConfig.miscellaneous.EvasionKnockback)
 				EnchantmentsUtility.ImprovedKnockBack(victim, 0.7f, (attacker.posX - victim.posX) * randX, (attacker.posZ - victim.posZ) * randZ);
 			victim.getEntityWorld().playSound(null, victim.posX, victim.posY, victim.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS, 0.3f, victim.getRNG().nextFloat() * 2.25f + 0.75f);
 			fEvent.setCanceled(true);

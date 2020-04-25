@@ -2,7 +2,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentRune;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
 import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
@@ -71,13 +71,13 @@ public class EnchantmentRune_ArrowPiercing extends Enchantment implements IEncha
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Rune_PiercingArrows && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Rune_PiercingArrows && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Rune_PiercingArrows;
+        return ModConfig.enabled.Rune_PiercingArrows;
     }
 
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)

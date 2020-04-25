@@ -53,8 +53,7 @@ import com.Shultrea.Rin.Ench0_4_5.EnchantmentPushing;
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentTrueStrike;
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentUnsheathing;
 import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.Config;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantment.Rarity;
@@ -66,8 +65,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Smc_040 {
-    
-	public static Config c = somanyenchantments.config;
 	
 	//public static Enchantment PierceThrough;
 	public static Enchantment AncientCurseInflicter;
@@ -366,129 +363,129 @@ public class Smc_040 {
 	//Registers the forge event effects of an enchantment and not the enchantment.
 	public static void enchHandler(){
 		
-		if(c.AtomicDeconstructor)
+		if(ModConfig.enabled.AtomicDeconstructor)
 		MinecraftForge.EVENT_BUS.register(AtomicDeconstructor);
 		
-		if(c.Disarmament)
+		if(ModConfig.enabled.Disarmament)
 		MinecraftForge.EVENT_BUS.register(Disarmament);
 		
-		if(c.Hors_de_combat)
+		if(ModConfig.enabled.Hors_de_combat)
 		MinecraftForge.EVENT_BUS.register(Hors_de_combat);
 	    
 		//MinecraftForge.EVENT_BUS.register(new EnchantmentSubjectEnchantments());
 		
 		//MinecraftForge.EVENT_BUS.register(AdvancedRespiration);
 		
-		if(c.CurseofPossession)
+		if(ModConfig.enabled.CurseofPossession)
 		MinecraftForge.EVENT_BUS.register(CurseofPossession);
 		
-		//if(c.Swiper)
+		//if(ModConfig.enabled.Swiper)
 		//MinecraftForge.EVENT_BUS.register(Swiper);
 		
-		if(c.Freezing)
+		if(ModConfig.enabled.Freezing)
 		MinecraftForge.EVENT_BUS.register(freezing);
 		
-		if(c.AdvancedMending)
+		if(ModConfig.enabled.AdvancedMending)
 		MinecraftForge.EVENT_BUS.register(advancedmending);
 		
-		if(c.LesserFlame)
+		if(ModConfig.enabled.LesserFlame)
 		MinecraftForge.EVENT_BUS.register(lesserflame);
 		
-		if(c.AdvancedFlame)
+		if(ModConfig.enabled.AdvancedFlame)
 		MinecraftForge.EVENT_BUS.register(advancedflame);
 		
-		if(c.SupremeFlame)
+		if(ModConfig.enabled.SupremeFlame)
 		MinecraftForge.EVENT_BUS.register(supremeflame);
 		
-		if(c.SplitShot)
+		if(ModConfig.enabled.SplitShot)
 		MinecraftForge.EVENT_BUS.register(splitshot);
 		
-		if(c.Rune_Resurrection)
+		if(ModConfig.enabled.Rune_Resurrection)
 		MinecraftForge.EVENT_BUS.register(Rune_Resurrection);
 		
 		//MinecraftForge.EVENT_BUS.register(rune_starfall);
 		
-		if(c.StrengthenedVitality)
+		if(ModConfig.enabled.StrengthenedVitality)
 		MinecraftForge.EVENT_BUS.register(strengthenedvitality);
 		
-		//if(c.DifficultyScaled)
+		//if(ModConfig.enabled.DifficultyScaled)
 		//MinecraftForge.EVENT_BUS.register(difficultyscaled);
 		
-		if(c.WellTilled)
+		if(ModConfig.enabled.WellTilled)
 		MinecraftForge.EVENT_BUS.register(welltilled);
 		
-		if(c.Upgrade)
+		if(ModConfig.enabled.Upgrade)
 		MinecraftForge.EVENT_BUS.register(upgrade);
 		
-		if(c.Adept)
+		if(ModConfig.enabled.Adept)
 			MinecraftForge.EVENT_BUS.register(Adept);
 		
-		if(c.CurseofDecay)
+		if(ModConfig.enabled.CurseofDecay)
 			MinecraftForge.EVENT_BUS.register(CurseofDecay);
 		
 		//MinecraftForge.EVENT_BUS.register(PierceThrough);
 		
-		if(c.MagmaWalker)
+		if(ModConfig.enabled.MagmaWalker)
 			MinecraftForge.EVENT_BUS.register(MagmaWalker);
 		
-		if(c.FieryShield)
+		if(ModConfig.enabled.FieryShield)
 			MinecraftForge.EVENT_BUS.register(fieryshield);
 		
-	//	if(c.NaturalBlocking)
+	//	if(ModConfig.enabled.NaturalBlocking)
 	//		MinecraftForge.EVENT_BUS.register(NaturalBlocking);
 		
-		if(c.DarkShadows)
+		if(ModConfig.enabled.DarkShadows)
 			MinecraftForge.EVENT_BUS.register(DarkShadows);
 		
-		if(c.CurseOfInaccuracy)
+		if(ModConfig.enabled.CurseOfInaccuracy)
 			MinecraftForge.EVENT_BUS.register(CurseOfInaccuracy);
 		
-		//if(c.Rune_PiercingArrows)
+		//if(ModConfig.enabled.Rune_PiercingArrows)
 		//	MinecraftForge.EVENT_BUS.register(Rune_PiercingArrows);
 		
-		if(c.InnerBerserk)
+		if(ModConfig.enabled.InnerBerserk)
 			MinecraftForge.EVENT_BUS.register(InnerBerserk);
 	
-		if(c.AncientCurseInflicter)
+		if(ModConfig.enabled.AncientCurseInflicter)
 			MinecraftForge.EVENT_BUS.register(AncientCurseInflicter);
 		
-		if(c.TillingPower)
+		if(ModConfig.enabled.TillingPower)
 			MinecraftForge.EVENT_BUS.register(TillingPower);
 		
-		if(c.CurseofHolding)
+		if(ModConfig.enabled.CurseofHolding)
 			MinecraftForge.EVENT_BUS.register(CurseofHolding);
 		
-		if(c.CurseofVulnerability)
+		if(ModConfig.enabled.CurseofVulnerability)
 			MinecraftForge.EVENT_BUS.register(CurseofVulnerability);
 			
-		//if(c.LuckMagnification)
+		//if(ModConfig.enabled.LuckMagnification)
 		//	MinecraftForge.EVENT_BUS.register(LuckMagnification);
 		
-		if(c.LightWeight)
+		if(ModConfig.enabled.LightWeight)
 			MinecraftForge.EVENT_BUS.register(LightWeight);
 		
-		if(c.UnderwaterStrider)
+		if(ModConfig.enabled.UnderwaterStrider)
 			MinecraftForge.EVENT_BUS.register(UnderwaterStrider);
 		
-		if(c.Frenzy)
+		if(ModConfig.enabled.Frenzy)
 			MinecraftForge.EVENT_BUS.register(Frenzy);
 		
-		if(c.Pushing)
+		if(ModConfig.enabled.Pushing)
 			MinecraftForge.EVENT_BUS.register(Pushing);
 		
-		if(c.Evasion)
+		if(ModConfig.enabled.Evasion)
 			MinecraftForge.EVENT_BUS.register(Evasion);
 		
-		if(c.Pulling)
+		if(ModConfig.enabled.Pulling)
 			MinecraftForge.EVENT_BUS.register(Pulling);
 		
-		//if(c.Instability)
+		//if(ModConfig.enabled.Instability)
 		//	MinecraftForge.EVENT_BUS.register(Instability);
 		
-		if(c.Unsheathing)
+		if(ModConfig.enabled.Unsheathing)
 			MinecraftForge.EVENT_BUS.register(Unsheathing);
 		
-		if(c.Pandora)
+		if(ModConfig.enabled.Pandora)
 			MinecraftForge.EVENT_BUS.register(Pandora);
 		
 		

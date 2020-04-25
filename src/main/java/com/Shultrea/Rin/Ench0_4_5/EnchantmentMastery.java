@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_5;
 
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
@@ -54,13 +55,13 @@ public class EnchantmentMastery extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.AncientSwordMastery && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.AncientSwordMastery && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.AncientSwordMastery;
+        return ModConfig.enabled.AncientSwordMastery;
     }
     
     @Override

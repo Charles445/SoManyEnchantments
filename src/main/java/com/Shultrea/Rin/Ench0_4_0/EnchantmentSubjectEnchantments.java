@@ -1,44 +1,21 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.ISubjectEnchantment;
-import com.Shultrea.Rin.Main_Sector.Config;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityEvoker;
-import net.minecraft.entity.monster.EntityIllusionIllager;
-import net.minecraft.entity.monster.EntityIronGolem;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntitySnowman;
-import net.minecraft.entity.monster.EntityVindicator;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentSubjectEnchantments extends Enchantment implements ISubjectEnchantment{
-	
-	Config c = somanyenchantments.config;
 	
 	private static final String[] DAMAGE_NAMES = new String[] {"Mathematics", "Science", "History", "Physics", "English", "PE"};
     /** Holds the base factor of enchantability needed to be able to use the enchant. */
@@ -125,7 +102,7 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
         {
             EntityLivingBase entitylivingbase = (EntityLivingBase)target;
 
-            if (this.damageType == 1 && c.Mathematics)
+            if (this.damageType == 1 && ModConfig.enabled.Mathematics)
             {
             	if(user.getRNG().nextDouble() * 100D < 20){
                user.getEntityWorld().newExplosion(user, target.posX, target.posY - 1.5D, target.posZ, 1.1f + (level * 0.4f), false, false);
@@ -140,7 +117,7 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
                
             	}
             }
-            if( this.damageType == 5 && c.PE){
+            if( this.damageType == 5 && ModConfig.enabled.PE){
             	
             	if(user.getRNG().nextDouble() * 100D < 8.5D){
             	if(level == 1 || level == 2){
@@ -179,17 +156,17 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
     {
     	switch(this.damageType) {
     	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.Mathematics;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Mathematics;
     	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.Science;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Science;
     	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.History;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.History;
     	case 3:
     		return false;
     	case 4:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.English;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.English;
     	case 5:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && somanyenchantments.config.PE;
+    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.PE;
     	default:
     		return false;
     	}
@@ -201,17 +178,17 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
     {
     	switch(this.damageType) {
     	case 0:
-    		return somanyenchantments.config.Mathematics;
+    		return ModConfig.enabled.Mathematics;
     	case 1:
-    		return somanyenchantments.config.Science;
+    		return ModConfig.enabled.Science;
     	case 2:
-    		return somanyenchantments.config.History;
+    		return ModConfig.enabled.History;
     	case 3:
     		return false;
     	case 4:
-    		return somanyenchantments.config.English;
+    		return ModConfig.enabled.English;
     	case 5:
-    		return somanyenchantments.config.PE;
+    		return ModConfig.enabled.PE;
     	default:
     		return false;
     	}

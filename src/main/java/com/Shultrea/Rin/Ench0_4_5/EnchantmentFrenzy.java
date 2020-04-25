@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -61,13 +62,13 @@ public class EnchantmentFrenzy extends Enchantment {
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return somanyenchantments.config.Frenzy && stack.getItem().canApplyAtEnchantingTable(stack, this);
+        return ModConfig.enabled.Frenzy && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.Frenzy;
+        return ModConfig.enabled.Frenzy;
     }
     
     @Override

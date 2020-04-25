@@ -1,6 +1,7 @@
 package com.Shultrea.Rin.Utility_Sector;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
 import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
@@ -41,13 +42,13 @@ public class ExtraEvent
 		
 		switch(flameLevel){
 		case 1:
-			if(somanyenchantments.config.LesserFlame)
+			if(ModConfig.enabled.LesserFlame)
 			fEvent.getEntityLiving().setFire(2);
 		case 2:
-			if(somanyenchantments.config.AdvancedFlame)
+			if(ModConfig.enabled.AdvancedFlame)
 			fEvent.getEntityLiving().setFire(15);
 		case 3:
-			if(somanyenchantments.config.SupremeFlame)
+			if(ModConfig.enabled.SupremeFlame)
 			fEvent.getEntityLiving().setFire(30);
 		default:
 			break;
@@ -55,7 +56,7 @@ public class ExtraEvent
 		
 		float pullPower = properties.getPullPower();
 		
-		if(pullPower > 0 && somanyenchantments.config.Pulling) {		
+		if(pullPower > 0 && ModConfig.enabled.Pulling) {		
 			pullPower *= -1;
 			float distance = MathHelper.sqrt(cause.motionX * cause.motionX + cause.motionZ * cause.motionZ);
 			fEvent.getEntityLiving().addVelocity(cause.motionX * pullPower * 0.6000000238418579D / (double)distance, 0.1D, cause.motionZ * pullPower * 0.6000000238418579D / (double)distance);

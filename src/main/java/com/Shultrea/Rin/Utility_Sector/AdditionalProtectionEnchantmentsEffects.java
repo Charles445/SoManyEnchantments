@@ -1,6 +1,7 @@
 package com.Shultrea.Rin.Utility_Sector;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.util.DamageSource;
@@ -15,7 +16,7 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    public void protectionOnly(LivingHurtEvent fEvent){
 	    		
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
-	    	if(!(somanyenchantments.config.AdvancedProtection))
+	    	if(!(ModConfig.enabled.AdvancedProtection))
 	    		return;
 		  
 	    	if(fEvent.getSource().damageType.equals("null"))
@@ -32,7 +33,7 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    public void projprotection(LivingHurtEvent fEvent){
 	    		
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
-	    	if(!(somanyenchantments.config.AdvancedProjectileProtection))
+	    	if(!(ModConfig.enabled.AdvancedProjectileProtection))
 	    		return;	
 	    	
 	    	if(!(fEvent.getSource().isProjectile()))
@@ -49,7 +50,7 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    public void fireprotection(LivingDamageEvent fEvent){
 	    		
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
-	    	if(!(somanyenchantments.config.AdvancedFireProtection))
+	    	if(!(ModConfig.enabled.AdvancedFireProtection))
 	    		return;	
 	    	
 	    	if(!(fEvent.getSource().isFireDamage()))
@@ -66,7 +67,7 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    public void blastprotection(LivingHurtEvent fEvent){
 	    		
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
-	    	if(!(somanyenchantments.config.AdvancedBlastProtection))
+	    	if(!(ModConfig.enabled.AdvancedBlastProtection))
 	    		return;
 	    		
 	    	if(!(fEvent.getSource().isExplosion()))
@@ -83,7 +84,7 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    public void featherfall(LivingHurtEvent fEvent){
 	    		
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
-	    	if(!(somanyenchantments.config.AdvancedFeatherFalling))
+	    	if(!(ModConfig.enabled.AdvancedFeatherFalling))
 	    		return;
 	    		
 	    	if((fEvent.getSource() != DamageSource.FALL))

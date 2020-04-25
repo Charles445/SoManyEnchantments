@@ -10,6 +10,7 @@ import com.Shultrea.Rin.Ench0_2_0.EnchantmentPenetratingEdge;
 import com.Shultrea.Rin.Ench0_2_0.EnchantmentRune_MagicalBlessing;
 import com.Shultrea.Rin.Ench0_2_0.EnchantmentUnpredictable;
 import com.Shultrea.Rin.Ench0_2_0.EnchantmentMortalitas;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
@@ -33,34 +34,34 @@ public class Smc_020 {
 	public static Enchantment Mortalitas;
 	
 	public static void init(){
-		if(somanyenchantments.config.Mortalitas)
+		if(ModConfig.enabled.Mortalitas)
 			Mortalitas = new EnchantmentMortalitas();
 		
-		if(somanyenchantments.config.PenetratingEdgeEnable)
+		if(ModConfig.enabled.PenetratingEdgeEnable)
 			PenetratingEdge = new EnchantmentPenetratingEdge();
 		
-		if(somanyenchantments.config.CombatRegenerationEnable)
+		if(ModConfig.enabled.CombatRegenerationEnable)
 			CombatRegeneration = new EnchantmentCombatVeterancy();
 		
-		if(somanyenchantments.config.AdvancedKnockbackEnable)
+		if(ModConfig.enabled.AdvancedKnockbackEnable)
 			AdvancedKnockback = new EnchantmentAdvancedKnockback();
 		
-		if(somanyenchantments.config.Rune_MagicalBlessingEnable)
+		if(ModConfig.enabled.Rune_MagicalBlessingEnable)
 			Rune_MagicalBlessing = new EnchantmentRune_MagicalBlessing();
 		
-		if(somanyenchantments.config.CounterAttackEnable)
+		if(ModConfig.enabled.CounterAttackEnable)
 			CounterAttack = new EnchantmentCounterAttack();
 		
-		if(somanyenchantments.config.ParryEnable)
+		if(ModConfig.enabled.ParryEnable)
 			Parry = new EnchantmentParry();
 		
-		if(somanyenchantments.config.UnpredictableEnable)
+		if(ModConfig.enabled.UnpredictableEnable)
 			Unpredictable = new EnchantmentUnpredictable();
 		
-		if(somanyenchantments.config.LifestealEnable)
+		if(ModConfig.enabled.LifestealEnable)
 			Lifesteal = new EnchantmentLifesteal();
 		
-		if(somanyenchantments.config.CullingEnable)
+		if(ModConfig.enabled.CullingEnable)
 			Culling = new EnchantmentCulling();
 		
 		
@@ -72,34 +73,34 @@ public class Smc_020 {
 
 	        @SubscribeEvent
 	        public static void registerEnchantment(RegistryEvent.Register<net.minecraft.enchantment.Enchantment> event) {
-	        	if(somanyenchantments.config.PenetratingEdgeEnable)
+	        	if(ModConfig.enabled.PenetratingEdgeEnable)
 	    			event.getRegistry().register(PenetratingEdge);
 	    		
-	    		if(somanyenchantments.config.CombatRegenerationEnable)
+	    		if(ModConfig.enabled.CombatRegenerationEnable)
 	    			event.getRegistry().register(CombatRegeneration);
 	    		
-	    		if(somanyenchantments.config.AdvancedKnockbackEnable)
+	    		if(ModConfig.enabled.AdvancedKnockbackEnable)
 	    			event.getRegistry().register(AdvancedKnockback);
 	    		
-	    		if(somanyenchantments.config.Rune_MagicalBlessingEnable)
+	    		if(ModConfig.enabled.Rune_MagicalBlessingEnable)
 	    			event.getRegistry().register(Rune_MagicalBlessing);
 	    		
-	    		if(somanyenchantments.config.CounterAttackEnable)
+	    		if(ModConfig.enabled.CounterAttackEnable)
 	    			event.getRegistry().register(CounterAttack);
 	    		
-	    		if(somanyenchantments.config.ParryEnable)
+	    		if(ModConfig.enabled.ParryEnable)
 	    			event.getRegistry().register(Parry);
 	    		
-	    		if(somanyenchantments.config.UnpredictableEnable)
+	    		if(ModConfig.enabled.UnpredictableEnable)
 	    			event.getRegistry().register(Unpredictable);
 	    		
-	    		if(somanyenchantments.config.LifestealEnable)
+	    		if(ModConfig.enabled.LifestealEnable)
 	    			event.getRegistry().register(Lifesteal);
 	    		
-	    		if(somanyenchantments.config.CullingEnable)
+	    		if(ModConfig.enabled.CullingEnable)
 	    			event.getRegistry().register(Culling);
 	        	
-	    		if(somanyenchantments.config.Mortalitas)
+	    		if(ModConfig.enabled.Mortalitas)
 	    			event.getRegistry().register(Mortalitas);
 	          	
 	        	
@@ -108,34 +109,34 @@ public class Smc_020 {
 
 	public static void enchHandler(){
 		
-		if(somanyenchantments.config.Mortalitas)
+		if(ModConfig.enabled.Mortalitas)
 			MinecraftForge.EVENT_BUS.register(Mortalitas);
 		
-		if(somanyenchantments.config.CullingEnable)
+		if(ModConfig.enabled.CullingEnable)
 			MinecraftForge.EVENT_BUS.register(Culling);
 
-		if(somanyenchantments.config.PenetratingEdgeEnable)
+		if(ModConfig.enabled.PenetratingEdgeEnable)
 			MinecraftForge.EVENT_BUS.register(PenetratingEdge);
 		
-		if(somanyenchantments.config.UnpredictableEnable)
+		if(ModConfig.enabled.UnpredictableEnable)
 			MinecraftForge.EVENT_BUS.register(Unpredictable);
 		
-		if(somanyenchantments.config.CounterAttackEnable)
+		if(ModConfig.enabled.CounterAttackEnable)
 			MinecraftForge.EVENT_BUS.register(CounterAttack);
 		
-		if(somanyenchantments.config.ParryEnable)
+		if(ModConfig.enabled.ParryEnable)
 			MinecraftForge.EVENT_BUS.register(Parry);
 		
-		//if(somanyenchantments.config.Rune_MagicalBlessingEnable)
+		//if(ModConfig.enabled.Rune_MagicalBlessingEnable)
 		//	MinecraftForge.EVENT_BUS.register(Rune_MagicalBlessing);
 		
-		if(somanyenchantments.config.CombatRegenerationEnable)
+		if(ModConfig.enabled.CombatRegenerationEnable)
 			MinecraftForge.EVENT_BUS.register(CombatRegeneration);
 		
-		if(somanyenchantments.config.AdvancedKnockbackEnable)
+		if(ModConfig.enabled.AdvancedKnockbackEnable)
 			MinecraftForge.EVENT_BUS.register(AdvancedKnockback);
 		
-		if(somanyenchantments.config.LifestealEnable)
+		if(ModConfig.enabled.LifestealEnable)
 			MinecraftForge.EVENT_BUS.register(Lifesteal);
 	
 		

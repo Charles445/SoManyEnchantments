@@ -1,7 +1,7 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -46,13 +46,13 @@ public class EnchantmentScytheDamage extends Enchantment {
     @Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack)
 	{
-		return stack.getItem() instanceof ItemHoe && somanyenchantments.config.ScytheDamage && stack.getItem().canApplyAtEnchantingTable(stack, this);
+		return stack.getItem() instanceof ItemHoe && ModConfig.enabled.ScytheDamage && stack.getItem().canApplyAtEnchantingTable(stack, this);
 	}
     
     @Override
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)
     {
-    	if(somanyenchantments.config.ScytheDamage)
+    	if(ModConfig.enabled.ScytheDamage)
     		return (1.0f + 0.55f * level);
     	
     	return 0;
@@ -61,7 +61,7 @@ public class EnchantmentScytheDamage extends Enchantment {
     @Override
     public boolean isAllowedOnBooks()
     {
-        return somanyenchantments.config.ScytheDamage;
+        return ModConfig.enabled.ScytheDamage;
     }
     
 }
