@@ -1,39 +1,37 @@
 package com.Shultrea.Rin.Ench0_3_0;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Enchantments;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.LivingAttackFixerHandler;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Enchantments;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 
-public class EnchantmentAshDestroyer extends Enchantment implements IDamageMultiplier {
+public class EnchantmentAshDestroyer extends EnchantmentBase implements IDamageMultiplier {
 	public EnchantmentAshDestroyer()
 	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("AshDestroyer");
 		this.setRegistryName("AshDestroyer");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AshDestroyerEnable;
 	}
 	
 	@Override

@@ -52,6 +52,7 @@ import com.Shultrea.Rin.Ench0_4_5.EnchantmentPulling;
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentPushing;
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentTrueStrike;
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentUnsheathing;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
@@ -67,430 +68,217 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class Smc_040 {
 	
 	//public static Enchantment PierceThrough;
-	public static Enchantment AncientCurseInflicter;
+	public static EnchantmentBase AncientCurseInflicter;
 	/** The Rune Enchantments. */
-	public static Enchantment Rune_Resurrection;
-	public static Enchantment rune_starfall; //***
-	public static Enchantment Rune_PiercingArrows;
+	public static EnchantmentBase Rune_Resurrection;
+	public static EnchantmentBase rune_starfall; //***
+	public static EnchantmentBase Rune_PiercingArrows;
 
 	
-	public static Enchantment Adept; //
-	public static Enchantment AtomicDeconstructor; //
-	public static Enchantment Brutality;
-	public static Enchantment Disarmament; //
+	public static EnchantmentBase Adept; //
+	public static EnchantmentBase AtomicDeconstructor; //
+	public static EnchantmentBase Brutality;
+	public static EnchantmentBase Disarmament; //
 	
-	public static Enchantment Mathematics; //
-	public static Enchantment Science;     //
-	public static Enchantment History;     //
+	public static EnchantmentBase Mathematics; //
+	public static EnchantmentBase Science;     //
+	public static EnchantmentBase History;     //
 	//public static Enchantment Physics;     //
-    public static Enchantment English;     //
-	public static Enchantment PE;          //
+    public static EnchantmentBase English;     //
+	public static EnchantmentBase PE;          //
 	
-	public static Enchantment flinging;    //
-	public static Enchantment sharperedge; //
-	public static Enchantment Adjuster;
-	public static Enchantment meltdown; //
-	public static Enchantment invis;
-	public static Enchantment WeaponBreaker; ///
+	public static EnchantmentBase flinging;    //
+	public static EnchantmentBase sharperedge; //
+	public static EnchantmentBase Adjuster;
+	public static EnchantmentBase meltdown; //
+	public static EnchantmentBase invis;
+	public static EnchantmentBase WeaponBreaker; ///
 	
 	//Hoe
-	public static Enchantment welltilled; //
-	public static Enchantment TillingPower; //
-	public static Enchantment scythedamage; //
+	public static EnchantmentBase welltilled; //
+	public static EnchantmentBase TillingPower; //
+	public static EnchantmentBase scythedamage; //
 	
-	public static Enchantment Knockback;
+	public static EnchantmentBase Knockback;
 	
-	public static Enchantment freezing; //
-	public static Enchantment Cryogenic;
+	public static EnchantmentBase freezing; //
+	public static EnchantmentBase Cryogenic;
 	
 	
-	public static Enchantment LesserFireAspect;  //
-	public static Enchantment AdvancedFireAspect; //
-	public static Enchantment SupremeFireAspect; //
+	public static EnchantmentBase LesserFireAspect;  //
+	public static EnchantmentBase AdvancedFireAspect; //
+	public static EnchantmentBase SupremeFireAspect; //
 	
-	public static Enchantment LesserSharpness; //
-	public static Enchantment SupremeSharpness; //
+	public static EnchantmentBase LesserSharpness; //
+	public static EnchantmentBase SupremeSharpness; //
 	
-	public static Enchantment LesserBaneOfArthropods; //
-	public static Enchantment SupremeBaneOfArthropods; //
+	public static EnchantmentBase LesserBaneOfArthropods; //
+	public static EnchantmentBase SupremeBaneOfArthropods; //
 	
-	public static Enchantment LesserSmite; //
-	public static Enchantment SupremeSmite; //
+	public static EnchantmentBase LesserSmite; //
+	public static EnchantmentBase SupremeSmite; //
 	
-	public static Enchantment LesserLooting;
-	public static Enchantment SupremeLooting;
+	public static EnchantmentBase LesserLooting;
+	public static EnchantmentBase SupremeLooting;
 	
-	public static Enchantment LesserKnockback;
-	public static Enchantment SupremeKnockback;
+	public static EnchantmentBase LesserKnockback;
+	public static EnchantmentBase SupremeKnockback;
 	
-	public static Enchantment LesserMending;
-	public static Enchantment advancedmending; //
-	public static Enchantment SupremeMending;
+	public static EnchantmentBase LesserMending;
+	public static EnchantmentBase advancedmending; //
+	public static EnchantmentBase SupremeMending;
 	
-	public static Enchantment LesserPower;
-	public static Enchantment SupremePower;
+	public static EnchantmentBase LesserPower;
+	public static EnchantmentBase SupremePower;
 	
-	public static Enchantment LesserPunch;
-	public static Enchantment SupremePunch;
+	public static EnchantmentBase LesserPunch;
+	public static EnchantmentBase SupremePunch;
 	
-	public static Enchantment LesserRespiration;
-	public static Enchantment AdvancedRespiration; //
-	public static Enchantment SupremeRespiration;
+	public static EnchantmentBase LesserRespiration;
+	public static EnchantmentBase AdvancedRespiration; //
+	public static EnchantmentBase SupremeRespiration;
 	
-	public static Enchantment CurseofPossession; //
-	public static Enchantment CurseofDecay; //
-	public static Enchantment CurseofVulnerability; //
+	public static EnchantmentBase CurseofPossession; //
+	public static EnchantmentBase CurseofDecay; //
+	public static EnchantmentBase CurseofVulnerability; //
 	
-	public static Enchantment fieryshield;      //
-	public static Enchantment Fortress;
-	public static Enchantment Bash;
-	public static Enchantment Lighter;
+	public static EnchantmentBase fieryshield;      //
+	public static EnchantmentBase Fortress;
+	public static EnchantmentBase Bash;
+	public static EnchantmentBase Lighter;
 	
-	public static Enchantment Multifisher; //
-	public static Enchantment Hors_de_combat; //
+	public static EnchantmentBase Multifisher; //
+	public static EnchantmentBase Hors_de_combat; //
 	
-	public static Enchantment Scavenge;
-	public static Enchantment splitshot; //
+	public static EnchantmentBase Scavenge;
+	public static EnchantmentBase splitshot; //
 	
-	public static Enchantment lesserflame; //
-    public static Enchantment advancedflame; //
-    public static Enchantment supremeflame; //
+	public static EnchantmentBase lesserflame; //
+    public static EnchantmentBase advancedflame; //
+    public static EnchantmentBase supremeflame; //
     
-	public static Enchantment Swiper; //
-	public static Enchantment strengthenedvitality; //
-	public static Enchantment difficultyscaled; //
-	public static Enchantment upgrade; //
+	public static EnchantmentBase Swiper; //
+	public static EnchantmentBase strengthenedvitality; //
+	public static EnchantmentBase difficultyscaled; //
+	public static EnchantmentBase upgrade; //
 	
-	public static Enchantment lastWill;      //NYI
-	public static Enchantment Overload;		 //NYI
-	public static Enchantment BreakingPoint; //NYI
+	public static EnchantmentBase lastWill;      //NYI
+	public static EnchantmentBase Overload;		 //NYI
+	public static EnchantmentBase BreakingPoint; //NYI
 	
-	public static Enchantment MagmaWalker; //
-	public static Enchantment Inhumane;    //
-	public static Enchantment NaturalBlocking; //
-	public static Enchantment DarkShadows;
-	public static Enchantment InnerBerserk;
+	public static EnchantmentBase MagmaWalker; //
+	public static EnchantmentBase Inhumane;    //
+	public static EnchantmentBase NaturalBlocking; //
+	public static EnchantmentBase DarkShadows;
+	public static EnchantmentBase InnerBerserk;
 	
-	public static Enchantment CurseOfInaccuracy; 
-	public static Enchantment CurseofHolding;
-	public static Enchantment LuckMagnification;
-	public static Enchantment LightWeight;
-	public static Enchantment UnderwaterStrider;
+	public static EnchantmentBase CurseOfInaccuracy; 
+	public static EnchantmentBase CurseofHolding;
+	public static EnchantmentBase LuckMagnification;
+	public static EnchantmentBase LightWeight;
+	public static EnchantmentBase UnderwaterStrider;
 	
-	public static Enchantment Frenzy;
-	public static Enchantment Pushing;
-	public static Enchantment Evasion;
-	public static Enchantment Pulling;
-	public static Enchantment Instability;
-	public static Enchantment Unsheathing;
+	public static EnchantmentBase Frenzy;
+	public static EnchantmentBase Pushing;
+	public static EnchantmentBase Evasion;
+	public static EnchantmentBase Pulling;
+	public static EnchantmentBase Instability;
+	public static EnchantmentBase Unsheathing;
 
-	public static Enchantment EnchantmentMastery;
+	public static EnchantmentBase EnchantmentMastery;
 
-	public static Enchantment TrueStrike;
+	public static EnchantmentBase TrueStrike;
 	
-	public static Enchantment Pandora;
+	public static EnchantmentBase Pandora;
 	
 	public static void init(){
 		 
 	
-	Mathematics = new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("Mathematics").setRegistryName("Mathematics");
+	Mathematics = registerAs(new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("Mathematics").setRegistryName("Mathematics"));
 	
-	Science =     new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("Science").setRegistryName("Science");
+	Science =     registerAs(new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("Science").setRegistryName("Science"));
 	
-	History =     new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("History").setRegistryName("History");
+	History =     registerAs(new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("History").setRegistryName("History"));
 	
 	//Physics =     new EnchantmentSubjectEnchantments(Rarity.VERY_RARE, 3, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("Physics").setRegistryName("Physics");
-	English =     new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 4, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("English").setRegistryName("English");
+	English =     registerAs(new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 4, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("English").setRegistryName("English"));
 	
-	PE =          new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 5, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("PE").setRegistryName("PE");
+	PE =          registerAs(new EnchantmentSubjectEnchantments(Rarity.RARE, EnumList.SWORD, 5, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("PE").setRegistryName("PE"));
 		
-	AtomicDeconstructor        = new EnchantmentAtomicDeconstructor();
-	Disarmament                = new EnchantmentDisarmament();
-	Hors_de_combat             = new EnchantmentHors_de_combat();
-	SupremeSharpness           = new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeSharpness").setRegistryName("SupremeSharpness");
-	LesserSharpness            = new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserSharpness").setRegistryName("LesserSharpness");
-	LesserBaneOfArthropods     = new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 4, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserBaneOfArthropods").setRegistryName("LesserBaneOfArthropods");
-	SupremeBaneOfArthropods    = new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 5, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeBaneOfArthropods").setRegistryName("SupremeBaneOfArthropods");
-	LesserSmite                = new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserSmite").setRegistryName("LesserSmite");
-	SupremeSmite               = new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 3, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeSmite").setRegistryName("SupremeSmite");
+	AtomicDeconstructor        = registerAs(new EnchantmentAtomicDeconstructor());
+	Disarmament                = registerAs(new EnchantmentDisarmament());
+	Hors_de_combat             = registerAs(new EnchantmentHors_de_combat());
+	SupremeSharpness           = registerAs(new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeSharpness").setRegistryName("SupremeSharpness"));
+	LesserSharpness            = registerAs(new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserSharpness").setRegistryName("LesserSharpness"));
+	LesserBaneOfArthropods     = registerAs(new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 4, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserBaneOfArthropods").setRegistryName("LesserBaneOfArthropods"));
+	SupremeBaneOfArthropods    = registerAs(new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 5, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeBaneOfArthropods").setRegistryName("SupremeBaneOfArthropods"));
+	LesserSmite                = registerAs(new EnchantmentTierDamage(Rarity.COMMON, EnumList.COMBAT, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("LesserSmite").setRegistryName("LesserSmite"));
+	SupremeSmite               = registerAs(new EnchantmentTierDamage(Rarity.VERY_RARE, EnumList.COMBAT, 3, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("SupremeSmite").setRegistryName("SupremeSmite"));
 	
 	//AdvancedRespiration        = new EnchantmentAdvancedRespiration();	
-	CurseofPossession          = new EnchantmentCurseofPossession();
+	CurseofPossession          = registerAs(new EnchantmentCurseofPossession());
 	
-	SupremeFireAspect           = new EnchantmentFAtier(Rarity.VERY_RARE, EnumList.SWORD, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("sfa").setRegistryName("sfa");
-	AdvancedFireAspect          = new EnchantmentFAtier(Rarity.RARE, EnumList.SWORD, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("afa").setRegistryName("afa");
-	LesserFireAspect            = new EnchantmentFAtier(Rarity.COMMON, EnumList.SWORD, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("lfa").setRegistryName("lfa");
-	Swiper                      = new EnchantmentSwiper();
-	freezing                    = new EnchantmentFreezing();
-	advancedmending             = new Enchantmentadvancedmending();
+	SupremeFireAspect           = registerAs(new EnchantmentFAtier(Rarity.VERY_RARE, EnumList.SWORD, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("sfa").setRegistryName("sfa"));
+	AdvancedFireAspect          = registerAs(new EnchantmentFAtier(Rarity.RARE, EnumList.SWORD, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("afa").setRegistryName("afa"));
+	LesserFireAspect            = registerAs(new EnchantmentFAtier(Rarity.COMMON, EnumList.SWORD, 0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND}).setName("lfa").setRegistryName("lfa"));
+	Swiper                      = registerAs(new EnchantmentSwiper());
+	freezing                    = registerAs(new EnchantmentFreezing());
+	advancedmending             = registerAs(new Enchantmentadvancedmending());
 	
-	lesserflame                 = new Enchantmentflametier(Rarity.COMMON, EnumEnchantmentType.BOW,    0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("lfl").setRegistryName("lfl");
-	advancedflame               = new Enchantmentflametier(Rarity.VERY_RARE, EnumEnchantmentType.BOW, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("afl").setRegistryName("afl");
-    supremeflame                = new Enchantmentflametier(Rarity.VERY_RARE, EnumEnchantmentType.BOW, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("sfl").setRegistryName("sfl");
-    splitshot                   = new EnchantmentSplitshot();
-    sharperedge                 = new EnchantmentReinforcedSharpness();
-    Rune_Resurrection           = new EnchantmentRune_Resurrection();
-    flinging                    = new EnchantmentFlinging();
-    rune_starfall               = new EnchantmentRune_StarFall();
-    strengthenedvitality        = new EnchantmentStrengthenedVitality();
-    difficultyscaled            = new EnchantmentDifficultyScaled();
-    meltdown                    = new EnchantmentMeltdown();
-    welltilled                  = new EnchantmentWellTilled();
-    upgrade                     = new EnchantmentUpgradedPotentials();
-    scythedamage                = new EnchantmentScytheDamage();
+	lesserflame                 = registerAs(new Enchantmentflametier(Rarity.COMMON, EnumEnchantmentType.BOW,    0, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("lfl").setRegistryName("lfl"));
+	advancedflame               = registerAs(new Enchantmentflametier(Rarity.VERY_RARE, EnumEnchantmentType.BOW, 1, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("afl").setRegistryName("afl"));
+    supremeflame                = registerAs(new Enchantmentflametier(Rarity.VERY_RARE, EnumEnchantmentType.BOW, 2, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND}).setName("sfl").setRegistryName("sfl"));
+    splitshot                   = registerAs(new EnchantmentSplitshot());
+    sharperedge                 = registerAs(new EnchantmentReinforcedSharpness());
+    Rune_Resurrection           = registerAs(new EnchantmentRune_Resurrection());
+    flinging                    = registerAs(new EnchantmentFlinging());
+    //rune_starfall               = registerAs(new EnchantmentRune_StarFall());
+    strengthenedvitality        = registerAs(new EnchantmentStrengthenedVitality());
+    difficultyscaled            = registerAs(new EnchantmentDifficultyScaled());
+    meltdown                    = registerAs(new EnchantmentMeltdown());
+    welltilled                  = registerAs(new EnchantmentWellTilled());
+    upgrade                     = registerAs(new EnchantmentUpgradedPotentials());
+    scythedamage                = registerAs(new EnchantmentScytheDamage());
     
-    Adept  						= new EnchantmentAdept();
-    CurseofDecay 				= new EnchantmentCurseofDecay();
+    Adept  						= registerAs(new EnchantmentAdept());
+    CurseofDecay 				= registerAs(new EnchantmentCurseofDecay());
     //PierceThrough 				= new EnchantmentPierceThrough();
-    Brutality  					= new EnchantmentBrutality();
-    MagmaWalker  			 	= new EnchantmentMagmaWalker();
-    Inhumane					= new EnchantmentInhumanity();
-    fieryshield                 = new EnchantmentFieryShield();
-    NaturalBlocking				= new EnchantmentNaturalBlocking();
-    DarkShadows					= new EnchantmentDarkShadows();
+    Brutality  					= registerAs(new EnchantmentBrutality());
+    MagmaWalker  			 	= registerAs(new EnchantmentMagmaWalker());
+    Inhumane					= registerAs(new EnchantmentInhumanity());
+    fieryshield                 = registerAs(new EnchantmentFieryShield());
+    NaturalBlocking				= registerAs(new EnchantmentNaturalBlocking());
+    DarkShadows					= registerAs(new EnchantmentDarkShadows());
     
-    CurseOfInaccuracy			= new EnchantmentCurseofInaccuracy();
-    Rune_PiercingArrows 		= new EnchantmentRune_ArrowPiercing();
-    InnerBerserk				= new EnchantmentInnerBerserk();
+    CurseOfInaccuracy			= registerAs(new EnchantmentCurseofInaccuracy());
+    Rune_PiercingArrows 		= registerAs(new EnchantmentRune_ArrowPiercing());
+    InnerBerserk				= registerAs(new EnchantmentInnerBerserk());
     
-    AncientCurseInflicter		= new EnchantmentAncient_CurseInflicter();
+    AncientCurseInflicter		= registerAs(new EnchantmentAncient_CurseInflicter());
     
-    TillingPower				= new EnchantmentTillingPower();
-    CurseofHolding				= new EnchantmentCurseofHolding();
-    CurseofVulnerability		= new EnchantmentCurseofVulnerability();
-    LuckMagnification			= new EnchantmentLuckMagnification();
-    LightWeight					= new EnchantmentLightWeight();
+    TillingPower				= registerAs(new EnchantmentTillingPower());
+    CurseofHolding				= registerAs(new EnchantmentCurseofHolding());
+    CurseofVulnerability		= registerAs(new EnchantmentCurseofVulnerability());
+    LuckMagnification			= registerAs(new EnchantmentLuckMagnification());
+    LightWeight					= registerAs(new EnchantmentLightWeight());
     //Multifisher					= new EnchantmentMultifisher();
-    UnderwaterStrider 			= new EnchantmentUnderwaterStrider();
+    UnderwaterStrider 			= registerAs(new EnchantmentUnderwaterStrider());
     
-    Frenzy 						= new EnchantmentFrenzy();
+    Frenzy 						= registerAs(new EnchantmentFrenzy());
     
-    Pushing 					= new EnchantmentPushing();
-    Pulling 					= new EnchantmentPulling();
-    Evasion 					= new EnchantmentEvasion();
-    Instability					= new EnchantmentInstability();
-    Unsheathing 				= new EnchantmentUnsheathing();
-    EnchantmentMastery		 	= new EnchantmentMastery();
-    TrueStrike					= new EnchantmentTrueStrike();
-    Pandora 					= new EnchantmentPandora();
+    Pushing 					= registerAs(new EnchantmentPushing());
+    Pulling 					= registerAs(new EnchantmentPulling());
+    Evasion 					= registerAs(new EnchantmentEvasion());
+    Instability					= registerAs(new EnchantmentInstability());
+    Unsheathing 				= registerAs(new EnchantmentUnsheathing());
+    EnchantmentMastery		 	= registerAs(new EnchantmentMastery());
+    TrueStrike					= registerAs(new EnchantmentTrueStrike());
+    Pandora 					= registerAs(new EnchantmentPandora());
     
 	}
 	
-	  @Mod.EventBusSubscriber
-	    public static class EventSubscriber {
-
-	        @SubscribeEvent
-	        public static void registerEnchantment(RegistryEvent.Register<net.minecraft.enchantment.Enchantment> event) {
-            
-	        	event.getRegistry().register(Mathematics);
-	        	event.getRegistry().register(Science);
-	        	event.getRegistry().register(History);
-	        	//event.getRegistry().register(Physics);
-	        	event.getRegistry().register(English);
-	        	event.getRegistry().register(PE);
-	        	
-	        	event.getRegistry().register(AtomicDeconstructor);
-	        	event.getRegistry().register(Disarmament);
-	        	event.getRegistry().register(Hors_de_combat);
-	        	
-	        	event.getRegistry().register(LesserSharpness);
-	        	event.getRegistry().register(SupremeSharpness);
-	        	event.getRegistry().register(LesserBaneOfArthropods);
-	        	event.getRegistry().register(SupremeBaneOfArthropods);
-	        	event.getRegistry().register(LesserSmite);
-	        	event.getRegistry().register(SupremeSmite);
-	        	
-	        	//event.getRegistry().register(AdvancedRespiration);
-	        	event.getRegistry().register(CurseofPossession);
-	        	
-	        	event.getRegistry().register(Swiper);
-	        	
-	        	event.getRegistry().register(LesserFireAspect);
-	        	event.getRegistry().register(AdvancedFireAspect);
-	        	event.getRegistry().register(SupremeFireAspect);
-	        	event.getRegistry().register(freezing);
-	        	event.getRegistry().register(advancedmending);
-	        	
-	        	event.getRegistry().register(lesserflame);
-	        	event.getRegistry().register(advancedflame);
-	        	event.getRegistry().register(supremeflame);
-	        	event.getRegistry().register(splitshot);
-	        	event.getRegistry().register(flinging);
-	        	event.getRegistry().register(sharperedge);
-	        	event.getRegistry().register(Rune_Resurrection);
-	        	//event.getRegistry().register(rune_starfall);
-	        	event.getRegistry().register(strengthenedvitality);
-	        	event.getRegistry().register(difficultyscaled);
-	        	event.getRegistry().register(meltdown);
-	        	event.getRegistry().register(welltilled);
-	        	event.getRegistry().register(upgrade);
-	        	event.getRegistry().register(scythedamage);
-	        	event.getRegistry().register(Adept);
-	        	event.getRegistry().register(CurseofDecay);
-	        	
-	        	
-	        	//event.getRegistry().register(PierceThrough);        	
-	        	event.getRegistry().register(Brutality);
-	        	event.getRegistry().register(MagmaWalker);
-	        	event.getRegistry().register(Inhumane);
-	        	event.getRegistry().register(fieryshield);
-	        	event.getRegistry().register(NaturalBlocking);
-	        	event.getRegistry().register(DarkShadows);
-	        	event.getRegistry().register(CurseOfInaccuracy);
-	        	event.getRegistry().register(Rune_PiercingArrows);
-	        	event.getRegistry().register(InnerBerserk);
-	        	event.getRegistry().register(TillingPower);
-	        	event.getRegistry().register(CurseofHolding);
-	        	event.getRegistry().register(CurseofVulnerability);
-	        	event.getRegistry().register(LightWeight);
-	        	event.getRegistry().register(LuckMagnification);
-	        	
-	        	event.getRegistry().register(AncientCurseInflicter);
-	        	event.getRegistry().register(UnderwaterStrider);
-	        	
-	        	event.getRegistry().register(Frenzy);
-	        	event.getRegistry().register(Evasion);
-	        	event.getRegistry().register(Pushing);
-	        	event.getRegistry().register(Pulling);
-	        	event.getRegistry().register(Instability);
-	        	event.getRegistry().register(Unsheathing);
-	        	event.getRegistry().register(EnchantmentMastery);
-	        	event.getRegistry().register(TrueStrike);
-	        	event.getRegistry().register(Pandora);
-	        }
-	  }
-    
-	//Registers the forge event effects of an enchantment and not the enchantment.
-	public static void enchHandler(){
-		
-		if(ModConfig.enabled.AtomicDeconstructor)
-		MinecraftForge.EVENT_BUS.register(AtomicDeconstructor);
-		
-		if(ModConfig.enabled.Disarmament)
-		MinecraftForge.EVENT_BUS.register(Disarmament);
-		
-		if(ModConfig.enabled.Hors_de_combat)
-		MinecraftForge.EVENT_BUS.register(Hors_de_combat);
-	    
-		//MinecraftForge.EVENT_BUS.register(new EnchantmentSubjectEnchantments());
-		
-		//MinecraftForge.EVENT_BUS.register(AdvancedRespiration);
-		
-		if(ModConfig.enabled.CurseofPossession)
-		MinecraftForge.EVENT_BUS.register(CurseofPossession);
-		
-		//if(ModConfig.enabled.Swiper)
-		//MinecraftForge.EVENT_BUS.register(Swiper);
-		
-		if(ModConfig.enabled.Freezing)
-		MinecraftForge.EVENT_BUS.register(freezing);
-		
-		if(ModConfig.enabled.AdvancedMending)
-		MinecraftForge.EVENT_BUS.register(advancedmending);
-		
-		if(ModConfig.enabled.LesserFlame)
-		MinecraftForge.EVENT_BUS.register(lesserflame);
-		
-		if(ModConfig.enabled.AdvancedFlame)
-		MinecraftForge.EVENT_BUS.register(advancedflame);
-		
-		if(ModConfig.enabled.SupremeFlame)
-		MinecraftForge.EVENT_BUS.register(supremeflame);
-		
-		if(ModConfig.enabled.SplitShot)
-		MinecraftForge.EVENT_BUS.register(splitshot);
-		
-		if(ModConfig.enabled.Rune_Resurrection)
-		MinecraftForge.EVENT_BUS.register(Rune_Resurrection);
-		
-		//MinecraftForge.EVENT_BUS.register(rune_starfall);
-		
-		if(ModConfig.enabled.StrengthenedVitality)
-		MinecraftForge.EVENT_BUS.register(strengthenedvitality);
-		
-		//if(ModConfig.enabled.DifficultyScaled)
-		//MinecraftForge.EVENT_BUS.register(difficultyscaled);
-		
-		if(ModConfig.enabled.WellTilled)
-		MinecraftForge.EVENT_BUS.register(welltilled);
-		
-		if(ModConfig.enabled.Upgrade)
-		MinecraftForge.EVENT_BUS.register(upgrade);
-		
-		if(ModConfig.enabled.Adept)
-			MinecraftForge.EVENT_BUS.register(Adept);
-		
-		if(ModConfig.enabled.CurseofDecay)
-			MinecraftForge.EVENT_BUS.register(CurseofDecay);
-		
-		//MinecraftForge.EVENT_BUS.register(PierceThrough);
-		
-		if(ModConfig.enabled.MagmaWalker)
-			MinecraftForge.EVENT_BUS.register(MagmaWalker);
-		
-		if(ModConfig.enabled.FieryShield)
-			MinecraftForge.EVENT_BUS.register(fieryshield);
-		
-	//	if(ModConfig.enabled.NaturalBlocking)
-	//		MinecraftForge.EVENT_BUS.register(NaturalBlocking);
-		
-		if(ModConfig.enabled.DarkShadows)
-			MinecraftForge.EVENT_BUS.register(DarkShadows);
-		
-		if(ModConfig.enabled.CurseOfInaccuracy)
-			MinecraftForge.EVENT_BUS.register(CurseOfInaccuracy);
-		
-		//if(ModConfig.enabled.Rune_PiercingArrows)
-		//	MinecraftForge.EVENT_BUS.register(Rune_PiercingArrows);
-		
-		if(ModConfig.enabled.InnerBerserk)
-			MinecraftForge.EVENT_BUS.register(InnerBerserk);
-	
-		if(ModConfig.enabled.AncientCurseInflicter)
-			MinecraftForge.EVENT_BUS.register(AncientCurseInflicter);
-		
-		if(ModConfig.enabled.TillingPower)
-			MinecraftForge.EVENT_BUS.register(TillingPower);
-		
-		if(ModConfig.enabled.CurseofHolding)
-			MinecraftForge.EVENT_BUS.register(CurseofHolding);
-		
-		if(ModConfig.enabled.CurseofVulnerability)
-			MinecraftForge.EVENT_BUS.register(CurseofVulnerability);
-			
-		//if(ModConfig.enabled.LuckMagnification)
-		//	MinecraftForge.EVENT_BUS.register(LuckMagnification);
-		
-		if(ModConfig.enabled.LightWeight)
-			MinecraftForge.EVENT_BUS.register(LightWeight);
-		
-		if(ModConfig.enabled.UnderwaterStrider)
-			MinecraftForge.EVENT_BUS.register(UnderwaterStrider);
-		
-		if(ModConfig.enabled.Frenzy)
-			MinecraftForge.EVENT_BUS.register(Frenzy);
-		
-		if(ModConfig.enabled.Pushing)
-			MinecraftForge.EVENT_BUS.register(Pushing);
-		
-		if(ModConfig.enabled.Evasion)
-			MinecraftForge.EVENT_BUS.register(Evasion);
-		
-		if(ModConfig.enabled.Pulling)
-			MinecraftForge.EVENT_BUS.register(Pulling);
-		
-		//if(ModConfig.enabled.Instability)
-		//	MinecraftForge.EVENT_BUS.register(Instability);
-		
-		if(ModConfig.enabled.Unsheathing)
-			MinecraftForge.EVENT_BUS.register(Unsheathing);
-		
-		if(ModConfig.enabled.Pandora)
-			MinecraftForge.EVENT_BUS.register(Pandora);
-		
-		
-		//MinecraftForge.EVENT_BUS.register(Multifisher);
-	
+	private static EnchantmentBase registerAs(Enchantment enchant)
+	{
+		return OrderedRegistry.registerAs(enchant);
 	}
-	
 }

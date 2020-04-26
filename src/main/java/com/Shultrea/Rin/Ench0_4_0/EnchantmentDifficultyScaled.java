@@ -1,11 +1,13 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
@@ -21,12 +23,18 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 
-public class EnchantmentDifficultyScaled extends Enchantment implements IDamageMultiplier{
+public class EnchantmentDifficultyScaled extends EnchantmentBase implements IDamageMultiplier{
 	public EnchantmentDifficultyScaled()
 	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("difficultyscaled");
 		this.setRegistryName("difficultyscaled");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.DifficultyScaled;
 	}
 	
 	@Override

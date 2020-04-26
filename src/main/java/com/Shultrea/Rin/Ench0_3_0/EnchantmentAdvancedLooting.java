@@ -1,36 +1,34 @@
 package com.Shultrea.Rin.Ench0_3_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemBook;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LootingLevelEvent;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentAdvancedLooting extends Enchantment 
+public class EnchantmentAdvancedLooting extends EnchantmentBase 
 {
 	public EnchantmentAdvancedLooting()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("AdvancedLooting");
 		this.setRegistryName("AdvancedLooting");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedLootingEnable;
 	}
 		
 	@Override

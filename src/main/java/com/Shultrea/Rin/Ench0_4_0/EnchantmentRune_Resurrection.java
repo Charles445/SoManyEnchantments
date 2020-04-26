@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Prop_Sector.IPlayerProperties;
 import com.Shultrea.Rin.Prop_Sector.PlayerPropertiesProvider;
 
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,7 +34,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import net.minecraftforge.items.ItemHandlerHelper;
 
-public class EnchantmentRune_Resurrection extends Enchantment{
+public class EnchantmentRune_Resurrection extends EnchantmentBase{
 	
 	private final Map<UUID, InventoryPlayer> INVENTORY_MAP = new HashMap<>();
 	
@@ -42,7 +43,14 @@ public class EnchantmentRune_Resurrection extends Enchantment{
 		super(Rarity.VERY_RARE, EnumList.COMBAT_GOLDEN_APPLE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
 		this.setName("Rune_Resurrection");
 		this.setRegistryName("Rune_Resurrection");
-}
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Rune_Resurrection;
+	}
+	
 	@Override
 	public int getMaxLevel()
     {

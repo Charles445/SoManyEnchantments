@@ -1,5 +1,7 @@
 package com.Shultrea.Rin.Ench0_2_0;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -11,13 +13,19 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentCombatVeterancy extends Enchantment {
+public class EnchantmentCombatVeterancy extends EnchantmentBase {
 	public EnchantmentCombatVeterancy()
 	{
 		super(Rarity.RARE, EnumList.COMBAT_WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("CombatRegeneration");
 		this.setRegistryName("CombatRegeneration");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CombatRegenerationEnable;
 	}
 	
 	@Override

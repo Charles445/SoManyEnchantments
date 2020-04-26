@@ -2,7 +2,11 @@ package com.Shultrea.Rin.Ench0_1_0;
 
 import java.util.Random;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -10,12 +14,18 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentFieryEdge extends Enchantment {
+public class EnchantmentFieryEdge extends EnchantmentBase {
 	public EnchantmentFieryEdge()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("FieryEdge");
 		this.setRegistryName("FieryEdge");
+	}
+
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.FieryEdgeEnable;
 	}
 	
 	@Override

@@ -1,39 +1,32 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnchantmentProtection;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityShulkerBullet;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentCounterAttack extends Enchantment {
+public class EnchantmentCounterAttack extends EnchantmentBase {
 	public EnchantmentCounterAttack()
 	{
 		super(Rarity.RARE, EnumList.SWORD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("CounterAttack");
 		this.setRegistryName("CounterAttack");
 	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CounterAttackEnable;
+	}
+	
 	
 	@Override
 	public int getMaxLevel()

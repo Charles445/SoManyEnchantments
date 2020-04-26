@@ -1,36 +1,29 @@
 package com.Shultrea.Rin.Ench0_3_0;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentProtection;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemShield;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentAdvancedProtection extends Enchantment implements IEnchantmentProtection, IEnhancedEnchantment{
+public class EnchantmentAdvancedProtection extends EnchantmentBase implements IEnchantmentProtection, IEnhancedEnchantment{
 	public EnchantmentAdvancedProtection()
 	{
         super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD, EntityEquipmentSlot.CHEST, EntityEquipmentSlot.LEGS, EntityEquipmentSlot.FEET});
 		this.setName("AdvancedProtection");
 		this.setRegistryName("AdvancedProtection");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedProtection;
 	}
 	
 	@Override

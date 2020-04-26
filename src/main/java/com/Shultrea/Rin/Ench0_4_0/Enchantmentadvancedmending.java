@@ -1,9 +1,10 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.item.EntityXPOrb;
@@ -15,12 +16,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class Enchantmentadvancedmending extends Enchantment{
+public class Enchantmentadvancedmending extends EnchantmentBase{
 	public Enchantmentadvancedmending()
 	{
 	super(Rarity.VERY_RARE, EnumEnchantmentType.BREAKABLE, EntityEquipmentSlot.values());
     this.setName("advancedmending");
 	this.setRegistryName("advancedmending");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedMending;
 	}
 	
 	@Override

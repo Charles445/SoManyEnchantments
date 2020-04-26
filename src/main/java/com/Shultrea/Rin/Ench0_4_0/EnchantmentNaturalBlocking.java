@@ -1,10 +1,12 @@
 package com.Shultrea.Rin.Ench0_4_0;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -14,13 +16,19 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentNaturalBlocking extends Enchantment{
+public class EnchantmentNaturalBlocking extends EnchantmentBase{
 	public EnchantmentNaturalBlocking()
 	{
 		super(Rarity.RARE, EnumList.SHIELD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
 		this.setName("NaturalBlocking");
 		this.setRegistryName("NaturalBlocking");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.NaturalBlocking;
 	}
 	
 	@Override

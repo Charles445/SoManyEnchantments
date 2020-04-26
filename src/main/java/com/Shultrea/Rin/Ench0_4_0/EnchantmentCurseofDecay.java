@@ -1,24 +1,32 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentCurseofDecay extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentCurseofDecay extends EnchantmentBase implements IEnchantmentCurse {
 	//If the item is dropped, it will decay almost instantly without delay unlike curse of vanishing.
 	public EnchantmentCurseofDecay() {
 		super(Rarity.VERY_RARE, EnumList.ALL, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		// TODO Auto-generated constructor stub
 		this.setRegistryName("CurseofDecay");
 		this.setName("CurseofDecay");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CurseofDecay;
 	}
 	
 	@Override

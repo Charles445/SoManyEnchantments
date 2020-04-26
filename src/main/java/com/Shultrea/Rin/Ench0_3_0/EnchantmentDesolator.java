@@ -1,26 +1,24 @@
 package com.Shultrea.Rin.Ench0_3_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IPotionDebuffer;
-import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentDesolator extends Enchantment implements IPotionDebuffer{
+public class EnchantmentDesolator extends EnchantmentBase implements IPotionDebuffer{
 	public EnchantmentDesolator()
 	{
 		super(Rarity.RARE, EnumList.COMBAT_AXE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -28,6 +26,13 @@ public class EnchantmentDesolator extends Enchantment implements IPotionDebuffer
 		this.setRegistryName("Desolator");
 		
 	}
+
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.DesolatorEnable;
+	}
+	
 	@Override
 	public int getMaxLevel()
 	{

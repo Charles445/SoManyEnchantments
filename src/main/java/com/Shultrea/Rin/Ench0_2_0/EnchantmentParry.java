@@ -1,6 +1,8 @@
 package com.Shultrea.Rin.Ench0_2_0;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 import com.Shultrea.Rin.Utility_Sector.SMEsounds;
 
@@ -24,13 +26,19 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentParry extends Enchantment {
+public class EnchantmentParry extends EnchantmentBase {
 	public EnchantmentParry()
 	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Parry");
 		this.setRegistryName("Parry");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.ParryEnable;
 	}
 	
 	@Override

@@ -1,4 +1,7 @@
 /**
+
+//UNUSED
+
 package com.Shultrea.Rin.Ench0_4_0;
 
 import java.util.ArrayList;
@@ -55,7 +58,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 
-public class EnchantmentPierceThrough extends Enchantment {
+public class EnchantmentPierceThrough extends EnchantmentBase {
 	public EnchantmentPierceThrough(){
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("PierceThrough");

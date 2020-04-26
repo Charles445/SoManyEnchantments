@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import java.util.UUID;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
@@ -21,8 +22,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class EnchantmentCurseofHolding extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentCurseofHolding extends EnchantmentBase implements IEnchantmentCurse {
 	
+	//TODO proper routing and delay handling
 	int interval;
 	
 	public EnchantmentCurseofHolding()
@@ -30,6 +32,12 @@ public class EnchantmentCurseofHolding extends Enchantment implements IEnchantme
 	super(Rarity.VERY_RARE, EnumList.ALL, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     this.setName("CurseofHolding");
 	this.setRegistryName("CurseofHolding");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CurseofHolding;
 	}
 	
 	@Override

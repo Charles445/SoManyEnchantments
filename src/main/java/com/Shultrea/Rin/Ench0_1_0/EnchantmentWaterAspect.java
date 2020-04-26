@@ -1,9 +1,10 @@
 package com.Shultrea.Rin.Ench0_1_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.SMEsounds;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 import net.minecraft.enchantment.Enchantment;
@@ -17,12 +18,11 @@ import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.SoundCategory;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentWaterAspect extends Enchantment implements IEnchantmentDamage{
+public class EnchantmentWaterAspect extends EnchantmentBase implements IEnchantmentDamage{
 	public EnchantmentWaterAspect()
 	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -30,7 +30,14 @@ public class EnchantmentWaterAspect extends Enchantment implements IEnchantmentD
 		this.setRegistryName("WaterAspect");
 		
 	}
-		@Override
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.WaterAspectEnable;
+	}
+	
+	@Override
 	public int getMaxLevel()
     {
         return 5;

@@ -4,30 +4,26 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EntityDamageSource;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentFrenzy extends Enchantment {
+public class EnchantmentFrenzy extends EnchantmentBase {
 	public EnchantmentFrenzy()
 	{
 		super(Rarity.RARE, EnumList.SWORD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -35,6 +31,13 @@ public class EnchantmentFrenzy extends Enchantment {
 		this.setRegistryName("Frenzy");
 		
 	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Frenzy;
+	}
+	
 	@Override
 	public int getMaxLevel()
     {

@@ -1,15 +1,14 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IConditionalDamage;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
-import com.Shultrea.Rin.Prop_Sector.IPlayerProperties;
-import com.Shultrea.Rin.Prop_Sector.PlayerPropertiesProvider;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -21,13 +20,19 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentMortalitas extends Enchantment {
+public class EnchantmentMortalitas extends EnchantmentBase {
 	
 	public EnchantmentMortalitas()
 	{
 		super(Rarity.VERY_RARE, EnumList.COMBAT, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Mortalitas");
 		this.setRegistryName("Mortalitas");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Mortalitas;
 	}
 	
 	@Override

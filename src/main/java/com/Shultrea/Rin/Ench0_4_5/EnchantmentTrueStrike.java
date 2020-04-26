@@ -1,22 +1,15 @@
 package com.Shultrea.Rin.Ench0_4_5;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentTrueStrike extends Enchantment {
+public class EnchantmentTrueStrike extends EnchantmentBase {
 	public EnchantmentTrueStrike()
 	{
 		super(Rarity.RARE, EnumList.SWORD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -24,6 +17,13 @@ public class EnchantmentTrueStrike extends Enchantment {
 		this.setRegistryName("TrueStrike");
 		
 	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.TrueStrike;
+	}
+	
 	@Override
 	public int getMaxLevel()
     {

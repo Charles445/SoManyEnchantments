@@ -3,12 +3,15 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 import java.util.List;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentRune;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,7 +24,7 @@ import net.minecraftforge.event.entity.player.PlayerDestroyItemEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentRune_Revival extends Enchantment implements IEnchantmentRune {
+public class EnchantmentRune_Revival extends EnchantmentBase implements IEnchantmentRune {
 	
 	
 	public EnchantmentRune_Revival()
@@ -29,6 +32,12 @@ public class EnchantmentRune_Revival extends Enchantment implements IEnchantment
 		super(Rarity.VERY_RARE, EnumList.DAMAGEABLE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
 		this.setName("Rune_Revival");
 		this.setRegistryName("Rune_Revival");	
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.RevivalEnable;
 	}
 	
 	@Override

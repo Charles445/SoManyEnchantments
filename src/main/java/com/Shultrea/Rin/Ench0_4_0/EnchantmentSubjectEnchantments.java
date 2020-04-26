@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.ISubjectEnchantment;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
@@ -15,7 +16,7 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 
-public class EnchantmentSubjectEnchantments extends Enchantment implements ISubjectEnchantment{
+public class EnchantmentSubjectEnchantments extends EnchantmentBase implements ISubjectEnchantment{
 	
 	private static final String[] DAMAGE_NAMES = new String[] {"Mathematics", "Science", "History", "Physics", "English", "PE"};
     /** Holds the base factor of enchantability needed to be able to use the enchant. */
@@ -36,6 +37,28 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
         this.type = type;
       
     }
+	
+	@Override
+	public boolean isEnabled()
+	{
+		switch(this.damageType)
+		{
+    		case 0:
+    			return ModConfig.enabled.Mathematics;
+    		case 1:
+    			return ModConfig.enabled.Science;
+    		case 2:
+    			return ModConfig.enabled.History;
+    		case 3:
+    			return false;
+    		case 4:
+    			return ModConfig.enabled.English;
+    		case 5:
+    			return ModConfig.enabled.PE;
+    		default:
+    			return false;
+    	}
+	}
 
     public int getMinEnchantability(int enchantmentLevel)
     {
@@ -154,45 +177,13 @@ public class EnchantmentSubjectEnchantments extends Enchantment implements ISubj
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Mathematics;
-    	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Science;
-    	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.History;
-    	case 3:
-    		return false;
-    	case 4:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.English;
-    	case 5:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.PE;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return ModConfig.enabled.Mathematics;
-    	case 1:
-    		return ModConfig.enabled.Science;
-    	case 2:
-    		return ModConfig.enabled.History;
-    	case 3:
-    		return false;
-    	case 4:
-    		return ModConfig.enabled.English;
-    	case 5:
-    		return ModConfig.enabled.PE;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled();
     }
     
 }

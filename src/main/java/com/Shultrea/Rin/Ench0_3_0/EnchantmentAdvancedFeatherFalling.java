@@ -2,8 +2,9 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 
 
-import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -13,12 +14,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
 
-public class EnchantmentAdvancedFeatherFalling extends Enchantment implements IEnhancedEnchantment{
+public class EnchantmentAdvancedFeatherFalling extends EnchantmentBase implements IEnhancedEnchantment{
 	public EnchantmentAdvancedFeatherFalling()
 	{
         super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
 		this.setName("AdvancedFeatherFalling");
 		this.setRegistryName("AdvancedFeatherFalling");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedFeatherFalling;
 	}
 	
 	@Override

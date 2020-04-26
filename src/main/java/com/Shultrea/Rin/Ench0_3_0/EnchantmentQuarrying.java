@@ -2,9 +2,9 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 import java.util.List;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
@@ -12,9 +12,8 @@ import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -23,12 +22,18 @@ import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentQuarrying extends Enchantment{
+public class EnchantmentQuarrying extends EnchantmentBase{
 	public EnchantmentQuarrying()
 	{
 		super(Rarity.VERY_RARE, EnumList.PICKAXE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Quarrying");
 		this.setRegistryName("Quarrying");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Quarrying;
 	}
 	
 	@Override

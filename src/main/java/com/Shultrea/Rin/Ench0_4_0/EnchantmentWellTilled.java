@@ -1,9 +1,9 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -28,13 +28,19 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentWellTilled extends Enchantment {
+public class EnchantmentWellTilled extends EnchantmentBase {
 	public EnchantmentWellTilled()
 	{
 		super(Rarity.UNCOMMON, EnumList.HOE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("WellTilled");
 		this.setRegistryName("WellTilled");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.WellTilled;
 	}
 	
 	@Override

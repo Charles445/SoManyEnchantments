@@ -1,12 +1,9 @@
 package com.Shultrea.Rin.Ench0_1_0;
 
-import java.lang.reflect.Method;
-import java.util.UUID;
-
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Interfaces.IPotionDebuffer;
-import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
-import com.google.common.reflect.Parameter;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -26,16 +23,10 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentPurification extends Enchantment implements IPotionDebuffer{
+public class EnchantmentPurification extends EnchantmentBase implements IPotionDebuffer{
 	
 	public EnchantmentPurification()
 	{
@@ -43,6 +34,12 @@ public class EnchantmentPurification extends Enchantment implements IPotionDebuf
 		this.setName("Purification");
 		this.setRegistryName("Purification");
 		
+	}
+
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.PurificationEnable;
 	}
 	
 	@Override

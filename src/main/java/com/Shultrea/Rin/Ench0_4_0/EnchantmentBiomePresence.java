@@ -38,7 +38,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentBiomePresence extends Enchantment{
+public class EnchantmentBiomePresence extends Enchantment
+{
+	//UNUSED
+	
 	private static final String[] PRESENCE_NAMES = new String[] {"plains","iceplains", "desert", "forest", "mountain", "roofForest", "taiga", "ocean", "mushroom","swamp","mesa","savanna"};
     /** Holds the base factor of enchantability needed to be able to use the enchant. */
 	

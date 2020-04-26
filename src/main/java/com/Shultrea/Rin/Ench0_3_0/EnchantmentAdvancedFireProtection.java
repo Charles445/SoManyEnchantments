@@ -2,9 +2,11 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -19,12 +21,18 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentAdvancedFireProtection extends Enchantment implements IEnchantmentProtection, IEnhancedEnchantment{
+public class EnchantmentAdvancedFireProtection extends EnchantmentBase implements IEnchantmentProtection, IEnhancedEnchantment{
 	public EnchantmentAdvancedFireProtection()
 	{
         super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD, EntityEquipmentSlot.CHEST, EntityEquipmentSlot.LEGS, EntityEquipmentSlot.FEET});
 		this.setName("AdvancedFireProtection");
 		this.setRegistryName("AdvancedFireProtection");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedFireProtection;
 	}
 	
 	@Override

@@ -1,33 +1,33 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
+import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
-import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
-
-public class EnchantmentUnpredictable extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentUnpredictable extends EnchantmentBase implements IEnchantmentCurse {
 	public EnchantmentUnpredictable()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Unpredictable");
 		this.setRegistryName("Unpredictable");
 	
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.UnpredictableEnable;
 	}
 	
 	@Override

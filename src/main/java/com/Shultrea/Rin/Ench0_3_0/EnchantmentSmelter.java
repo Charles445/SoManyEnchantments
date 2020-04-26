@@ -2,12 +2,14 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 import java.util.Random;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.MsgSP_Particle;
 import com.Shultrea.Rin.Utility_Sector.SMEnetwork;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.item.EntityItem;
@@ -21,13 +23,19 @@ import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentSmelter extends Enchantment{
+public class EnchantmentSmelter extends EnchantmentBase{
 	public EnchantmentSmelter()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.DIGGER, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Smelter");
 		this.setRegistryName("Smelter");
 
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.SmelterEnable;
 	}
 	
 	@Override

@@ -1,9 +1,9 @@
 package com.Shultrea.Rin.Ench0_1_0;
 
-import java.util.Collection;
-
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
@@ -11,18 +11,13 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEvoker;
 import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
-import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
-public class EnchantmentSpellBreaker extends Enchantment implements IEnchantmentDamage{
+public class EnchantmentSpellBreaker extends EnchantmentBase implements IEnchantmentDamage{
 		
 	public EnchantmentSpellBreaker()
 	{
@@ -30,6 +25,12 @@ public class EnchantmentSpellBreaker extends Enchantment implements IEnchantment
 		this.setName("SpellBreaker");
 		this.setRegistryName("SpellBreaker");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.SpellBreakerEnable;
 	}
 	
 	@Override

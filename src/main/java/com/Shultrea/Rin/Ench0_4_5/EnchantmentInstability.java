@@ -1,11 +1,12 @@
 package com.Shultrea.Rin.Ench0_4_5;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IDamageMultiplier;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentDurability;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -16,7 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentInstability extends Enchantment implements IDamageMultiplier{
+public class EnchantmentInstability extends EnchantmentBase implements IDamageMultiplier{
 	public EnchantmentInstability()
 	{
 		super(Rarity.VERY_RARE, EnumList.ALL_TOOL, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -24,6 +25,13 @@ public class EnchantmentInstability extends Enchantment implements IDamageMultip
 		this.setRegistryName("Instability");
 		
 	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Instability;
+	}
+	
 	@Override
 	public int getMaxLevel()
     {

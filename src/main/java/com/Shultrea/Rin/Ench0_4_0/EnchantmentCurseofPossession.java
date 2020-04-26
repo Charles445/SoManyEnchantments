@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
@@ -23,7 +25,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 
-public class EnchantmentCurseofPossession extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentCurseofPossession extends EnchantmentBase implements IEnchantmentCurse {
 	
 	public static int interval;
 	
@@ -35,6 +37,12 @@ public class EnchantmentCurseofPossession extends Enchantment implements IEnchan
 	    this.setName("CurseofPossession");
 		this.setRegistryName("CurseofPossession");
 		this.dimensionMap = new HashMap<Integer,Integer>();
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CurseofPossession;
 	}
 	
 	@Override

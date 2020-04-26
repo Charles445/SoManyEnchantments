@@ -1,9 +1,9 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
@@ -28,7 +28,7 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentTillingPower extends Enchantment {
+public class EnchantmentTillingPower extends EnchantmentBase {
 	
 	 public static final PropertyInteger MOISTURE = PropertyInteger.create("moisture", 0, 7);
 	 
@@ -38,6 +38,12 @@ public class EnchantmentTillingPower extends Enchantment {
 		this.setName("TillingPower");
 		this.setRegistryName("TillingPower");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.TillingPower;
 	}
 	
 	@Override

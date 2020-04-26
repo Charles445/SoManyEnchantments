@@ -1,6 +1,12 @@
 package com.Shultrea.Rin.Main_Sector;
 
 import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Config(modid=somanyenchantments.MODID)
 public class ModConfig
@@ -540,5 +546,19 @@ public class ModConfig
 		@Config.Name("Winter's Grace")
 	    @Config.RequiresMcRestart
 	    public boolean WinterEnable = true;
+	}
+	
+	@Mod.EventBusSubscriber(modid = somanyenchantments.MODID)
+	private static class EventHandler
+	{
+		@SubscribeEvent
+		@SideOnly(Side.CLIENT)
+		public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
+		{
+			if(event.getModID().equals(somanyenchantments.MODID))
+			{
+				ConfigManager.sync(somanyenchantments.MODID, Config.Type.INSTANCE);
+			}
+		}
 	}
 }

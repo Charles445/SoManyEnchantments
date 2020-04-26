@@ -1,30 +1,25 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemBook;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 
-
-public class EnchantmentLifesteal extends Enchantment 
+public class EnchantmentLifesteal extends EnchantmentBase 
 {
 	public EnchantmentLifesteal()
 	{
@@ -32,6 +27,12 @@ public class EnchantmentLifesteal extends Enchantment
 		this.setName("Lifesteal");
 		this.setRegistryName("Lifesteal");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.LifestealEnable;
 	}
 	
 	@Override

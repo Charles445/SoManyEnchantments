@@ -2,25 +2,31 @@ package com.Shultrea.Rin.Ench0_3_0;
 
 
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentProtection;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
 
-public class EnchantmentAdvancedProjectileProtection extends Enchantment implements IEnchantmentProtection, IEnhancedEnchantment{
+public class EnchantmentAdvancedProjectileProtection extends EnchantmentBase implements IEnchantmentProtection, IEnhancedEnchantment{
 	public EnchantmentAdvancedProjectileProtection()
 	{
         super(Rarity.RARE, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD, EntityEquipmentSlot.CHEST, EntityEquipmentSlot.LEGS, EntityEquipmentSlot.FEET});
 		this.setName("AdvancedProjectileProtection");
 		this.setRegistryName("AdvancedProjectileProtection");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedProjectileProtection;
 	}
 	
 	@Override

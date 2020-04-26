@@ -1,35 +1,34 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Interfaces.IEnchantmentRune;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemBook;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentPenetratingEdge extends Enchantment implements IEnchantmentDamage
+public class EnchantmentPenetratingEdge extends EnchantmentBase implements IEnchantmentDamage
 {
 	public EnchantmentPenetratingEdge()
 	{
 		super(Rarity.RARE, EnumList.COMBAT_AXE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("PenetratingEdge");
 		this.setRegistryName("PenetratingEdge");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.PenetratingEdgeEnable;
 	}
 		
 	@Override

@@ -1,40 +1,30 @@
 package com.Shultrea.Rin.Ench0_1_0;
 
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.enchantment.Enchantment.Rarity;
+import net.minecraft.enchantment.EnchantmentDamage;
+import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 
 
-public class EnchantmentAdvancedBaneOfArthropods extends Enchantment implements IEnchantmentDamage, IEnhancedEnchantment {
+public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase implements IEnchantmentDamage, IEnhancedEnchantment
+{
 	public EnchantmentAdvancedBaneOfArthropods()
 	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -103,4 +93,10 @@ public class EnchantmentAdvancedBaneOfArthropods extends Enchantment implements 
  		}
     }
     }
-    }
+
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedBaneOfArthropodsEnable;
+	}
+}

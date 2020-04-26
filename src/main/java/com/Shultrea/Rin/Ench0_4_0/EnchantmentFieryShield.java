@@ -1,4 +1,5 @@
 package com.Shultrea.Rin.Ench0_4_0;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
@@ -17,13 +18,19 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentFieryShield extends Enchantment{
+public class EnchantmentFieryShield extends EnchantmentBase{
 	public EnchantmentFieryShield()
 	{
 		super(Rarity.RARE, EnumList.SHIELD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
 		this.setName("fieryshield");
 		this.setRegistryName("fieryshield");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.FieryShield;
 	}
 	
 	@Override

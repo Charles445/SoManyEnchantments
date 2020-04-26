@@ -104,21 +104,16 @@ public class somanyenchantments {
     @EventHandler
     public void postInit(FMLPostInitializationEvent fEvent)
     {
-    proxy.postInit(fEvent);
-    
-    //Event Source 
-    Smc_010.enchHandler();
-    Smc_020.enchHandler();
-    Smc_030.enchHandler(); 
-    Smc_040.enchHandler();
-    OrderedRegistry.orderedRegister();
-
-    EnchantmentsUtility.enchHandler();
-    
-    OtherHandler.enchHandler();
-    PotionLister.Cycle();
-    EnumList.initializeEnchantmentTab();
-    EnchantmentLister.initEnchantmentList();
-    
-	    }  
+	    proxy.postInit(fEvent);
+	    
+	    //Event Source
+	    OrderedRegistry.orderedRegister();
+	
+	    EnchantmentsUtility.enchHandler();
+	    
+	    OtherHandler.enchHandler();
+	    PotionLister.Cycle();
+	    EnumList.initializeEnchantmentTab();
+	    EnchantmentLister.initEnchantmentList();
+	}  
 }

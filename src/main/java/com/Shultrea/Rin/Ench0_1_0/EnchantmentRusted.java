@@ -4,32 +4,39 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class EnchantmentRusted extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCurse {
 
 	public EnchantmentRusted()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.BREAKABLE , new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Rusted");
 		this.setRegistryName("Rusted");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.RustedEnable;
 	}
 	
 	@Override

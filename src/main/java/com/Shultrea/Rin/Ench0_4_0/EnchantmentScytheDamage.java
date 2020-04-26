@@ -1,21 +1,29 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentScytheDamage extends Enchantment {
+public class EnchantmentScytheDamage extends EnchantmentBase {
 	public EnchantmentScytheDamage()
 	{
 		super(Rarity.RARE, EnumList.HOE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("ScytheDamage");
 		this.setRegistryName("ScytheDamage");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.ScytheDamage;
 	}
 	
 	@Override

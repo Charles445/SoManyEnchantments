@@ -1,10 +1,14 @@
 package com.Shultrea.Rin.Ench0_1_0;
 
+import java.util.UUID;
+
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnchantmentKnockback;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -16,24 +20,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.List;
-import java.util.UUID;
-
-import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 
 
 
-
-public class EnchantmentSwifterSlashes extends Enchantment
+public class EnchantmentSwifterSlashes extends EnchantmentBase
 {
 	public EnchantmentSwifterSlashes()
 	{
@@ -41,6 +37,12 @@ public class EnchantmentSwifterSlashes extends Enchantment
 		this.setName("SwifterSlashes");
 		this.setRegistryName("SwifterSlashes");
 	
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.SwifterSlashesEnable;
 	}
 		
 	@Override

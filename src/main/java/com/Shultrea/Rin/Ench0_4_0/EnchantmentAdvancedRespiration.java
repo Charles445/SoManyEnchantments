@@ -16,12 +16,15 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class EnchantmentAdvancedRespiration extends Enchantment{
+public class EnchantmentAdvancedRespiration extends Enchantment
+{
+	//UNUSED
+	
 	public EnchantmentAdvancedRespiration()
 	{
-	super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_HEAD, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD});
-    this.setName("AdvancedRespiration");
-	this.setRegistryName("AdvancedRespiration");
+		super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_HEAD, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD});
+	    this.setName("AdvancedRespiration");
+		this.setRegistryName("AdvancedRespiration");
 	}
 	
 	@Override

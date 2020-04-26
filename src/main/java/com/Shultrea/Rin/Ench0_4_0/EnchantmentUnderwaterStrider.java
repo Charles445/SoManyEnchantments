@@ -2,12 +2,13 @@ package com.Shultrea.Rin.Ench0_4_0;
 
 import java.util.UUID;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentWaterWalker;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -22,13 +23,19 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
-public class EnchantmentUnderwaterStrider extends Enchantment{
+public class EnchantmentUnderwaterStrider extends EnchantmentBase{
 
 	public EnchantmentUnderwaterStrider()
 	{
 	super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
     this.setName("UnderwaterStrider");
 	this.setRegistryName("UnderwaterStrider");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.UnderwaterStrider;
 	}
 	
 	@Override

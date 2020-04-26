@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
@@ -36,7 +37,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentTierDamage extends Enchantment implements IEnchantmentDamage, IEnhancedEnchantment{
+public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantmentDamage, IEnhancedEnchantment{
 	private static final String[] DAMAGE_NAMES = new String[] {"LesserSharpness", "SupremeSharpness", "LesserSmite", "SupremeSmite", "LesserBaneOfArthropods", "SupremeBaneOfArthropods"};
     private static final int[] MIN_COST = new int[] {1, 120, 1, 120, 1, 120}; 
     private static final int[] LEVEL_COST = new int[] {4, 80, 5, 80, 4, 80};
@@ -54,6 +55,28 @@ public class EnchantmentTierDamage extends Enchantment implements IEnchantmentDa
         this.type = type;
       
     }
+    
+	@Override
+	public boolean isEnabled()
+	{
+		switch(this.damageType)
+		{
+	    	case 0:
+	    		return ModConfig.enabled.LesserSharpness;
+	    	case 1:
+	    		return ModConfig.enabled.SupremeSharpness;
+	    	case 2:
+	    		return ModConfig.enabled.LesserSmite;
+	    	case 3:
+	    		return ModConfig.enabled.SupremeSmite;
+	    	case 4:
+	    		return ModConfig.enabled.LesserBaneOfArthropods;
+	    	case 5:
+	    		return ModConfig.enabled.SupremeBaneOfArthropods;
+	    	default:
+	    		return false;
+    	}
+	}
 
     @Override
     public int getMinEnchantability(int enchantmentLevel)
@@ -143,45 +166,13 @@ public class EnchantmentTierDamage extends Enchantment implements IEnchantmentDa
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserSharpness;
-    	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeSharpness;
-    	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserSmite;
-    	case 3:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeSmite;
-    	case 4:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserBaneOfArthropods;
-    	case 5:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeBaneOfArthropods;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return ModConfig.enabled.LesserSharpness;
-    	case 1:
-    		return ModConfig.enabled.SupremeSharpness;
-    	case 2:
-    		return ModConfig.enabled.LesserSmite;
-    	case 3:
-    		return ModConfig.enabled.SupremeSmite;
-    	case 4:
-    		return ModConfig.enabled.LesserBaneOfArthropods;
-    	case 5:
-    		return ModConfig.enabled.SupremeBaneOfArthropods;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled();
     }
 }
   

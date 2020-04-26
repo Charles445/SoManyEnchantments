@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Interfaces.IEnchantmentRune;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
@@ -8,6 +9,7 @@ import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,12 +24,18 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentRune_ArrowPiercing extends Enchantment implements IEnchantmentRune {
+public class EnchantmentRune_ArrowPiercing extends EnchantmentBase implements IEnchantmentRune {
 	public EnchantmentRune_ArrowPiercing()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.BOW, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
 		this.setName("Rune_ArrowPiercing");
 		this.setRegistryName("Rune_ArmorPiercing");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Rune_PiercingArrows;
 	}
 	
 	@Override

@@ -5,8 +5,10 @@ package com.Shultrea.Rin.Ench0_3_0;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Interfaces.IEnchantmentProtection;
 import com.Shultrea.Rin.Interfaces.IEnhancedEnchantment;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
@@ -14,19 +16,17 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentProtection;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.Explosion;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.world.ExplosionEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentAdvancedBlastProtection extends Enchantment implements IEnchantmentProtection, IEnhancedEnchantment {
+public class EnchantmentAdvancedBlastProtection extends EnchantmentBase implements IEnchantmentProtection, IEnhancedEnchantment {
 
 	private static Field power;
 	
@@ -35,6 +35,12 @@ public class EnchantmentAdvancedBlastProtection extends Enchantment implements I
         super(Rarity.RARE, EnumEnchantmentType.ARMOR, new EntityEquipmentSlot[]{EntityEquipmentSlot.HEAD, EntityEquipmentSlot.CHEST, EntityEquipmentSlot.LEGS, EntityEquipmentSlot.FEET});
 		this.setName("AdvancedBlastProtection");
 		this.setRegistryName("AdvancedBlastProtection");
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.AdvancedBlastProtection;
 	}
 	
 	@Override

@@ -1,34 +1,38 @@
 package com.Shultrea.Rin.Ench0_3_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
+import com.Shultrea.Rin.Interfaces.IConditionalDamage;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
+
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Enchantments;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
-import com.Shultrea.Rin.Interfaces.IConditionalDamage;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 
 
-public class EnchantmentViper extends Enchantment implements IConditionalDamage {
+public class EnchantmentViper extends EnchantmentBase implements IConditionalDamage {
 	public EnchantmentViper()
 	{
 		super(Rarity.RARE,EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Viper");
 		this.setRegistryName("Viper");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.ViperEnable;
 	}
 	
 	@Override

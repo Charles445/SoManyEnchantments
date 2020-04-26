@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_010;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
@@ -11,7 +12,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
-public class EnchantmentFAtier extends Enchantment{
+public class EnchantmentFAtier extends EnchantmentBase{
 	private static final String[] DAMAGE_NAMES = new String[] {"lfa", "afa","sfa"};
     /** Holds the base factor of enchantability needed to be able to use the enchant. */
 	
@@ -34,6 +35,18 @@ public class EnchantmentFAtier extends Enchantment{
       
     }
 
+	@Override
+	public boolean isEnabled()
+	{
+		switch(this.damageType)
+		{
+			case 0: return ModConfig.enabled.LesserFireAspect;
+			case 1: return ModConfig.enabled.AdvancedFireAspect;
+			case 2: return ModConfig.enabled.SupremeFireAspect;
+			default: return false;
+		}
+	}
+	
     public int getMinEnchantability(int enchantmentLevel)
     {
         return MIN_COST[this.damageType] + (enchantmentLevel - 1) * LEVEL_COST[this.damageType];
@@ -76,33 +89,13 @@ public class EnchantmentFAtier extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserFireAspect;
-    	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.AdvancedFireAspect;
-    	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeFireAspect;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return ModConfig.enabled.LesserFireAspect;
-    	case 1:
-    		return ModConfig.enabled.AdvancedFireAspect;
-    	case 2:
-    		return ModConfig.enabled.SupremeFireAspect;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled();
     }
     
     @Override
@@ -125,18 +118,24 @@ public class EnchantmentFAtier extends Enchantment{
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
-    if(this.damageType == 2 && ModConfig.enabled.SupremeFireAspect){
-      if(level > 0)
-    	  target.setFire(16 * level);
-    }
-    if(this.damageType == 1 && ModConfig.enabled.AdvancedFireAspect){
-        if(level > 0)
-      	  target.setFire(8 * level);
-      }
-    if(this.damageType == 0 && ModConfig.enabled.LesserFireAspect){
-        if(level > 0)
-      	  target.setFire(2 * level);
-      }
+    	if(!isEnabled())
+    		return;
+    	
+	    if(this.damageType == 2)
+	    {
+	      if(level > 0)
+	    	  target.setFire(16 * level);
+	    }
+	    else if(this.damageType == 1)
+	    {
+	        if(level > 0)
+	      	  target.setFire(8 * level);
+	    }
+	    else if(this.damageType == 0 )
+	    {
+	        if(level > 0)
+	      	  target.setFire(2 * level);
+	    }
     }
   
     

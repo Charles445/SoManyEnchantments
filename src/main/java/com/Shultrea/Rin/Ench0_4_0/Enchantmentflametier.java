@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
@@ -7,7 +8,8 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
-public class Enchantmentflametier extends Enchantment{
+public class Enchantmentflametier extends EnchantmentBase
+{
 	private static final String[] DAMAGE_NAMES = new String[] {"lfl", "afl","sfl"};
     /** Holds the base factor of enchantability needed to be able to use the enchant. */
 	
@@ -31,6 +33,18 @@ public class Enchantmentflametier extends Enchantment{
         this.type = type;
       
     }
+
+	@Override
+	public boolean isEnabled()
+	{
+		switch(this.damageType)
+		{
+			case 0: return ModConfig.enabled.LesserFlame;
+			case 1: return ModConfig.enabled.AdvancedFlame;
+			case 2: return ModConfig.enabled.SupremeFlame;
+			default: return false;
+		}
+	}
 
     /**
      * Returns the minimal value of enchantability needed on the enchantment level passed.
@@ -101,34 +115,13 @@ public class Enchantmentflametier extends Enchantment{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.LesserFlame;
-    	case 1:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.AdvancedFlame;
-    	case 2:
-    		return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.SupremeFlame;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
     
     @Override
     public boolean isAllowedOnBooks()
     {
-    	switch(this.damageType) {
-    	case 0:
-    		return ModConfig.enabled.LesserFireAspect;
-    	case 1:
-    		return ModConfig.enabled.AdvancedFireAspect;
-    	case 2:
-    		return ModConfig.enabled.SupremeFireAspect;
-    	default:
-    		return false;
-    	}
-      
+    	return isEnabled();
     }
   
-    
 }

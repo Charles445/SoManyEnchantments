@@ -1,17 +1,24 @@
 package com.Shultrea.Rin.Ench0_2_0;
 
+import java.util.Random;
+
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
+import com.Shultrea.Rin.Enum.EnumList;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Utility_Sector.MsgSP_Particle;
+import com.Shultrea.Rin.Utility_Sector.SMEnetwork;
+import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
+
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentDamage;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySpider;
@@ -21,32 +28,19 @@ import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.Random;
-
-import com.Shultrea.Rin.Enchantments_Sector.Smc_020;
-import com.Shultrea.Rin.Enum.EnumList;
-import com.Shultrea.Rin.Main_Sector.somanyenchantments;
-import com.Shultrea.Rin.Utility_Sector.MsgSP_Particle;
-import com.Shultrea.Rin.Utility_Sector.SMEnetwork;
-import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
 
 
 
-
-public class EnchantmentCulling extends Enchantment {
+public class EnchantmentCulling extends EnchantmentBase {
 	public EnchantmentCulling()
 	{
 		super(Rarity.VERY_RARE, EnumList.COMBAT_AXE, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -54,6 +48,12 @@ public class EnchantmentCulling extends Enchantment {
 		this.setRegistryName("Culling");
 		
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CullingEnable;
 	}
 	
 	@Override

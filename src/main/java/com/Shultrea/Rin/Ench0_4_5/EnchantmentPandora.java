@@ -3,14 +3,15 @@ package com.Shultrea.Rin.Ench0_4_5;
 import java.util.List;
 import java.util.Random;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentGreaterCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentLister;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -25,7 +26,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class EnchantmentPandora extends Enchantment implements IEnchantmentGreaterCurse {
+public class EnchantmentPandora extends EnchantmentBase implements IEnchantmentGreaterCurse {
 
 	//An enchantment that is hidden until a certain time where it will reveal itself.
 	//While hidden, it infects the inventory of players with a bunch of curse enchantments, not including itself.
@@ -35,6 +36,12 @@ public class EnchantmentPandora extends Enchantment implements IEnchantmentGreat
 		this.setName("Pandora");
 		this.setRegistryName("Pandora");
 		
+	}
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.Pandora;
 	}
 			
 	@Override

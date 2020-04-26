@@ -1,6 +1,7 @@
 package com.Shultrea.Rin.Ench0_4_0;
 
 import com.Shultrea.Rin.Ench0_4_5.EnchantmentTrueStrike;
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
@@ -18,7 +19,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentCurseofInaccuracy extends Enchantment implements IEnchantmentCurse {
+public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEnchantmentCurse {
 
 	public EnchantmentCurseofInaccuracy() {
 		super(Rarity.VERY_RARE, EnumList.COMBAT_WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});
@@ -26,6 +27,15 @@ public class EnchantmentCurseofInaccuracy extends Enchantment implements IEnchan
 		this.setRegistryName("CurseOfInaccuracy");
 	}
 //Curse that makes a melee weapon miss or a range weapon to be inaccurate
+	
+
+	
+	@Override
+	public boolean isEnabled()
+	{
+		return ModConfig.enabled.CurseOfInaccuracy;
+	}
+	
 	 @Override
 	 public int getMinEnchantability(int ench)
 	 {

@@ -52,8 +52,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 
-public class EnchantmentDebug extends Enchantment {
-	public EnchantmentDebug(){
+public class EnchantmentDebug extends Enchantment
+{
+	//UNUSED
+	
+	public EnchantmentDebug()
+	{
 		super(Rarity.UNCOMMON, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Debug");
 		this.setRegistryName("Debug");
