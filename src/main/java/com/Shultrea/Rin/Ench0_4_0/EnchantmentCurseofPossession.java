@@ -70,12 +70,6 @@ public class EnchantmentCurseofPossession extends EnchantmentBase implements IEn
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseofPossession;
-    }
-    
-    @Override
     public boolean isAllowedOnBooks()
     {
         return false;

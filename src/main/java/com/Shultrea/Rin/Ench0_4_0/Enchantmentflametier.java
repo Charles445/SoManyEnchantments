@@ -88,15 +88,6 @@ public class Enchantmentflametier extends EnchantmentBase
     {
         return !(ench instanceof Enchantmentflametier);
     }
-
-    /**
-     * Determines if this enchantment can be applied to a specific ItemStack.
-     */
-    @Override
-    public boolean canApply(ItemStack stack)
-    {
-        return super.canApply(stack);
-    }
     
     @Override
     public boolean isTreasureEnchantment() {
@@ -110,18 +101,6 @@ public class Enchantmentflametier extends EnchantmentBase
     	default:
     		return false;
     	}
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-    	return isEnabled();
     }
   
 }

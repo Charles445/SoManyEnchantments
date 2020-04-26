@@ -59,12 +59,6 @@ public class EnchantmentViper extends EnchantmentBase implements IConditionalDam
     	return super.canApplyTogether(fTest) && !(fTest instanceof IConditionalDamage);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority=EventPriority.HIGH)
     public void HandleEnchant(LivingHurtEvent fEvent)
     {

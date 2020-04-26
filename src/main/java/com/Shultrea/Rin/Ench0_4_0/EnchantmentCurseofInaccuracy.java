@@ -26,7 +26,7 @@ public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEn
 		this.setName("CurseOfInaccuracy");
 		this.setRegistryName("CurseOfInaccuracy");
 	}
-//Curse that makes a melee weapon miss or a range weapon to be inaccurate
+	//Curse that makes a melee weapon miss or a range weapon to be inaccurate
 	
 
 	
@@ -64,27 +64,9 @@ public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEn
 	   	return fTest instanceof EnchantmentTrueStrike ? false : super.canApplyTogether(fTest);
 	 }
 	 
-	    @Override
-	    public boolean canApply(ItemStack fTest)
-	    {
-	    	return fTest.getItem() instanceof Item ? super.canApply(fTest) : false;
-	    }
-	 
 	 @Override
 	 public boolean isTreasureEnchantment(){
 		 return true;
-	 }
-	 
-	 @Override
-	 public boolean canApplyAtEnchantingTable(ItemStack stack)
-	 {
-	     return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseOfInaccuracy;
-	 }
-	    
-	 @Override
-	 public boolean isAllowedOnBooks()
-	 {
-	     return true;
 	 }
 	 
 	 @SubscribeEvent(priority = EventPriority.HIGHEST)

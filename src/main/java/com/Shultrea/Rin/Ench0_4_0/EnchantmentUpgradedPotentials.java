@@ -55,27 +55,9 @@ public class EnchantmentUpgradedPotentials extends EnchantmentBase {
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
     public boolean canApply(ItemStack fTest)
     {
     	return false;
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Upgrade && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Upgrade;
     }
 	
 	@SubscribeEvent

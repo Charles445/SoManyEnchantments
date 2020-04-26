@@ -49,22 +49,8 @@ public class EnchantmentUnpredictable extends EnchantmentBase implements IEnchan
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-
-    	return super.canApplyTogether(fTest);
-  
-    }
-    
-    @Override
     public boolean isCurse() {
     	return true;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
     }
     
     @SubscribeEvent(priority = EventPriority.LOW) 

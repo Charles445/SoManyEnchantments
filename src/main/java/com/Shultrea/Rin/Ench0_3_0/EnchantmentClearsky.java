@@ -56,12 +56,6 @@ public class EnchantmentClearsky extends EnchantmentBase implements IWeatherEnch
     {
     	 return super.canApplyTogether(fTest) && !(fTest instanceof IWeatherEnchantment);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
 
 @SubscribeEvent(priority=EventPriority.HIGHEST)

@@ -50,24 +50,6 @@ public class EnchantmentFieryShield extends EnchantmentBase{
 	{
 		return this.getMinEnchantability(par1) + 40;
 	}
-	    
-	@Override
-    public boolean canApplyTogether(Enchantment fTest)
-	{
-    	return super.canApplyTogether(fTest);		    
-    }
-	
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.FieryShield;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return true;
-    }
 	   
     @SubscribeEvent(priority = EventPriority.LOWEST) 
     public void shieldBurn(LivingAttackEvent fEvent){

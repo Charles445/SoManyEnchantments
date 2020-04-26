@@ -62,12 +62,6 @@ public class EnchantmentMagicProtection extends EnchantmentBase implements IEnch
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public int calcModifierDamage(int level, DamageSource source)
     {
         return source.canHarmInCreative() ? 0 : (source.isMagicDamage() ? level * 2 : 0);

@@ -75,12 +75,6 @@ public class EnchantmentCulling extends EnchantmentBase {
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {  	
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
     public boolean canApply(ItemStack fTest)
     {
     	return fTest.getItem() instanceof ItemAxe ? super.canApply(fTest) : false;

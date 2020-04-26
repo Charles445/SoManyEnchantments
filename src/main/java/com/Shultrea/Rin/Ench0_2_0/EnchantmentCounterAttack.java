@@ -47,17 +47,6 @@ public class EnchantmentCounterAttack extends EnchantmentBase {
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public void onUserHurt(EntityLivingBase user, Entity target, int level){
     	
     	if(target == null)

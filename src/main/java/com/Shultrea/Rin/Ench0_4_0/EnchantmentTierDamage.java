@@ -162,18 +162,6 @@ public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantme
     		return false;
     	}
     }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-    	return isEnabled();
-    }
 }
   
         

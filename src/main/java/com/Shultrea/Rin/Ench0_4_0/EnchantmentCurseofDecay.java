@@ -54,24 +54,6 @@ public class EnchantmentCurseofDecay extends EnchantmentBase implements IEnchant
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseofDecay;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return true;
-    }
-    
-    @Override
     public boolean isCurse(){
     	return true;
     }

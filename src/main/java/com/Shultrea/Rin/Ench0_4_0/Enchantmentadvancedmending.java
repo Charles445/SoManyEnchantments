@@ -62,19 +62,7 @@ public class Enchantmentadvancedmending extends EnchantmentBase{
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-        return ModConfig.enabled.AdvancedMending && stack.isItemStackDamageable() && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.AdvancedMending;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return fTest.getItem() instanceof Item ? super.canApply(fTest) : false;
+        return stack.isItemStackDamageable() && super.canApplyAtEnchantingTable(stack);
     }
     
     @SubscribeEvent

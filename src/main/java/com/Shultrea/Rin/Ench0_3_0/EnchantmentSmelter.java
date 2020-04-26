@@ -63,12 +63,6 @@ public class EnchantmentSmelter extends EnchantmentBase{
     	return fTest == Enchantments.SILK_TOUCH ? false : super.canApplyTogether(fTest);
     	
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 	
 	
 	Random random = new Random();

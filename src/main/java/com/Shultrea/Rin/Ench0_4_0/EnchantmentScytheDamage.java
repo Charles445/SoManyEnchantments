@@ -4,8 +4,6 @@ import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemHoe;
@@ -44,17 +42,10 @@ public class EnchantmentScytheDamage extends EnchantmentBase {
         return super.getMinEnchantability(par1) + 30;
     }
     
-    
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
     @Override
 	public boolean canApplyAtEnchantingTable(ItemStack stack)
 	{
-		return stack.getItem() instanceof ItemHoe && ModConfig.enabled.ScytheDamage && stack.getItem().canApplyAtEnchantingTable(stack, this);
+    	return super.canApplyAtEnchantingTable(stack) && stack.getItem() instanceof ItemHoe;
 	}
     
     @Override
@@ -64,12 +55,6 @@ public class EnchantmentScytheDamage extends EnchantmentBase {
     		return (1.0f + 0.55f * level);
     	
     	return 0;
-    }
-     
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.ScytheDamage;
     }
     
 }

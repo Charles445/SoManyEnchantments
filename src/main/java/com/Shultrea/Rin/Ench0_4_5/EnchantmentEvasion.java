@@ -51,30 +51,6 @@ public class EnchantmentEvasion extends EnchantmentBase
         return super.getMinEnchantability(par1) + 40;
     }
 	    
-	@Override
-	public boolean canApplyTogether(Enchantment fTest)
-	{
-		return super.canApplyTogether(fTest);
-	}
-	    
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-		return super.canApply(fTest);
-    }
-	
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Evasion && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Evasion;
-    }
-	    
     @SubscribeEvent(priority = EventPriority.LOW, receiveCanceled = false) 
     public void HandleEnchant(LivingAttackEvent fEvent)
     {	

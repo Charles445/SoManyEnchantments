@@ -56,56 +56,49 @@ public class EnchantmentAdvancedPower extends EnchantmentBase {
     	
     	return super.canApplyTogether(fTest);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
-@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
-public void onEvent(EntityJoinWorldEvent event)
-{
-	if (event.getEntity() instanceof EntityArrow)
+	@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
+	public void onEvent(EntityJoinWorldEvent event)
 	{
-		
-		EntityArrow arrow = (EntityArrow) event.getEntity();
-		EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
-		if(shooter == null)
-		return;
-		
-	    ItemStack bow = shooter.getActiveItemStack();
-		
-		if(bow == null || bow == ItemStack.EMPTY){
+		if (event.getEntity() instanceof EntityArrow)
+		{
 			
-			bow = shooter.getHeldItemOffhand();
+			EntityArrow arrow = (EntityArrow) event.getEntity();
+			EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
+			if(shooter == null)
+			return;
+			
+		    ItemStack bow = shooter.getActiveItemStack();
+			
 			if(bow == null || bow == ItemStack.EMPTY){
 				
-				return;
+				bow = shooter.getHeldItemOffhand();
+				if(bow == null || bow == ItemStack.EMPTY){
+					
+					return;
+				}
 			}
-		}
-		
-		 
-		
-		 int p = EnchantmentHelper.getEnchantmentLevel(Smc_030.AdvancedPower, bow);
-		 if(p > 0){
-			arrow.setDamage(arrow.getDamage() + 1.25D + (double)p * 0.75D);
 			
-			 if(p >= 4){
-				 arrow.setIsCritical(true);
+			 
+			
+			 int p = EnchantmentHelper.getEnchantmentLevel(Smc_030.AdvancedPower, bow);
+			 if(p > 0){
+				arrow.setDamage(arrow.getDamage() + 1.25D + (double)p * 0.75D);
+				
+				 if(p >= 4){
+					 arrow.setIsCritical(true);
+				 }
+				 
+				 else if(shooter.getRNG().nextFloat() < (p * 0.25f)){
+					 arrow.setIsCritical(true);
+				 }
+				 
+				 
+				 
 			 }
-			 
-			 else if(shooter.getRNG().nextFloat() < (p * 0.25f)){
-				 arrow.setIsCritical(true);
-			 }
-			 
-			 
-			 
-		 }
-	
-	
-		  
+		
+		
+			  
+		}
+	}
 }
-}
-}
-

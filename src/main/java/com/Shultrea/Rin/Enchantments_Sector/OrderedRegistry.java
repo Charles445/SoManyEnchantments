@@ -132,10 +132,10 @@ public class OrderedRegistry
 		if(enchant==null)
 			throw new RuntimeException("Passed a null enchant during registerEnchant!");
 		
-		if(enchant.isConfigEnabled())
-		{
+		//if(enchant.isConfigEnabled())
+		//{
 			orderedEnchants.add(enchant);
-		}
+		//}
 		
 		return enchant;
 	}

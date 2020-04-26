@@ -53,24 +53,6 @@ public class EnchantmentHors_de_combat extends EnchantmentBase implements IPotio
 	{
 		return fTest instanceof IPotionDebuffer ? false : super.canApplyTogether(fTest);
 	}
-			
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-	
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Hors_de_combat && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Hors_de_combat;
-    }
 	
 	@Override
 	public void onEntityDamaged(EntityLivingBase user, Entity victims, int level){

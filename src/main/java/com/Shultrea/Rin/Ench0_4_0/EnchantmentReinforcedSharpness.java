@@ -67,18 +67,6 @@ public class EnchantmentReinforcedSharpness extends EnchantmentBase implements I
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.SharperEdge && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.SharperEdge;
-    }
-    
-    @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
     	if(ModConfig.enabled.SharperEdge && target instanceof EntityLivingBase && user instanceof EntityPlayer){

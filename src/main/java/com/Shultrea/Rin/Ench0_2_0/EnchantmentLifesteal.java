@@ -56,19 +56,8 @@ public class EnchantmentLifesteal extends EnchantmentBase
     @Override
     public boolean canApplyTogether(Enchantment fTest)
     {
-
     	return super.canApplyTogether(fTest) && fTest != Smc_010.BlessedEdge && fTest != Smc_010.CursedEdge;
-	
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-  
-   
     
     @SubscribeEvent(priority = EventPriority.LOW) 
     public void HandlingFirst(LivingHurtEvent fEvent)

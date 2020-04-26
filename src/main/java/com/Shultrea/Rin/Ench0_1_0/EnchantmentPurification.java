@@ -61,18 +61,6 @@ public class EnchantmentPurification extends EnchantmentBase implements IPotionD
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public void onEntityDamaged (EntityLivingBase user, Entity target, int level) {
     	
     	if(!(target instanceof EntityLivingBase))

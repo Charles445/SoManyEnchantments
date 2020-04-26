@@ -57,24 +57,6 @@ public class EnchantmentInstability extends EnchantmentBase implements IDamageMu
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Instability && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Instability;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public boolean isCurse() {
     	return true;
     }

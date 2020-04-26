@@ -53,12 +53,6 @@ public class EnchantmentAdvancedFeatherFalling extends EnchantmentBase implement
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public int calcModifierDamage(int level, DamageSource source)
     {
     	if(Math.random() < 0.35f) 

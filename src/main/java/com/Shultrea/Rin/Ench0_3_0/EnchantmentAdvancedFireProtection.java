@@ -60,12 +60,6 @@ public class EnchantmentAdvancedFireProtection extends EnchantmentBase implement
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public int calcModifierDamage(int level, DamageSource source)
     {
         return source.canHarmInCreative() ? 0 : source.isFireDamage() ? level * 3 : 0;

@@ -51,12 +51,6 @@ public class EnchantmentLevitator extends EnchantmentBase implements IPotionDebu
     			
     	return super.canApplyTogether(fTest) && !(fTest instanceof IPotionDebuffer);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)

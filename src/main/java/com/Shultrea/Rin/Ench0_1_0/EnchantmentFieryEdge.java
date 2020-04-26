@@ -53,12 +53,6 @@ public class EnchantmentFieryEdge extends EnchantmentBase {
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
     	if(!(target instanceof EntityLivingBase))

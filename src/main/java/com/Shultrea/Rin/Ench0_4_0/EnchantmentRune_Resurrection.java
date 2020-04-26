@@ -69,18 +69,6 @@ public class EnchantmentRune_Resurrection extends EnchantmentBase{
     	return super.getMinEnchantability(par1) + 50;
     }
     
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Rune_Resurrection && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Rune_Resurrection;
-    }
-      
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onWielderDeath(LivingDeathEvent e){
     	int level = 0;

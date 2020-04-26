@@ -59,12 +59,6 @@ public class EnchantmentQuarrying extends EnchantmentBase{
     {
     	return super.canApplyTogether(fTest) && fTest != Enchantments.FORTUNE && fTest != Enchantments.SILK_TOUCH;  	
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 	
 	@SubscribeEvent(priority=EventPriority.LOWEST, receiveCanceled=true)
 	public void onEvent(HarvestDropsEvent e) {

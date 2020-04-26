@@ -48,24 +48,6 @@ public class EnchantmentNaturalBlocking extends EnchantmentBase{
 	{
         return this.getMinEnchantability(par1) + 40;
 	}
-	    
-	@Override
-    public boolean canApplyTogether(Enchantment fTest)
-	{
-		return super.canApplyTogether(fTest);	
-    }
-	
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.NaturalBlocking && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.NaturalBlocking;
-    }
 	   
     @SubscribeEvent(priority = EventPriority.LOWEST) 
     public void naturalBlock(LivingDamageEvent fEvent){

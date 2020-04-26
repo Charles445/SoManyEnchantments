@@ -56,24 +56,6 @@ public class EnchantmentDifficultyScaled extends EnchantmentBase implements IDam
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.DifficultyScaled;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.DifficultyScaled;
-    }
-    
-    @Override
     public boolean canApply(ItemStack fTest)
     {
     	return fTest.getItem() instanceof ItemSword ? true : super.canApply(fTest);

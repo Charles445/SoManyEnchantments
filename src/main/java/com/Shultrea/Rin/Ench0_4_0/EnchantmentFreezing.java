@@ -62,24 +62,6 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     	return super.canApplyTogether(fTest) && !(fTest instanceof IPotionDebuffer);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Freezing;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Freezing;
-    }
-    
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public void onEntityDamaged(LivingDamageEvent fEvent){
     	

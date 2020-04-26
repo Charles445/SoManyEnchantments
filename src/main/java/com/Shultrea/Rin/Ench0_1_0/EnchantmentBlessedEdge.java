@@ -57,12 +57,6 @@ public class EnchantmentBlessedEdge extends EnchantmentBase {
     	return super.canApplyTogether(fTest) && fTest != Enchantments.SMITE && fTest != Smc_010.CursedEdge && fTest != Smc_010.AdvancedSmite && !(fTest instanceof IEnchantmentDamage);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.NORMAL) 
     public void HandleEnchant(LivingHurtEvent fEvent)
     {

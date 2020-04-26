@@ -44,18 +44,6 @@ public class EnchantmentBrutality extends EnchantmentBase{
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Brutality && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Brutality;
-    }
-    
-    @Override
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
     	if(!ModConfig.enabled.Brutality)

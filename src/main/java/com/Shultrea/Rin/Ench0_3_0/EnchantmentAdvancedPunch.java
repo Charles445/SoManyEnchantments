@@ -54,12 +54,6 @@ public class EnchantmentAdvancedPunch extends EnchantmentBase {
     {	
     	return fTest == Enchantments.PUNCH ? false : super.canApplyTogether(fTest);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
 @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
 public void onEvent(EntityJoinWorldEvent event)

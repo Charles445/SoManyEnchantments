@@ -48,24 +48,6 @@ public class EnchantmentDisarmament extends EnchantmentBase {
         return super.getMinEnchantability(par1) + 50;
     }
     
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Disarmament;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Disarmament;
-    }
-    
     @SubscribeEvent
     public void HandleEnchant(LivingHurtEvent fEvent)
     {

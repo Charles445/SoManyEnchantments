@@ -44,18 +44,6 @@ public class EnchantmentAdvancedRespiration extends Enchantment
         return this.getMinEnchantability(par1) + 30;
     }
 	
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-	
 	public static int decreaseAirSupply(EntityPlayer entity, int air)
 	    {
 	        int i = EnchantmentHelper.getMaxEnchantmentLevel(Smc_040.AdvancedRespiration, entity);

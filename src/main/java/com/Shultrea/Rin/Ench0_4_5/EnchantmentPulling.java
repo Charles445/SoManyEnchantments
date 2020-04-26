@@ -57,61 +57,43 @@ public class EnchantmentPulling extends EnchantmentBase {
     {	
     	return fTest == Enchantments.PUNCH || fTest instanceof EnchantmentAdvancedPunch ? false : super.canApplyTogether(fTest);
     }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Pulling && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Pulling;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
-@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
-public void onEvent(EntityJoinWorldEvent event)
-{
-	if (event.getEntity() instanceof EntityArrow)
+	@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
+	public void onEvent(EntityJoinWorldEvent event)
 	{
-		/**EntityArrow arrow = (EntityArrow) event.getEntity();
-		EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
-		if(shooter == null)
-		return;
-		ItemStack bow = shooter.getHeldItemMainhand();
-		int PunchLevel = EnchantmentHelper.getEnchantmentLevel(Smc_030.ExtremePunch, bow);
-		if(PunchLevel == 0)
+		if (event.getEntity() instanceof EntityArrow)
+		{
+			/**EntityArrow arrow = (EntityArrow) event.getEntity();
+			EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
+			if(shooter == null)
 			return;
-		arrow.setKnockbackStrength((PunchLevel * 2) + 1);
-	   */
-		
-		EntityArrow arrow = (EntityArrow) event.getEntity();
-		EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
-		if(shooter == null)
-		return;
-		
-		
-	    ItemStack bow = shooter instanceof EntityPlayer ? shooter.getActiveItemStack() : !shooter.getHeldItemMainhand().isEmpty() ? shooter.getHeldItemMainhand() : shooter.getHeldItemOffhand();
-		
-		if(bow == null || bow == ItemStack.EMPTY){
+			ItemStack bow = shooter.getHeldItemMainhand();
+			int PunchLevel = EnchantmentHelper.getEnchantmentLevel(Smc_030.ExtremePunch, bow);
+			if(PunchLevel == 0)
+				return;
+			arrow.setKnockbackStrength((PunchLevel * 2) + 1);
+		   */
 			
-			bow = shooter.getHeldItemOffhand();
+			EntityArrow arrow = (EntityArrow) event.getEntity();
+			EntityLivingBase shooter = (EntityLivingBase) arrow.shootingEntity;
+			if(shooter == null)
+			return;
+			
+			
+		    ItemStack bow = shooter instanceof EntityPlayer ? shooter.getActiveItemStack() : !shooter.getHeldItemMainhand().isEmpty() ? shooter.getHeldItemMainhand() : shooter.getHeldItemOffhand();
+			
 			if(bow == null || bow == ItemStack.EMPTY){
 				
-				return;
+				bow = shooter.getHeldItemOffhand();
+				if(bow == null || bow == ItemStack.EMPTY){
+					
+					return;
+				}
 			}
-		}
 		
 		
-		 int p = EnchantmentHelper.getEnchantmentLevel(this, bow);
-		 if(p > 0){
+			int p = EnchantmentHelper.getEnchantmentLevel(this, bow);
+			if(p > 0){
 			 if(!arrow.hasCapability(ArrowPropertiesProvider.ARROWPROPERTIES_CAP, null))
 				 return;
 				
@@ -119,8 +101,5 @@ public void onEvent(EntityJoinWorldEvent event)
 				properties.setPullPower(1.25f + p * 1.75f);
 			 }
 		 }
-	    
 	}
-
-
 }

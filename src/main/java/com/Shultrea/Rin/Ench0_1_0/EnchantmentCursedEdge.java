@@ -57,11 +57,6 @@ public class EnchantmentCursedEdge extends EnchantmentBase implements IEnchantme
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    @Override
     public boolean isTreasureEnchantment()
     {
     	return true;

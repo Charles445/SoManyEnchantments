@@ -56,30 +56,6 @@ public class EnchantmentSplitshot extends EnchantmentBase
 	{
 		return super.getMinEnchantability(par1) + 30;
 	}
-	    
-	@Override
-	public boolean canApplyTogether(Enchantment fTest)
-	{
-		return super.canApplyTogether(fTest);
-	}
-			
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-	
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.SplitShot && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.SplitShot;
-    }
 	
 	@SubscribeEvent(priority=EventPriority.LOWEST, receiveCanceled=true)
 	public void onEvent(ArrowLooseEvent event)

@@ -60,24 +60,6 @@ public class EnchantmentWellTilled extends EnchantmentBase {
     {
         return super.getMinEnchantability(par1) + 30;
     }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.WellTilled && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.WellTilled;
-    }
-    
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
    
     private void setFarmland(World worldIn, BlockPos pos, Block block)
     {

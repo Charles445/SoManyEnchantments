@@ -55,30 +55,6 @@ public class EnchantmentFrenzy extends EnchantmentBase {
     {
         return this.getMinEnchantability(par1) + 30;
     }
-    
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Frenzy && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Frenzy;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
  
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onAttack(LivingAttackEvent event)

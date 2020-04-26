@@ -64,12 +64,6 @@ public class EnchantmentCriticalStrike extends EnchantmentBase implements IDamag
     	return super.canApplyTogether(fTest) && !(fTest instanceof IDamageMultiplier);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onCritical(CriticalHitEvent e){
     	if(e.getEntityPlayer() == null)

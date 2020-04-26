@@ -54,12 +54,6 @@ public class EnchantmentRaining extends EnchantmentBase implements IWeatherEncha
     {
     	return super.canApplyTogether(fTest) && !(fTest instanceof IWeatherEnchantment);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
 @SubscribeEvent
 public void HandleEnchant(LivingHurtEvent fEvent){

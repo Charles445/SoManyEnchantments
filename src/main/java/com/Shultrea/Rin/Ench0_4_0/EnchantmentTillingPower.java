@@ -64,25 +64,6 @@ public class EnchantmentTillingPower extends EnchantmentBase {
         return super.getMinEnchantability(par1) + 30;
     }
     
-    
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.TillingPower && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.TillingPower;
-    }
-   
     private void setFarmland(World worldIn, BlockPos pos, Block block, int level)
     {
     	if(level > 0)

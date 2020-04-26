@@ -54,11 +54,6 @@ public class EnchantmentAdvancedLooting extends EnchantmentBase
 	{
 		return fTest == Enchantments.LOOTING ? false : super.canApplyTogether(fTest);
 	}
-	@Override
-	public boolean canApply(ItemStack fTest)
-	{
-		return super.canApply(fTest);
-	}
 	
 	@SubscribeEvent(priority = EventPriority.LOWEST) 
 	public void HandleEnchant(LootingLevelEvent fEvent)

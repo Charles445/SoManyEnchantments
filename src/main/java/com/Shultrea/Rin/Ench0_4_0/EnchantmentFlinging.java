@@ -59,24 +59,6 @@ public class EnchantmentFlinging extends EnchantmentBase {
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Flinging;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Flinging;
-    }
-    
-    @Override
     public void onEntityDamaged (EntityLivingBase user, Entity target, int level) {
     	        
     	ItemStack stack = user.getHeldItemMainhand();

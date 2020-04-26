@@ -63,12 +63,6 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
     	return super.canApplyTogether(fTest) && !(fTest instanceof IEnchantmentRune);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.LOWEST) 
     public void HandleEnchant(LivingHurtEvent fEvent)
     {

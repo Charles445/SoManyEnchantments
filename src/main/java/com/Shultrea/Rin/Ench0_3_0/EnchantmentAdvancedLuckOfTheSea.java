@@ -55,11 +55,7 @@ public class EnchantmentAdvancedLuckOfTheSea extends EnchantmentBase
 		
 		 return fTest == Enchantments.LUCK_OF_THE_SEA  ? false : super.canApplyTogether(fTest);
 	}
-	@Override
-	public boolean canApply(ItemStack fTest)
-	    {
-		return super.canApply(fTest);
-	    }
+	
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void onEvent(EntityJoinWorldEvent fEvent)
 	{

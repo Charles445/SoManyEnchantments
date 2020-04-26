@@ -60,24 +60,6 @@ public class EnchantmentStrengthenedVitality extends EnchantmentBase{
     {
     	return super.canApplyTogether(e) && !(e instanceof IEnchantmentProtection) && !(e instanceof EnchantmentProtection);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.StrengthenedVitality && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.StrengthenedVitality;
-    }
 		  
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void updateHealth(PlayerTickEvent fEvent){

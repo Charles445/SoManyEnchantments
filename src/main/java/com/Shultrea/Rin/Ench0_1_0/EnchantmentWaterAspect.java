@@ -61,12 +61,6 @@ public class EnchantmentWaterAspect extends EnchantmentBase implements IEnchantm
     	return super.canApplyTogether(fTest) && fTest != Smc_010.Bluntness && !(fTest instanceof EnchantmentDamage) && !(fTest instanceof IEnchantmentDamage) && fTest != Enchantments.FIRE_ASPECT;
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.HIGHEST) 
     public void HandleEnchant(LivingHurtEvent fEvent)
     {

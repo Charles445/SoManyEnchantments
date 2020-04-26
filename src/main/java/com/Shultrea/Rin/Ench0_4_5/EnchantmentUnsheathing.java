@@ -48,30 +48,6 @@ public class EnchantmentUnsheathing extends EnchantmentBase {
     {
         return this.getMinEnchantability(par1) + 30;
     }
-    
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Unsheathing && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Unsheathing;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
  
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onAttack(LivingAttackEvent e) {
@@ -100,6 +76,6 @@ public class EnchantmentUnsheathing extends EnchantmentBase {
     			}
     				
     		}
+    	}
     }
-  }
 }

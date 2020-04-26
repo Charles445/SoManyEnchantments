@@ -52,14 +52,9 @@ public class EnchantmentAdvancedLure extends EnchantmentBase
 	@Override
 	public boolean canApplyTogether(Enchantment fTest)
 	{
-		
 		return fTest == Enchantments.LURE  ? false : super.canApplyTogether(fTest);
 	}
-	@Override
-	public boolean canApply(ItemStack fTest)
-	    {
-		return super.canApply(fTest);
-	    }
+	
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void onEvent(EntityJoinWorldEvent fEvent)
 	{

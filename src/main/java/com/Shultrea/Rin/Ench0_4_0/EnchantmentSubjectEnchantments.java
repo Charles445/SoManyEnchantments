@@ -174,16 +174,4 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
     	return true;
     }
     
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-    	return isEnabled();
-    }
-    
 }

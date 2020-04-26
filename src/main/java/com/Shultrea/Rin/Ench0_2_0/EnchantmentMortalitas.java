@@ -59,12 +59,6 @@ public class EnchantmentMortalitas extends EnchantmentBase {
     	return super.canApplyTogether(e) && !(e instanceof IDamageMultiplier) && !(e instanceof IConditionalDamage);
     }
     
-    @Override
-    public boolean canApply(ItemStack e)
-    {
-    	return super.canApply(e);
-    }
-    
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onDamage(LivingHurtEvent e){
     	if(e.getSource().getTrueSource() != null && e.getSource().getTrueSource() instanceof EntityPlayer && e.getSource().damageType.equals("player")){

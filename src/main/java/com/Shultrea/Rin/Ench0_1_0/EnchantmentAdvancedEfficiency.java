@@ -61,17 +61,6 @@ public class EnchantmentAdvancedEfficiency extends EnchantmentBase implements IE
     	return super.canApplyTogether(fTest) && fTest != Enchantments.EFFICIENCY && fTest != Smc_010.Inefficient;
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    
-		
-	
-    
-    
     @SubscribeEvent
     public void HandleEnchant(PlayerEvent.BreakSpeed fEvent)
     {

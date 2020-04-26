@@ -79,24 +79,6 @@ public class EnchantmentFAtier extends EnchantmentBase{
     {
         return !(ench instanceof EnchantmentFAtier || ench == Smc_010.FieryEdge || ench == Smc_010.WaterAspect);
     }
-
-    @Override
-    public boolean canApply(ItemStack stack)
-    {
-        return super.canApply(stack);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-    	return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-    	return isEnabled();
-    }
     
     @Override
     public boolean isTreasureEnchantment() {

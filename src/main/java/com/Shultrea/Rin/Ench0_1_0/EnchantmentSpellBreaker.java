@@ -51,18 +51,6 @@ public class EnchantmentSpellBreaker extends EnchantmentBase implements IEnchant
         return super.getMinEnchantability(par1) + 30;
     }
     
-    @Override
-    public boolean canApplyTogether(Enchantment e)
-    {
-    	return super.canApplyTogether(e);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     /**
     @SubscribeEvent
     public void onTick(PlayerTickEvent e) {

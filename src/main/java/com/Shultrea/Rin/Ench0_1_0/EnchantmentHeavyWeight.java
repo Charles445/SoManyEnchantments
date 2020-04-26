@@ -61,16 +61,7 @@ public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantm
 	public boolean canApplyTogether(Enchantment fTest)
 	{
 		return super.canApplyTogether(fTest) && fTest != Smc_010.SwifterSlashes;
-		
-		
 	}
-	    
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-		return super.canApply(fTest);
-    }
-	    
 	
     @Override
     public boolean isTreasureEnchantment()

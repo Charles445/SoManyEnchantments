@@ -57,12 +57,6 @@ public class EnchantmentEmpoweredDefence extends EnchantmentBase{
     {
     	return super.canApply(e) || e.getItem().isShield(e, null);
     }
-	    
-    @Override
-	public boolean canApplyTogether(Enchantment fTest)
-	{    	
-    	return super.canApplyTogether(fTest);    	
-	}
 	        
     @SubscribeEvent(priority = EventPriority.LOW) 
     public void EmpoweredDefenceEvent(LivingAttackEvent fEvent){

@@ -58,18 +58,6 @@ public class EnchantmentDarkShadows extends EnchantmentBase implements IConditio
     {	
     	 return super.canApplyTogether(fTest) && !(fTest instanceof IConditionalDamage);
     }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-    	return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.DarkShadows;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.DarkShadows;
-    }
 
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)

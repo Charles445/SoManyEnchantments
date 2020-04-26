@@ -46,18 +46,6 @@ public class EnchantmentCombatVeterancy extends EnchantmentBase {
     	return this.getMinEnchantability(par1) + 25;
     }
     
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.LOW)
     public void onRegen(LivingHealEvent e){
 

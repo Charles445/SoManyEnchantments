@@ -64,18 +64,6 @@ public class EnchantmentInhumanity extends EnchantmentBase implements IEnchantme
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.Inhumane;
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Inhumane;
-    }
-    
-    @Override
     public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
     {
     	if(!ModConfig.enabled.Inhumane)

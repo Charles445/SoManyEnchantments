@@ -56,12 +56,6 @@ public class EnchantmentReviledBlade extends EnchantmentBase implements IDamageM
 		return super.canApplyTogether(fTest) && !(fTest instanceof IDamageMultiplier);
 	}
 	    
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-		return super.canApply(fTest);
-    }
-	    
 	@SubscribeEvent(priority = EventPriority.LOWEST) 
 	public void HandleEnchant(LivingDamageEvent fEvent)
 	{

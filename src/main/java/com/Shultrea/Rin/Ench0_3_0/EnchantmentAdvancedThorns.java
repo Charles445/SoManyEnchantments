@@ -58,12 +58,6 @@ public class EnchantmentAdvancedThorns extends EnchantmentBase{
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public void onUserHurt(EntityLivingBase user, Entity attacker, int level)
     {
     	if(user == null)

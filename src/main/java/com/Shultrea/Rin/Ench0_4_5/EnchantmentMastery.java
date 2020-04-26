@@ -59,25 +59,7 @@ public class EnchantmentMastery extends EnchantmentBase {
     	return super.canApplyTogether(e) && !(e instanceof EnchantmentSweepingEdge);
     }
     
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.AncientSwordMastery && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.AncientSwordMastery;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-   @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
+	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void HandleEnchant(LivingDamageEvent e)
     {
     	if(e.getSource().damageType != "player" && e.getSource().damageType != "mob")
@@ -143,8 +125,6 @@ public class EnchantmentMastery extends EnchantmentBase {
 			e.setAmount(damage);
 		}
 		
-
-	
     }
    
    @Override

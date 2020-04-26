@@ -64,24 +64,6 @@ public class EnchantmentPushing extends EnchantmentBase
     {
     	return fTest instanceof EnchantmentStrafe ? false : super.canApplyTogether(fTest);  	
     }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Pushing && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Pushing;
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
 	public void onEvent(LivingEntityUseItemEvent.Tick event)

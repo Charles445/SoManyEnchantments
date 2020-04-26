@@ -62,23 +62,6 @@ public class EnchantmentUnderwaterStrider extends EnchantmentBase{
     	return super.canApplyTogether(e) && !(e instanceof EnchantmentWaterWalker);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.UnderwaterStrider && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.UnderwaterStrider;
-    }
     
     @SubscribeEvent
     public void onUnder(PlayerTickEvent e){

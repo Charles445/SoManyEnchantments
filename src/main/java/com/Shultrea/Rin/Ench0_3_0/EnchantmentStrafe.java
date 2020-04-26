@@ -60,12 +60,6 @@ public class EnchantmentStrafe extends EnchantmentBase{
     	return fTest == Enchantments.INFINITY || fTest == Enchantments.PUNCH || fTest == Smc_030.AdvancedPunch ? false : super.canApplyTogether(fTest);  	
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
 	public void onEvent(LivingEntityUseItemEvent.Tick event)
 	{

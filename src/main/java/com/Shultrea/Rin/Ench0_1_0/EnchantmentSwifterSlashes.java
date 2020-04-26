@@ -69,12 +69,6 @@ public class EnchantmentSwifterSlashes extends EnchantmentBase
 		return super.canApplyTogether(fTest) && fTest != Smc_010.Bluntness &&fTest != Enchantments.KNOCKBACK && fTest != Smc_010.BlessedEdge && fTest != Smc_010.ReviledBlade && fTest != Smc_010.CursedEdge;	
 	}
 	    
-	@Override
-    public boolean canApply(ItemStack fTest)
-    {
-		return super.canApply(fTest);
-    }
-	    
 	  public boolean isValidPlayer(Entity entity) {
 
 	        if (entity instanceof EntityPlayer) {

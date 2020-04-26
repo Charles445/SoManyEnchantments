@@ -57,35 +57,11 @@ public class EnchantmentRune_ArrowPiercing extends EnchantmentBase implements IE
     }
     
     @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public String getTranslatedName(int level)
     {
         String s = I18n.translateToLocal(this.getName());
         s = TextFormatting.GREEN + s;       
         return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Rune_PiercingArrows && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Rune_PiercingArrows;
     }
 
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)

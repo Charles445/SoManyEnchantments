@@ -48,13 +48,7 @@ public class EnchantmentEnvenomed extends EnchantmentBase implements IPotionDebu
     @Override
     public boolean canApplyTogether(Enchantment fTest)
     {			
- 	return super.canApplyTogether(fTest) && !(fTest instanceof IPotionDebuffer);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
+    	return super.canApplyTogether(fTest) && !(fTest instanceof IPotionDebuffer);
     }
  
     @Override

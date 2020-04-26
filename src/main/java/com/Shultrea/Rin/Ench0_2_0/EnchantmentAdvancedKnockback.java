@@ -62,12 +62,6 @@ public class EnchantmentAdvancedKnockback extends EnchantmentBase {
     
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     
     public boolean isValidPlayer(Entity entity) {
 

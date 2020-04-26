@@ -59,18 +59,6 @@ public class EnchantmentParry extends EnchantmentBase {
     	return this.getMinEnchantability(par1) + 40;
     }
     
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	
-    	return super.canApplyTogether(fTest);
-    }
-    
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = false) 
     public void HandleEnchant(LivingAttackEvent e)
     {	

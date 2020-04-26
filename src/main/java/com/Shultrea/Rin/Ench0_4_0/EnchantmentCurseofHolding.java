@@ -57,24 +57,6 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
     {
         return this.getMinEnchantability(par1) + 30;
     }
-	
-    @Override
-    public boolean canApplyTogether(Enchantment fTest)
-    {
-    	return super.canApplyTogether(fTest);
-    }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return fTest.getItem() instanceof Item ? super.canApply(fTest) : false;
-    }
-    
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return stack.getItem().canApplyAtEnchantingTable(stack, this) && ModConfig.enabled.CurseofHolding;
-    }
     
     @Override
     public boolean isAllowedOnBooks()

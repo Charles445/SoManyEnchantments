@@ -53,18 +53,6 @@ public class EnchantmentAdept extends EnchantmentBase{
     }
     
     @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack)
-    {
-        return ModConfig.enabled.Adept && stack.getItem().canApplyAtEnchantingTable(stack, this);
-    }
-    
-    @Override
-    public boolean isAllowedOnBooks()
-    {
-        return ModConfig.enabled.Adept;
-    }
-    
-    @Override
     public boolean isTreasureEnchantment() {
     	return true;
     }

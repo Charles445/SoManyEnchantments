@@ -60,12 +60,6 @@ public class EnchantmentPowerless extends EnchantmentBase implements IEnchantmen
     }
     
     @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
-    @Override
     public boolean isCurse(){
     	return true;
     }

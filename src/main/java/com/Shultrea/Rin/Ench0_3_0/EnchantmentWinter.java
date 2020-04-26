@@ -58,12 +58,6 @@ public class EnchantmentWinter extends EnchantmentBase implements IWeatherEnchan
     {
     	return super.canApplyTogether(fTest) && !(fTest instanceof IWeatherEnchantment);
     }
-    
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
 
   
   public int level(ItemStack stack) {

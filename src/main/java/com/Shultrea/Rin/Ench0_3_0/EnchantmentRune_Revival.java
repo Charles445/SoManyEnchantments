@@ -67,7 +67,8 @@ public class EnchantmentRune_Revival extends EnchantmentBase implements IEnchant
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack)
     {
-    	return !(stack.getItem() instanceof ItemArmor) ? super.canApplyAtEnchantingTable(stack) : false;
+    	return super.canApplyAtEnchantingTable(stack) && !(stack.getItem() instanceof ItemArmor);
+    	//return !(stack.getItem() instanceof ItemArmor) ? super.canApplyAtEnchantingTable(stack) : false;
     }
        
     @SubscribeEvent

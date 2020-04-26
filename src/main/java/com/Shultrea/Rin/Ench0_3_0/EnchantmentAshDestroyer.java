@@ -58,12 +58,6 @@ public class EnchantmentAshDestroyer extends EnchantmentBase implements IDamageM
     	return fTest == Enchantments.FIRE_ASPECT || fTest == Smc_010.FieryEdge || fTest instanceof IDamageMultiplier ? false : super.canApplyTogether(fTest);
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
-    
     @SubscribeEvent(priority=EventPriority.LOWEST)
     public void HandleEnchant(LivingDamageEvent fEvent)
     {

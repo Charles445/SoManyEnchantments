@@ -61,11 +61,6 @@ public class EnchantmentPhysicalProtection extends EnchantmentBase implements IE
     	return super.canApplyTogether(fTest) && !(fTest instanceof IEnchantmentProtection);
 
     }
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return super.canApply(fTest);
-    }
     
     @Override
     public int calcModifierDamage(int level, DamageSource source)
