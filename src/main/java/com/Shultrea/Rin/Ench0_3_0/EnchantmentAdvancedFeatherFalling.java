@@ -23,7 +23,7 @@ public class EnchantmentAdvancedFeatherFalling extends EnchantmentBase implement
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedFeatherFalling;
 	}

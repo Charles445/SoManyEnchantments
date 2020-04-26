@@ -32,7 +32,7 @@ public class EnchantmentDifficultyScaled extends EnchantmentBase implements IDam
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.DifficultyScaled;
 	}

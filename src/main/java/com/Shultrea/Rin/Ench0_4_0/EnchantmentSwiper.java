@@ -42,7 +42,7 @@ public class EnchantmentSwiper extends EnchantmentBase
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Swiper;
 	}

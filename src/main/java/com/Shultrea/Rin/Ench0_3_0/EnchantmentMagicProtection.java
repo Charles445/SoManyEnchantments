@@ -24,7 +24,7 @@ public class EnchantmentMagicProtection extends EnchantmentBase implements IEnch
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.MagicProtectionEnable;
 	}

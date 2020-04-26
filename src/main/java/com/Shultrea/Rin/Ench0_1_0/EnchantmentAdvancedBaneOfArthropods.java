@@ -95,7 +95,7 @@ public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase impleme
     }
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedBaneOfArthropodsEnable;
 	}

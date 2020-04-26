@@ -26,7 +26,7 @@ public class EnchantmentDisorientation extends EnchantmentBase implements IPotio
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.DisorientationEnable;
 	}

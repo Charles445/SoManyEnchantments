@@ -39,7 +39,7 @@ public class EnchantmentPandora extends EnchantmentBase implements IEnchantmentG
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Pandora;
 	}

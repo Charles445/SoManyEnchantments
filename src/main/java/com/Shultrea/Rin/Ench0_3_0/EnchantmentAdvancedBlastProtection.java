@@ -38,7 +38,7 @@ public class EnchantmentAdvancedBlastProtection extends EnchantmentBase implemen
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedBlastProtection;
 	}

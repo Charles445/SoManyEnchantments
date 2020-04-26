@@ -35,7 +35,7 @@ public class EnchantmentRune_Revival extends EnchantmentBase implements IEnchant
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.RevivalEnable;
 	}

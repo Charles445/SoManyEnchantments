@@ -31,7 +31,7 @@ public class EnchantmentThunderstorm extends EnchantmentBase implements IWeather
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.ThunderstormEnable;
 	}

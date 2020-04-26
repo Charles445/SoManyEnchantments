@@ -36,7 +36,7 @@ public class EnchantmentMagmaWalker extends EnchantmentBase {
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.MagmaWalker;
 	}

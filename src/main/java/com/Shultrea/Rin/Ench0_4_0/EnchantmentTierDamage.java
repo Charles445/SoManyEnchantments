@@ -57,7 +57,7 @@ public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantme
     }
     
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		switch(this.damageType)
 		{

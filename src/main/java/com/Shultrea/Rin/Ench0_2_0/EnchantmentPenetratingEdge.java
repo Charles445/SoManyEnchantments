@@ -26,7 +26,7 @@ public class EnchantmentPenetratingEdge extends EnchantmentBase implements IEnch
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.PenetratingEdgeEnable;
 	}

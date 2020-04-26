@@ -32,7 +32,7 @@ public class EnchantmentWaterAspect extends EnchantmentBase implements IEnchantm
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.WaterAspectEnable;
 	}

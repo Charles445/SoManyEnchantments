@@ -30,7 +30,7 @@ public class EnchantmentAncient_CurseInflicter extends EnchantmentBase implement
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AncientCurseInflicter;
 	}

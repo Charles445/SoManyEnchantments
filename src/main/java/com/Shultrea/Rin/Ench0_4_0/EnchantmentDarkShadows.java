@@ -29,7 +29,7 @@ public class EnchantmentDarkShadows extends EnchantmentBase implements IConditio
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.DarkShadows;
 	}

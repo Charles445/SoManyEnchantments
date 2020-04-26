@@ -27,7 +27,7 @@ public class EnchantmentInstability extends EnchantmentBase implements IDamageMu
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Instability;
 	}

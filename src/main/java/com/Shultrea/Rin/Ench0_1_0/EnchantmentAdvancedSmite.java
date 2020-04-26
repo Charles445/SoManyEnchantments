@@ -28,7 +28,7 @@ public class EnchantmentAdvancedSmite extends EnchantmentBase implements IEnchan
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedSmiteEnable;
 	}

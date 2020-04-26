@@ -24,7 +24,7 @@ public class EnchantmentAdvancedProjectileProtection extends EnchantmentBase imp
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedProjectileProtection;
 	}

@@ -34,7 +34,7 @@ public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantm
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.HeavyWeight;
 	}

@@ -27,7 +27,7 @@ public class EnchantmentPowerless extends EnchantmentBase implements IEnchantmen
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.PowerlessEnable;
 	}

@@ -26,7 +26,7 @@ public class EnchantmentRaining extends EnchantmentBase implements IWeatherEncha
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.RainingEnable;
 	}

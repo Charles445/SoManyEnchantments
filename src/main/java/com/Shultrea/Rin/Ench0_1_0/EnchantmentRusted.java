@@ -34,7 +34,7 @@ public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCu
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.RustedEnable;
 	}

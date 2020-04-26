@@ -27,7 +27,7 @@ public class EnchantmentMoonlight extends EnchantmentBase implements IWeatherEnc
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.MoonlightEnable;
 	}

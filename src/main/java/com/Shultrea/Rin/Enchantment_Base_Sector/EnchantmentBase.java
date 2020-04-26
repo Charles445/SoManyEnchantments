@@ -6,11 +6,38 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 
 public abstract class EnchantmentBase extends Enchantment
 {
+	private boolean registered;
+	
 	public EnchantmentBase(Rarity rarityIn, EnumEnchantmentType typeIn, EntityEquipmentSlot[] slots)
 	{
 		super(rarityIn, typeIn, slots);
+		this.registered = false;
 	}
 	
-	public abstract boolean isEnabled();
+	/** Returns the ModConfig.enabled for the enchantment
+	 * 
+	 */
+	public abstract boolean isConfigEnabled();
+	
+	/** Whether the enchantment is both enabled in the config and registered
+	 * 
+	 */
+	public boolean isEnabled()
+	{
+		return isRegistered() && isConfigEnabled();
+	}
+	
+	public void setRegistered()
+	{
+		this.registered = true;
+	}
+	
+	/** Whether the enchantment is registered or not. Ignores config.
+	 * 
+	 */
+	public boolean isRegistered()
+	{
+		return this.registered;
+	}
 	
 }

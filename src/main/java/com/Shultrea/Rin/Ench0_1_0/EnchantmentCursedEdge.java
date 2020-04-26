@@ -27,7 +27,7 @@ public class EnchantmentCursedEdge extends EnchantmentBase implements IEnchantme
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.CursedEdgeEnable;
 	}

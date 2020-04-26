@@ -34,7 +34,7 @@ public class EnchantmentButchering extends EnchantmentBase implements IEnchantme
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.ButcheringEnable;
 	}

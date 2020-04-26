@@ -28,7 +28,7 @@ public class EnchantmentDesolator extends EnchantmentBase implements IPotionDebu
 	}
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.DesolatorEnable;
 	}

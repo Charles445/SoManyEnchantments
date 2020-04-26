@@ -37,7 +37,7 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
 		this.setRegistryName("Rune_MagicalBlessing");
 		
 	}@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Rune_MagicalBlessingEnable;
 	}

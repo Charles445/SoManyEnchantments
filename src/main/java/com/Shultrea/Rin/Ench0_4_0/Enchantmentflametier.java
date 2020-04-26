@@ -35,7 +35,7 @@ public class Enchantmentflametier extends EnchantmentBase
     }
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		switch(this.damageType)
 		{

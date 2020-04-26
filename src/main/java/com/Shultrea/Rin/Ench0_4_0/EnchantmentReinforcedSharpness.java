@@ -27,7 +27,7 @@ public class EnchantmentReinforcedSharpness extends EnchantmentBase implements I
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.SharperEdge;
 	}

@@ -29,7 +29,7 @@ public class EnchantmentFlinging extends EnchantmentBase {
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Flinging;
 	}

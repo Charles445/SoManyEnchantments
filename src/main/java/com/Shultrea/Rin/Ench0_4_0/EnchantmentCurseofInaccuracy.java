@@ -31,7 +31,7 @@ public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEn
 
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.CurseOfInaccuracy;
 	}

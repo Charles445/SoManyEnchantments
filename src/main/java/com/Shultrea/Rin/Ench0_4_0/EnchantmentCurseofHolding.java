@@ -35,7 +35,7 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.CurseofHolding;
 	}

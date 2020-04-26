@@ -27,7 +27,7 @@ public class EnchantmentSunshine extends EnchantmentBase implements IWeatherEnch
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.SunshineEnable;
 	}

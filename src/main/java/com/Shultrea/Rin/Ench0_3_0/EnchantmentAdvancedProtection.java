@@ -21,7 +21,7 @@ public class EnchantmentAdvancedProtection extends EnchantmentBase implements IE
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedProtection;
 	}

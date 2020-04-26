@@ -132,7 +132,7 @@ public class OrderedRegistry
 		if(enchant==null)
 			throw new RuntimeException("Passed a null enchant during registerEnchant!");
 		
-		if(enchant.isEnabled())
+		if(enchant.isConfigEnabled())
 		{
 			orderedEnchants.add(enchant);
 		}
@@ -149,7 +149,11 @@ public class OrderedRegistry
         	IForgeRegistry<Enchantment> registry = event.getRegistry();
         	for(EnchantmentBase enchant : orderedEnchants)
         	{
-        		registry.register(enchant);
+        		if(!enchant.isRegistered())
+        		{
+	        		registry.register(enchant);
+	    			enchant.setRegistered();
+        		}
         	}
         }
     }

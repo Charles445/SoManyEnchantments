@@ -25,7 +25,7 @@ public class EnchantmentHors_de_combat extends EnchantmentBase implements IPotio
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Hors_de_combat;
 	}

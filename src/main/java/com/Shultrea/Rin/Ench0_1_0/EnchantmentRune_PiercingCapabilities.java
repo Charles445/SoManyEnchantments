@@ -34,7 +34,7 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Rune_PiercingCapabilitiesEnable;
 	}

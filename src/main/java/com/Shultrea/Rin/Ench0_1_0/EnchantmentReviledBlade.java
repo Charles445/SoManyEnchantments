@@ -27,7 +27,7 @@ public class EnchantmentReviledBlade extends EnchantmentBase implements IDamageM
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.ReviledBladeEnable;
 	}

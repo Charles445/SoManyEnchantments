@@ -34,7 +34,7 @@ public class EnchantmentSplitshot extends EnchantmentBase
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.SplitShot;
 	}

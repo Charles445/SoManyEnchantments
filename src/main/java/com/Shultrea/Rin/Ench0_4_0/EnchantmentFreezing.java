@@ -34,7 +34,7 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Freezing;
 	}

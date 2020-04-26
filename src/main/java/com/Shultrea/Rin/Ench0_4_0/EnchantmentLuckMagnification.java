@@ -31,7 +31,7 @@ public class EnchantmentLuckMagnification extends EnchantmentBase implements IDa
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.LuckMagnification;
 	}

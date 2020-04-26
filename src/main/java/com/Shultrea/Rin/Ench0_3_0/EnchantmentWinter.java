@@ -30,7 +30,7 @@ public class EnchantmentWinter extends EnchantmentBase implements IWeatherEnchan
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.WinterEnable;
 	}

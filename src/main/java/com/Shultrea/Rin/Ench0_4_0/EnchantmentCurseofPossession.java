@@ -40,7 +40,7 @@ public class EnchantmentCurseofPossession extends EnchantmentBase implements IEn
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.CurseofPossession;
 	}

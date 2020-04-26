@@ -30,7 +30,7 @@ public class EnchantmentAdvancedFireProtection extends EnchantmentBase implement
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedFireProtection;
 	}

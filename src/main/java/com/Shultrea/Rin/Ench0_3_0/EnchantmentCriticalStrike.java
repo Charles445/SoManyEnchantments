@@ -35,7 +35,7 @@ public class EnchantmentCriticalStrike extends EnchantmentBase implements IDamag
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.CriticalStrikeEnable;
 	}

@@ -36,7 +36,7 @@ public class EnchantmentFAtier extends EnchantmentBase{
     }
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		switch(this.damageType)
 		{

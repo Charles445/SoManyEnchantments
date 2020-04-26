@@ -33,7 +33,7 @@ public class EnchantmentSmelter extends EnchantmentBase{
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.SmelterEnable;
 	}

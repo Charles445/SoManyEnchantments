@@ -26,7 +26,7 @@ public class EnchantmentMeltdown extends EnchantmentBase{
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Meltdown;
 	}

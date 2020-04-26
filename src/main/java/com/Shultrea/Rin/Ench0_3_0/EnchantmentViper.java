@@ -30,7 +30,7 @@ public class EnchantmentViper extends EnchantmentBase implements IConditionalDam
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.ViperEnable;
 	}

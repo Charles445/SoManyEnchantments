@@ -37,7 +37,7 @@ public class EnchantmentPurification extends EnchantmentBase implements IPotionD
 	}
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.PurificationEnable;
 	}

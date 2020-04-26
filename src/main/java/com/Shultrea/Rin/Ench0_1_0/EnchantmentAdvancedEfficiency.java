@@ -160,7 +160,7 @@ public class EnchantmentAdvancedEfficiency extends EnchantmentBase implements IE
 		}
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.AdvancedEfficencyEnable;
 	}

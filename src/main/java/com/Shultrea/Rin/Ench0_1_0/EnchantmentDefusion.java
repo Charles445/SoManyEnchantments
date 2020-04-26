@@ -32,7 +32,7 @@ public class EnchantmentDefusion extends EnchantmentBase implements IEnchantment
 	}
 
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.DefusionEnable;
 	}

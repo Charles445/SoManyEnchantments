@@ -33,7 +33,7 @@ public class EnchantmentFrenzy extends EnchantmentBase {
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.Frenzy;
 	}

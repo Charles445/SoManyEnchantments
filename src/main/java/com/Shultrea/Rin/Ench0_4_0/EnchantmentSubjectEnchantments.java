@@ -39,7 +39,7 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
     }
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		switch(this.damageType)
 		{

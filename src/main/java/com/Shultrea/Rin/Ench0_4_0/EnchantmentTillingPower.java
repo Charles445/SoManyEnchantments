@@ -41,7 +41,7 @@ public class EnchantmentTillingPower extends EnchantmentBase {
 	}
 	
 	@Override
-	public boolean isEnabled()
+	public boolean isConfigEnabled()
 	{
 		return ModConfig.enabled.TillingPower;
 	}
