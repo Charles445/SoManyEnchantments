@@ -75,12 +75,6 @@ public class EnchantmentCurseofPossession extends EnchantmentBase implements IEn
         return false;
     }
     
-    @Override
-    public boolean canApply(ItemStack fTest)
-    {
-    	return fTest.getItem() instanceof Item ? super.canApply(fTest) : false;
-    }
-    
 	@Override
 	public boolean isCurse(){
 		return true;

@@ -5,7 +5,6 @@ import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentSweepingEdge;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -17,7 +16,6 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -126,13 +124,11 @@ public class EnchantmentMastery extends EnchantmentBase {
 		}
 		
     }
-   
-   @Override
-   public String getTranslatedName(int level)
-   {
-       String s = I18n.translateToLocal(this.getName());
-       s = TextFormatting.YELLOW + s;       
-       return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-   }
+
+	@Override
+	public String getPrefix()
+	{
+		return TextFormatting.YELLOW.toString();
+	}
 
 }

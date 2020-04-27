@@ -114,11 +114,9 @@ public class EnchantmentAncient_CurseInflicter extends EnchantmentBase implement
 		}
 	}
 
-    @Override
-    public String getTranslatedName(int level)
-    {
-        String s = I18n.translateToLocal(this.getName());
-        s = TextFormatting.YELLOW + s;       
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-    }
+	@Override
+	public String getPrefix()
+	{
+		return TextFormatting.YELLOW.toString();
+	}
 }

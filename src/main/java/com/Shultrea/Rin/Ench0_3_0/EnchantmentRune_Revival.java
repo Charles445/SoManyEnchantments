@@ -124,12 +124,10 @@ public class EnchantmentRune_Revival extends EnchantmentBase implements IEnchant
     }
     
     @Override
-    public String getTranslatedName(int level)
-    {
-        String s = I18n.translateToLocal(this.getName());
-        s = TextFormatting.GREEN + s;       
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-    }
+	public String getPrefix()
+	{
+		return TextFormatting.GREEN.toString();
+	}
     
 }
 

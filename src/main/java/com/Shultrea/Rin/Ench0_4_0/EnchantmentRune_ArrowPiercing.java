@@ -57,12 +57,10 @@ public class EnchantmentRune_ArrowPiercing extends EnchantmentBase implements IE
     }
     
     @Override
-    public String getTranslatedName(int level)
-    {
-        String s = I18n.translateToLocal(this.getName());
-        s = TextFormatting.GREEN + s;       
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-    }
+	public String getPrefix()
+	{
+		return TextFormatting.GREEN.toString();
+	}
 
     @SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
     public void onEvent(EntityJoinWorldEvent event)

@@ -11,7 +11,6 @@ import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentLister;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -154,8 +153,12 @@ public class EnchantmentPandora extends EnchantmentBase implements IEnchantmentG
     }
 	
 	@Override
+	@SuppressWarnings("deprecation")
 	public String getTranslatedName(int level)
 	{
+		if(!isEnabled())
+			return super.getTranslatedName(level);
+		
 		String s = I18n.translateToLocal(this.getName());
 	    s = TextFormatting.DARK_RED + s;       
 	    

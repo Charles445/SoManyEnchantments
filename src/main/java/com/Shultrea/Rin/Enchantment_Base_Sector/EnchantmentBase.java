@@ -4,10 +4,21 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 
 public abstract class EnchantmentBase extends Enchantment
 {
 	private boolean registered;
+	
+	//Current Registry issues
+	
+	//EnchantmentData constructing
+	
+	//TODO canApply from EntityVillager.ListEnchantedBookForEmeralds (grabs from entire registry), might be able to do this with event shenanigans
+	//TODO apply from EnchantRandomly (grabs from entire registry, applies to Items.BOOK or canApply)
+	
+	//(RESOLVED) getEnchantmentDatas from EnchantmentHelper (checks any of canApplyAtEnchantingTable and isAllowedOnBooks)
 	
 	public EnchantmentBase(Rarity rarityIn, EnumEnchantmentType typeIn, EntityEquipmentSlot[] slots)
 	{
@@ -41,6 +52,8 @@ public abstract class EnchantmentBase extends Enchantment
 		return this.registered;
 	}
 	
+	//Enchantment Overrides
+	
 	//Used for something? Not quite sure how this is used
 	//Current Overrides List
 	//Curse of Holding
@@ -64,4 +77,65 @@ public abstract class EnchantmentBase extends Enchantment
         return isEnabled() && stack.getItem().canApplyAtEnchantingTable(stack, this);
     }
 	
+	//Current Overrides List
+	//Advanced Bane of Arthropods
+	//Advanced Sharpness
+	//Advanced Smite
+	//Bluntness
+	//Butchering
+	//Defusion
+	//Rusted
+	//Culling
+	//Empowered Defence
+	//Adept
+	//DifficultyScaled
+	//Inhumanity
+	//Subject Enchantments
+	//Tier Damage
+	//Upgraded Potentials
+	@Override
+	public boolean canApply(ItemStack stack)
+	{
+		return isEnabled() && super.canApply(stack);
+	}
+	
+	//Current Overrides List
+	//Pandora's Curse
+	@Override
+	@SuppressWarnings("deprecation")
+	public String getTranslatedName(int level)
+    {
+		String s = I18n.translateToLocal(this.getName());
+		
+		//Formatting
+		
+		if(!this.isEnabled())
+		{
+			s = TextFormatting.DARK_RED + "" + TextFormatting.STRIKETHROUGH + s;
+		}
+		else if (this.isCurse())
+        {
+            s = TextFormatting.RED + s;
+        }
+		else
+		{
+			s = getPrefix() + s;
+		}
+
+		//Content
+        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
+    }
+	
+	//Current Overrides List
+	//Rune Piercing Capabilities
+	//Rune Magical Blessing
+	//Rune Revival
+	//Ancient Curse Inflicter
+	//Rune Arrow Piercing
+	//Rune Resurrection
+	//Ancient Sword Mastery
+	public String getPrefix()
+	{
+		return "";
+	}
 }

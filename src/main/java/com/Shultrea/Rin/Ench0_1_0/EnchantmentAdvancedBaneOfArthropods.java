@@ -62,17 +62,6 @@ public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase impleme
     {
     	return fTest.getItem() instanceof ItemAxe ? true : super.canApply(fTest);
     }
-    
-    @Override
-    public String getTranslatedName(int level)
-    {
-        String s = I18n.translateToLocal(this.getName());
-        if(!ModConfig.enabled.AdvancedBaneOfArthropodsEnable){
-        s = TextFormatting.STRIKETHROUGH + "" + TextFormatting.DARK_RED + s;       
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level) + "(Disabled)";
-    }
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
-    }
 
     @Override
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)

@@ -91,12 +91,11 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
 		else UtilityAccessor.damageTargetEvent(fEvent.getEntityLiving(), new EntityDamageSource("mob", attacker).setDamageBypassesArmor(), damage);
 	
 	
-}
-    @Override
-    public String getTranslatedName(int level)
-    {
-        String s = I18n.translateToLocal(this.getName());
-        s = TextFormatting.GREEN + s;       
-        return level == 1 && this.getMaxLevel() == 1 ? s : s + " " + I18n.translateToLocal("enchantment.level." + level);
     }
+
+    @Override
+	public String getPrefix()
+	{
+		return TextFormatting.GREEN.toString();
+	}
 }
