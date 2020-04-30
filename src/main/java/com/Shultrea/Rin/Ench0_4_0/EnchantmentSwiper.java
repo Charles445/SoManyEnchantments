@@ -50,7 +50,7 @@ public class EnchantmentSwiper extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Swiper;
     }
 	
 	@Override

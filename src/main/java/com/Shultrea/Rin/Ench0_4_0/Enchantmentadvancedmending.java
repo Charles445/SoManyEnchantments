@@ -31,12 +31,6 @@ public class Enchantmentadvancedmending extends EnchantmentBase{
 	}
 	
 	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
-	
-	@Override
 	public boolean isTreasureEnchantment(){
 		return true;
 	}

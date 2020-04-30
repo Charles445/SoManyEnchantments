@@ -41,7 +41,7 @@ public class EnchantmentStrengthenedVitality extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.StrengthenedVitality;
     }
 	@Override
     public int getMinEnchantability(int par1)

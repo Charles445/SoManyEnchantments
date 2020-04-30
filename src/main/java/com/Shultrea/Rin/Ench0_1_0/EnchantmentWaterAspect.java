@@ -40,7 +40,7 @@ public class EnchantmentWaterAspect extends EnchantmentBase implements IEnchantm
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.WaterAspect;
     }
 	
 	@Override

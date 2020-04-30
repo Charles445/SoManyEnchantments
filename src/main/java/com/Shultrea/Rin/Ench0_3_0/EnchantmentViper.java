@@ -38,7 +38,7 @@ public class EnchantmentViper extends EnchantmentBase implements IConditionalDam
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Viper;
     }
 	
 	@Override

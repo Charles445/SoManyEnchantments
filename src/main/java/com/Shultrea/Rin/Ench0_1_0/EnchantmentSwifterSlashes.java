@@ -48,7 +48,7 @@ public class EnchantmentSwifterSlashes extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
 	{
-		return 5;
+		return ModConfig.level.SwifterSlashes;
 	}
 		
 	@Override

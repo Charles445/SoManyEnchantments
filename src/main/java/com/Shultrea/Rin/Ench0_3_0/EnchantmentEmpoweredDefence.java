@@ -37,7 +37,7 @@ public class EnchantmentEmpoweredDefence extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
 	{
-	    return 4;
+	    return ModConfig.level.EmpoweredDefence;
 	}
 		
     @Override

@@ -77,6 +77,28 @@ public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantme
 	    		return false;
     	}
 	}
+	
+    @Override
+    public int getMaxLevel()
+    {	
+    	switch(this.damageType)
+    	{
+    		case 0:
+    			return ModConfig.level.LesserSharpness;
+    		case 1:
+    			return ModConfig.level.SupremeSharpness;
+    		case 2:
+    			return ModConfig.level.LesserSmite;
+    		case 3:
+    			return ModConfig.level.SupremeSmite;
+    		case 4:
+    			return ModConfig.level.LesserBaneOfArthropods;
+    		case 5:
+    			return ModConfig.level.SupremeBaneOfArthropods;
+    		default:
+    			return 5;
+    	}
+    }
 
     @Override
     public int getMinEnchantability(int enchantmentLevel)
@@ -88,12 +110,6 @@ public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantme
     public int getMaxEnchantability(int enchantmentLevel)
     {
         return this.getMinEnchantability(enchantmentLevel) + LEVEL_COST_SPAN[this.damageType];
-    }
-
-    @Override
-    public int getMaxLevel()
-    {	
-    	return 5;
     }
 
     @Override

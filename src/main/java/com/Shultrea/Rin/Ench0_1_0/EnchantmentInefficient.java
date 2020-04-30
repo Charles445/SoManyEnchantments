@@ -36,7 +36,7 @@ public class EnchantmentInefficient extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Inefficent;
     }
 	
 	@Override

@@ -30,7 +30,7 @@ public class EnchantmentLevitator extends EnchantmentBase implements IPotionDebu
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Levitator;
     }
 	
 	@Override

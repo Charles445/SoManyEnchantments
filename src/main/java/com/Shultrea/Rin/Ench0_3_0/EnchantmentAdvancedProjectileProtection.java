@@ -32,7 +32,7 @@ public class EnchantmentAdvancedProjectileProtection extends EnchantmentBase imp
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.AdvancedProjectileProtection;
     }
 	
 	@Override

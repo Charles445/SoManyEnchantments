@@ -36,7 +36,7 @@ public class EnchantmentFieryShield extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.FieryShield;
 	}
 		
 	@Override

@@ -15,12 +15,14 @@ import com.Shultrea.Rin.Prop_Sector.PlayerPropertiesStorage;
 import com.Shultrea.Rin.Utility_Sector.CommProxy;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentLister;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
+import com.Shultrea.Rin.Utility_Sector.HurtPatchHandler;
 import com.Shultrea.Rin.Utility_Sector.OtherHandler;
 import com.Shultrea.Rin.Utility_Sector.PotionLister;
 import com.Shultrea.Rin.Utility_Sector.RefStrings;
 import com.Shultrea.Rin.Utility_Sector.SMEsounds;
 
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -108,10 +110,6 @@ public class somanyenchantments {
 	    
 	    //Event Source
 	    OrderedRegistry.orderedRegister();
-	
-	    EnchantmentsUtility.enchHandler();
-	    
-	    OtherHandler.enchHandler();
 	    PotionLister.Cycle();
 	    EnumList.initializeEnchantmentTab();
 	    EnchantmentLister.initEnchantmentList();

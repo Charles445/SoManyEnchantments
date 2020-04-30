@@ -35,7 +35,7 @@ public class EnchantmentSunshine extends EnchantmentBase implements IWeatherEnch
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Sunshine;
     }
 	
 	@Override

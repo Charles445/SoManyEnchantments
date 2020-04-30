@@ -36,7 +36,7 @@ public class EnchantmentBlessedEdge extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.BlessedEdge;
     }
 	
 	@Override

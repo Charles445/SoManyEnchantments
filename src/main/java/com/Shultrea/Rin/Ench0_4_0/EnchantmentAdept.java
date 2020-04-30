@@ -30,8 +30,9 @@ public class EnchantmentAdept extends EnchantmentBase{
 	}
 	
 	@Override
-	public int getMaxLevel(){
-		return 3;
+	public int getMaxLevel()
+	{
+		return ModConfig.level.Adept;
 	}
 
 	@Override

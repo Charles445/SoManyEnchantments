@@ -34,7 +34,7 @@ public class EnchantmentPenetratingEdge extends EnchantmentBase implements IEnch
 	@Override
 	public int getMaxLevel()
 	{
-		return 6;
+		return ModConfig.level.PenetratingEdge;
 	}
 		
 	@Override

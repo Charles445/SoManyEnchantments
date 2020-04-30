@@ -42,7 +42,7 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.Rune_PiercingCapabilities;
     }
 	
 	@Override

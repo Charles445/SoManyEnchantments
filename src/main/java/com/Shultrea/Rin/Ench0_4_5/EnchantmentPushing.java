@@ -44,7 +44,7 @@ public class EnchantmentPushing extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Pushing;
     }
 	
 	@Override

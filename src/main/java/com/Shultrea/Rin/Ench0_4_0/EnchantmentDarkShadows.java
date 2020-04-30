@@ -37,7 +37,7 @@ public class EnchantmentDarkShadows extends EnchantmentBase implements IConditio
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.DarkShadows;
     }
 	
 	@Override

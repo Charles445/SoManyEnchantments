@@ -42,7 +42,7 @@ public class EnchantmentButchering extends EnchantmentBase implements IEnchantme
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Butchering;
     }
 	
 	@Override

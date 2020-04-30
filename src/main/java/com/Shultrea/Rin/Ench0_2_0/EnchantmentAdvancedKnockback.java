@@ -39,7 +39,7 @@ public class EnchantmentAdvancedKnockback extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.AdvancedKnockback;
     }
 	
 	@Override

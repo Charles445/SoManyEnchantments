@@ -38,7 +38,7 @@ public class EnchantmentMortalitas extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 8;
+        return ModConfig.level.Mortalitas;
     }
 	
 	@Override

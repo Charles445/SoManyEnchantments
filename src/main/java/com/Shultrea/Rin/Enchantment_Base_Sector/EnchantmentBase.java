@@ -54,6 +54,14 @@ public abstract class EnchantmentBase extends Enchantment
 	
 	//Enchantment Overrides
 	
+	//Overridden by most things
+	//Same as vanilla
+	@Override
+	public int getMaxLevel()
+	{
+		return 1;
+	}
+	
 	//Used for something? Not quite sure how this is used
 	//Current Overrides List
 	//Curse of Holding

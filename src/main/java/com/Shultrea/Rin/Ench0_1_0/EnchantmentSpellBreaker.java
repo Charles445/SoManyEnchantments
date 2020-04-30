@@ -36,7 +36,7 @@ public class EnchantmentSpellBreaker extends EnchantmentBase implements IEnchant
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.SpellBreaker;
     }
 	
 	@Override

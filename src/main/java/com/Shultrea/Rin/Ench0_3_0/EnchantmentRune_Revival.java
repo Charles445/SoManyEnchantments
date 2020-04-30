@@ -43,7 +43,7 @@ public class EnchantmentRune_Revival extends EnchantmentBase implements IEnchant
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Revival;
     }
 	
 	@Override

@@ -35,7 +35,7 @@ public class EnchantmentInstability extends EnchantmentBase implements IDamageMu
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Instability;
     }
 	
 	@Override

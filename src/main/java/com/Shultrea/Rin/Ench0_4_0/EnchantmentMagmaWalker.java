@@ -44,7 +44,7 @@ public class EnchantmentMagmaWalker extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.MagmaWalker;
     }
 	
 	@Override

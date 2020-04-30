@@ -44,12 +44,6 @@ public class EnchantmentWellTilled extends EnchantmentBase {
 	}
 	
 	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
-	
-	@Override
     public int getMinEnchantability(int par1)
     {
         return 20;

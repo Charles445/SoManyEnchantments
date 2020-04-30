@@ -59,17 +59,31 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
     			return false;
     	}
 	}
+	
+	@Override
+	public int getMaxLevel()
+	{
+		switch(this.damageType)
+		{
+			case 0:
+				return ModConfig.level.Mathematics;
+			case 1:
+				return ModConfig.level.Science;
+			case 2:
+				return ModConfig.level.History;
+			case 3:
+				return 4;
+			case 4:
+				return ModConfig.level.English;
+			case 5:
+				return ModConfig.level.PE;
+			default:
+				return 4;
+		}
+	}
+	
 
-    public int getMinEnchantability(int enchantmentLevel)
-    {
-        return MIN_COST[this.damageType] + (enchantmentLevel - 1) * LEVEL_COST[this.damageType];
-    }
-
-    public int getMaxEnchantability(int enchantmentLevel)
-    {
-        return this.getMinEnchantability(enchantmentLevel) + LEVEL_COST_SPAN[this.damageType];
-    }
-
+	/*
     public int getMaxLevel()
     {
     	//if(this.damageType == 5)
@@ -77,7 +91,21 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
     	
     	return this.damageType == 5 ? 5 : 4;
     }
+    */
 
+	@Override
+    public int getMinEnchantability(int enchantmentLevel)
+    {
+        return MIN_COST[this.damageType] + (enchantmentLevel - 1) * LEVEL_COST[this.damageType];
+    }
+
+	@Override
+    public int getMaxEnchantability(int enchantmentLevel)
+    {
+        return this.getMinEnchantability(enchantmentLevel) + LEVEL_COST_SPAN[this.damageType];
+    }
+
+	@Override
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)
     {
        /** if (this.damageType == 0)

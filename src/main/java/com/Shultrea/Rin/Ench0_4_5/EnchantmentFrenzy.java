@@ -41,7 +41,7 @@ public class EnchantmentFrenzy extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Frenzy;
     }
 	
 	@Override
@@ -95,46 +95,47 @@ public class EnchantmentFrenzy extends EnchantmentBase {
 							if(victim.getDistanceSq(randomTarget) <= 36 + (level - 1) * 28)
 							{
 								if(victim.getMaxHealth() <= victim.getHealth())
-									victim.setRevengeTarget(randomTarget);
-								//e.setCanceled(true);
-								
-								//Check if the victim has been given a revenge target or already has one
-								World victimWorld = victim.getEntityWorld();
-								EntityLivingBase revenge = victim.getRevengeTarget();
-								
-								if(victimWorld instanceof WorldServer && revenge != null)
 								{
-									//Schedule the task, otherwise the attacker will become the target every time
-									((WorldServer)world).addScheduledTask(() -> 
+									victim.setRevengeTarget(randomTarget);
+								
+									//Check if the victim has been given a revenge target or already has one
+									World victimWorld = victim.getEntityWorld();
+									EntityLivingBase revenge = victim.getRevengeTarget();
+									
+									if(victimWorld instanceof WorldServer && revenge != null)
 									{
-										try
+										//Schedule the task, otherwise the attacker will become the target every time
+										((WorldServer)world).addScheduledTask(() -> 
 										{
-											//Make absolutely sure that the three entities involved still exist
-											if(victim!=null && attacker!=null && revenge != null)
+											try
 											{
-												//A dead victim can't get angry
-												if(!victim.isDead)
+												//Make absolutely sure that the three entities involved still exist
+												if(victim!=null && attacker!=null && revenge != null)
 												{
-													//Double check that the victim class is ready for casting
-													if(victim instanceof EntityLiving)
+													//A dead victim can't get angry
+													if(!victim.isDead)
 													{
-														//Prevent monsters from targeting themselves
-														if(!victim.getUniqueID().equals(revenge.getUniqueID()))
+														//Double check that the victim class is ready for casting
+														if(victim instanceof EntityLiving)
 														{
-															//Get mad!
-															EntityLiving victimLiving = (EntityLiving)victim;
-															victimLiving.setRevengeTarget(revenge);
-															victimLiving.setAttackTarget(revenge);
+															//Prevent monsters from targeting themselves
+															if(!victim.getUniqueID().equals(revenge.getUniqueID()))
+															{
+																//Get mad!
+																EntityLiving victimLiving = (EntityLiving)victim;
+																victimLiving.setRevengeTarget(revenge);
+																victimLiving.setAttackTarget(revenge);
+															}
 														}
 													}
 												}
 											}
-										}
-										catch(Exception ex)
-										{
-											//Task failed
-										}
-									});
+											catch(Exception ex)
+											{
+												//Task failed
+											}
+										});
+									}
 								}
     						
 								//victim.attackEntityFrom(new EntityDamageSource("confusion", attacker), e.getAmount());

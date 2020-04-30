@@ -34,6 +34,12 @@ public class EnchantmentAtomicDeconstructor extends EnchantmentBase
 	}
 	
 	@Override
+	public int getMaxLevel()
+    {
+        return ModConfig.level.AtomicDeconstructor;
+    }
+	
+	@Override
     public int getMinEnchantability(int par1)
     {
         return 16 + 14 * (par1 - 1);
@@ -43,12 +49,6 @@ public class EnchantmentAtomicDeconstructor extends EnchantmentBase
     public int getMaxEnchantability(int par1)
     {
         return super.getMinEnchantability(par1) + 40;
-    }
-	
-	@Override
-	public int getMaxLevel()
-    {
-        return 2;
     }
 
     @SubscribeEvent

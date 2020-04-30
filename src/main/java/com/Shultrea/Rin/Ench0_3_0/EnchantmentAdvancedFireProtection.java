@@ -38,7 +38,7 @@ public class EnchantmentAdvancedFireProtection extends EnchantmentBase implement
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.AdvancedFireProtection;
     }
 	
 	@Override

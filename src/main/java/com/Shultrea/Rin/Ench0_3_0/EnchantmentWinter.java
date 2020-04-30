@@ -38,7 +38,7 @@ public class EnchantmentWinter extends EnchantmentBase implements IWeatherEnchan
 	@Override
 	public int getMaxLevel()
     {
-        return 6;
+        return ModConfig.level.Winter;
     }
 	
 	@Override

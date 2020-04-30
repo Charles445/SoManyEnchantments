@@ -36,7 +36,7 @@ public class EnchantmentDesolator extends EnchantmentBase implements IPotionDebu
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.Desolator;
 	}
 		
 	@Override

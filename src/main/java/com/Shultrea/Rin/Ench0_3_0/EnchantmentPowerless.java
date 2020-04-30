@@ -35,7 +35,7 @@ public class EnchantmentPowerless extends EnchantmentBase implements IEnchantmen
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Powerless;
     }
 	
 	@Override

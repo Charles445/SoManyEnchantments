@@ -31,7 +31,7 @@ public class EnchantmentAdvancedFeatherFalling extends EnchantmentBase implement
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.AdvancedFeatherFalling;
     }
 	
 	@Override

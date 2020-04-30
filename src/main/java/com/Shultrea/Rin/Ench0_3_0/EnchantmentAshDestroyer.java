@@ -37,7 +37,7 @@ public class EnchantmentAshDestroyer extends EnchantmentBase implements IDamageM
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.AshDestroyer;
     }
 	
 	@Override

@@ -39,7 +39,7 @@ public class EnchantmentThunderstorm extends EnchantmentBase implements IWeather
 	@Override
 	public int getMaxLevel()
     {
-        return 6;
+        return ModConfig.level.Thunderstorm;
     }
 	
 	@Override

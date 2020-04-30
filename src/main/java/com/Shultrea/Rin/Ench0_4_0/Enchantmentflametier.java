@@ -62,14 +62,6 @@ public class Enchantmentflametier extends EnchantmentBase
         return this.getMinEnchantability(enchantmentLevel) + LEVEL_COST_SPAN[this.damageType];
     }
 
-    /**
-     * Returns the maximum level that the enchantment can have.
-     */
-    public int getMaxLevel()
-    {
-    	return 1;
-    }
-
 
     /**
      * Return the name of key in translation table of this enchantment.

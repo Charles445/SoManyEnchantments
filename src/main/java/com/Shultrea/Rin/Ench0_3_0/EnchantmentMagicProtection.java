@@ -32,7 +32,7 @@ public class EnchantmentMagicProtection extends EnchantmentBase implements IEnch
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.MagicProtection;
     }
 	
 	@Override

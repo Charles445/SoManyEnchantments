@@ -34,7 +34,7 @@ public class EnchantmentNaturalBlocking extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
 	{
-		return 3;
+		return ModConfig.level.NaturalBlocking;
 	}
 		
 	@Override

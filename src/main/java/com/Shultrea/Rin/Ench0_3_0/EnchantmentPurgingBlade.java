@@ -39,7 +39,7 @@ public class EnchantmentPurgingBlade extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.PurgingBlade;
     }
 	
 	@Override

@@ -33,7 +33,7 @@ public class EnchantmentDisarmament extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Disarmament;
     }
 	
 	@Override

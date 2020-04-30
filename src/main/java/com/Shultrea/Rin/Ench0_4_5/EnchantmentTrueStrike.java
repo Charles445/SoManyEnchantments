@@ -10,6 +10,10 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
 public class EnchantmentTrueStrike extends EnchantmentBase {
+	
+	
+	//TODO what is this supposed to do? It's referenced in Parry and Evasion
+	
 	public EnchantmentTrueStrike()
 	{
 		super(Rarity.RARE, EnumList.SWORD, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -23,12 +27,6 @@ public class EnchantmentTrueStrike extends EnchantmentBase {
 	{
 		return ModConfig.enabled.TrueStrike;
 	}
-	
-	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
 	
 	@Override
     public int getMinEnchantability(int par1)

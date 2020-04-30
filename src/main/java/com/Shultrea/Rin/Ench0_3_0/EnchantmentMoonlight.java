@@ -35,7 +35,7 @@ public class EnchantmentMoonlight extends EnchantmentBase implements IWeatherEnc
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Moonlight;
     }
 	
 	@Override

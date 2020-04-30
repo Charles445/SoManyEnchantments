@@ -41,7 +41,7 @@ public class EnchantmentRune_ArrowPiercing extends EnchantmentBase implements IE
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.Rune_PiercingArrows;
     }
 	
 	@Override

@@ -34,7 +34,7 @@ public class EnchantmentMeltdown extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Meltdown;
     }
 	@Override
     public int getMinEnchantability(int par1)

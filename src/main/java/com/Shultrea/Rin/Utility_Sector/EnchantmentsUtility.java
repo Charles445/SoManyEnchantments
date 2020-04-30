@@ -611,12 +611,7 @@ public class EnchantmentsUtility {
 	
 
 }	
-		   
-	   public static void enchHandler(){
-		   if(ModConfig.miscellaneous.EnableFixEnchantment){
-				MinecraftForge.EVENT_BUS.register(new HurtPatchHandler());
-				}
-	   }
+	
 	   /** For armors, similar to calcModifier*/
 	   public static int CalcModgetTotalLevel(float modifier, Enchantment theEnchantment, EntityLivingBase user)
 	    {

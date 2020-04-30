@@ -32,11 +32,17 @@ public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase impleme
 		this.setRegistryName("AdvancedBaneOfArthropods");
 		
 	}
+
+	@Override
+	public boolean isConfigEnabled()
+	{
+		return ModConfig.enabled.AdvancedBaneOfArthropodsEnable;
+	}
 	
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.AdvancedBaneOfArthropods;
     }
 	
 	@Override
@@ -82,10 +88,4 @@ public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase impleme
  		}
     }
     }
-
-	@Override
-	public boolean isConfigEnabled()
-	{
-		return ModConfig.enabled.AdvancedBaneOfArthropodsEnable;
-	}
 }

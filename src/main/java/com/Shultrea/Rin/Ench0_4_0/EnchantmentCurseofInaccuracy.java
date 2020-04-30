@@ -36,6 +36,12 @@ public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEn
 		return ModConfig.enabled.CurseOfInaccuracy;
 	}
 	
+	@Override
+	public int getMaxLevel()
+	{
+		return ModConfig.level.CurseOfInaccuracy;
+	}
+	
 	 @Override
 	 public int getMinEnchantability(int ench)
 	 {
@@ -46,12 +52,6 @@ public class EnchantmentCurseofInaccuracy extends EnchantmentBase implements IEn
 	 {
 		 return this.getMinEnchantability(ench) + 30;
 	 }
-	
-	 @Override
-	 public int getMaxLevel()
-     {
-		 return 2;
-     }
 	 
 	 @Override
 	 public boolean isCurse(){

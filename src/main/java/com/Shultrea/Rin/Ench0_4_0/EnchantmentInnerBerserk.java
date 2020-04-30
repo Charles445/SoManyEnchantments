@@ -33,7 +33,7 @@ public class EnchantmentInnerBerserk extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.InnerBerserk;
 	}
 		
 	@Override

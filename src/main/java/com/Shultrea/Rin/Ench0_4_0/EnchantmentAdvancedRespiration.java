@@ -32,6 +32,7 @@ public class EnchantmentAdvancedRespiration extends Enchantment
     {
         return 3;
     }
+	
 	@Override
     public int getMinEnchantability(int par1)
     {

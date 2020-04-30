@@ -37,7 +37,7 @@ public class EnchantmentFlinging extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Flinging;
     }
 	
 	@Override

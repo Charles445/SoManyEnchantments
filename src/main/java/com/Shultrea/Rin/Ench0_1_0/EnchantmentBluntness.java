@@ -30,7 +30,7 @@ public class EnchantmentBluntness extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Bluntness;
     }
 	
 	@Override

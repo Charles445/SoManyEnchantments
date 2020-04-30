@@ -43,7 +43,7 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.CurseofHolding;
     }
 	
 	@Override

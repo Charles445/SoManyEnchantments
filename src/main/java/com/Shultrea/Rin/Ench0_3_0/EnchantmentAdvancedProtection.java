@@ -29,7 +29,7 @@ public class EnchantmentAdvancedProtection extends EnchantmentBase implements IE
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.AdvancedProtection;
     }
 	
 	@Override

@@ -32,7 +32,7 @@ public class EnchantmentPhysicalProtection extends EnchantmentBase implements IE
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.PhysicalProtection;
     }
 	
 	@Override

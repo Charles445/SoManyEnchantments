@@ -34,7 +34,7 @@ public class EnchantmentRaining extends EnchantmentBase implements IWeatherEncha
 	@Override
 	public int getMaxLevel()
     {
-        return 6;
+        return ModConfig.level.Raining;
     }
 	
 	@Override

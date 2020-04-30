@@ -43,7 +43,7 @@ public class EnchantmentCriticalStrike extends EnchantmentBase implements IDamag
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.CriticalStrike;
     }
 	
 	@Override

@@ -46,7 +46,7 @@ public class EnchantmentAdvancedBlastProtection extends EnchantmentBase implemen
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.AdvancedBlastProtection;
     }
 	
 	@Override
@@ -85,7 +85,8 @@ public class EnchantmentAdvancedBlastProtection extends EnchantmentBase implemen
     }
  
     @SubscribeEvent(priority=EventPriority.LOWEST)
-    public void DetonateKnockBackReduction(ExplosionEvent.Detonate e) {
+    public void DetonateKnockBackReduction(ExplosionEvent.Detonate e)
+    {
     
     	List victims = e.getAffectedEntities();
     	int size = victims.size();
@@ -112,12 +113,19 @@ public class EnchantmentAdvancedBlastProtection extends EnchantmentBase implemen
     		if(explosion == null)
     			return;
     		
-    		try {
-    			power = ObfuscationReflectionHelper.findField(Explosion.class, "field_77280_f");
-    			power.setAccessible(true);
+    		try
+    		{
+    			//Create and cache power
+    			if(power==null)
+    			{
+    				power = ObfuscationReflectionHelper.findField(Explosion.class, "field_77280_f");
+    				power.setAccessible(true);
+    			}
+    			
     			explosionSize = power.getFloat(explosion);
     		}
-    	    catch(Exception ex) {
+    	    catch(Exception ex)
+    		{
     	    	ex.printStackTrace();
     	    }
     		

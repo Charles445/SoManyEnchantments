@@ -46,12 +46,6 @@ public class EnchantmentCurseofPossession extends EnchantmentBase implements IEn
 	}
 	
 	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
-	
-	@Override
     public int getMinEnchantability(int par1)
     {
         return 25 * par1;

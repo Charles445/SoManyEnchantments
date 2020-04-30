@@ -4,7 +4,13 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
+import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesHandler;
+import com.Shultrea.Rin.Utility_Sector.AdditionalProtectionEnchantmentsEffects;
+import com.Shultrea.Rin.Utility_Sector.ExtraEvent;
+import com.Shultrea.Rin.Utility_Sector.HurtPatchHandler;
+import com.Shultrea.Rin.Utility_Sector.OtherHandler;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
@@ -125,6 +131,16 @@ public class OrderedRegistry
 		subscribe(Smc_020.Rune_MagicalBlessing);
 		subscribe(Smc_010.Rune_PiercingCapabilities);
 		subscribe(Smc_040.EnchantmentMastery);
+		
+		
+		//HURT PATCH
+	    MinecraftForge.EVENT_BUS.register(new HurtPatchHandler());
+	    
+	    //OTHER HANDLER
+	    MinecraftForge.EVENT_BUS.register(new OtherHandler());
+    	MinecraftForge.EVENT_BUS.register(new ArrowPropertiesHandler());
+    	MinecraftForge.EVENT_BUS.register(new AdditionalProtectionEnchantmentsEffects());
+		MinecraftForge.EVENT_BUS.register(new ExtraEvent());
 	}
 	
 	public static EnchantmentBase registerEnchant(EnchantmentBase enchant)
@@ -132,10 +148,11 @@ public class OrderedRegistry
 		if(enchant==null)
 			throw new RuntimeException("Passed a null enchant during registerEnchant!");
 		
-		//if(enchant.isConfigEnabled())
-		//{
+		
+		if(!ModConfig.miscellaneous.unregisterDisabled || enchant.isConfigEnabled())
+		{
 			orderedEnchants.add(enchant);
-		//}
+		}
 		
 		return enchant;
 	}
@@ -160,6 +177,9 @@ public class OrderedRegistry
 	
 	public static void subscribe(EnchantmentBase o)
 	{
+		//TODO take steps towards this being fully configurable
+		//This should in the future just check for isRegistered, and all related enchantments check for the isEnabled themselves
+		
 		if(o.isEnabled())
 			MinecraftForge.EVENT_BUS.register(o);
 		

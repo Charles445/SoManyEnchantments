@@ -40,7 +40,7 @@ public class EnchantmentDifficultyScaled extends EnchantmentBase implements IDam
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.DifficultyScaled;
     }
 	
 	@Override

@@ -35,7 +35,7 @@ public class EnchantmentCursedEdge extends EnchantmentBase implements IEnchantme
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.CursedEdge;
     }
 	
 	@Override

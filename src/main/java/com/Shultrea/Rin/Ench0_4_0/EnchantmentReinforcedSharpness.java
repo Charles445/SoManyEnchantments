@@ -35,7 +35,7 @@ public class EnchantmentReinforcedSharpness extends EnchantmentBase implements I
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.SharperEdge;
     }
 	
 	@Override

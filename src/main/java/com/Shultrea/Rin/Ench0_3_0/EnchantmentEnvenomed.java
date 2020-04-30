@@ -30,7 +30,7 @@ public class EnchantmentEnvenomed extends EnchantmentBase implements IPotionDebu
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Envenomed;
     }
 	
 	@Override

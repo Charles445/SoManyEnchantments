@@ -28,7 +28,7 @@ public class EnchantmentBrutality extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Brutality;
     }
 	
 	@Override

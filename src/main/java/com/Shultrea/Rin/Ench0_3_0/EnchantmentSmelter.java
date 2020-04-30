@@ -39,12 +39,6 @@ public class EnchantmentSmelter extends EnchantmentBase{
 	}
 	
 	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
-	
-	@Override
     public int getMinEnchantability(int par1)
     {
         return 30 * par1;

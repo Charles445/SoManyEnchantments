@@ -38,7 +38,7 @@ public class EnchantmentAdvancedEfficiency extends EnchantmentBase implements IE
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.AdvancedEfficency;
     }
 	
 	@Override

@@ -9,9 +9,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
-// Created by Charles445
-// April 25th 2020
-// 4/25/2020
 
 public class DebugUtil
 {

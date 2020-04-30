@@ -27,7 +27,7 @@ public class CommProxy {
 		
 		
 		
-		MinecraftForge.EVENT_BUS.register(new LivingAttackFixerHandler());
+		//MinecraftForge.EVENT_BUS.register(new LivingAttackFixerHandler());
 		
 		
 	}

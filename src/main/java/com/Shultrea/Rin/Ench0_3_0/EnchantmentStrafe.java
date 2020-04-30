@@ -39,7 +39,7 @@ public class EnchantmentStrafe extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
     {
-        return 6;
+        return ModConfig.level.Strafe;
     }
 	
 	@Override

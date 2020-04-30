@@ -47,20 +47,31 @@ public class EnchantmentFAtier extends EnchantmentBase{
 		}
 	}
 	
+	@Override
+    public int getMaxLevel()
+    {
+    	switch(this.damageType)
+    	{
+    		case 0: return ModConfig.level.LesserFireAspect;
+    		case 1: return ModConfig.level.AdvancedFireAspect;
+    		case 2: return ModConfig.level.SupremeFireAspect;
+    		default: return 2;
+    	}
+    }
+	
+	@Override
     public int getMinEnchantability(int enchantmentLevel)
     {
         return MIN_COST[this.damageType] + (enchantmentLevel - 1) * LEVEL_COST[this.damageType];
     }
 
+    @Override
     public int getMaxEnchantability(int enchantmentLevel)
     {
         return this.getMinEnchantability(enchantmentLevel) + LEVEL_COST_SPAN[this.damageType];
     }
     
-    public int getMaxLevel()
-    {
-    	return 2;
-    }
+    
 
     @Override
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)

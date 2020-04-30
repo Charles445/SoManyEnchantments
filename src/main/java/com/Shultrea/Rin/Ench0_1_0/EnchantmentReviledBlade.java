@@ -35,7 +35,7 @@ public class EnchantmentReviledBlade extends EnchantmentBase implements IDamageM
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.ReviledBlade;
 	}
 		
 	@Override

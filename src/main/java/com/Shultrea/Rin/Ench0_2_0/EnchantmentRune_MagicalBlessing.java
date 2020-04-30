@@ -45,7 +45,7 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
 	@Override
 	public int getMaxLevel()
     {
-        return 4;
+        return ModConfig.level.Rune_MagicalBlessing;
     }
 	
 	@Override

@@ -59,7 +59,7 @@ public class EnchantmentCulling extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Culling;
     }
 	
 	@Override

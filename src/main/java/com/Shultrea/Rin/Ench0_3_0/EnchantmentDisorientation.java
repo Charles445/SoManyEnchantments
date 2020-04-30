@@ -34,7 +34,7 @@ public class EnchantmentDisorientation extends EnchantmentBase implements IPotio
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.Disorientation;
 	}
 		
 	@Override

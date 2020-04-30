@@ -40,7 +40,7 @@ public class EnchantmentDefusion extends EnchantmentBase implements IEnchantment
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Defusion;
     }
 	
 	@Override

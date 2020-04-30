@@ -34,12 +34,6 @@ public class EnchantmentAncient_CurseInflicter extends EnchantmentBase implement
 	{
 		return ModConfig.enabled.AncientCurseInflicter;
 	}
-	
-	@Override
-	public int getMaxLevel(){
-		return 1;
-	}
-	
 	@Override
     public int getMinEnchantability(int ench)
     {

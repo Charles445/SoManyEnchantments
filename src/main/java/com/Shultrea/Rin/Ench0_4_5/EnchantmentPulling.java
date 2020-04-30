@@ -37,7 +37,7 @@ public class EnchantmentPulling extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Pulling;
     }
 	
 	@Override

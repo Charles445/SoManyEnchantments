@@ -42,7 +42,7 @@ public class EnchantmentSplitshot extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.SplitShot;
 	}
 		
 	@Override

@@ -36,7 +36,7 @@ public class EnchantmentClearsky extends EnchantmentBase implements IWeatherEnch
 	@Override
 	public int getMaxLevel()
     {
-        return 6;
+        return ModConfig.level.Clearsky;
     }
 	
 	@Override

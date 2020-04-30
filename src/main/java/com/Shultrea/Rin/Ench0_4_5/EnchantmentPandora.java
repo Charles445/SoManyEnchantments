@@ -44,12 +44,6 @@ public class EnchantmentPandora extends EnchantmentBase implements IEnchantmentG
 	}
 			
 	@Override
-	public int getMaxLevel()
-	{
-		return 1;
-	}
-			
-	@Override
 	public int getMinEnchantability(int par1)
 	{
 		return 100 + 50 * (par1 - 1);

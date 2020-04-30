@@ -42,7 +42,7 @@ public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantm
 	@Override
 	public int getMaxLevel()
 	{
-		return 5;
+		return ModConfig.level.HeavyWeight;
 	}
 		
 	@Override

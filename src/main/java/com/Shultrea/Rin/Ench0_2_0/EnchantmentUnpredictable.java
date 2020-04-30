@@ -33,7 +33,7 @@ public class EnchantmentUnpredictable extends EnchantmentBase implements IEnchan
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Unpredictable;
     }
 	
 	@Override

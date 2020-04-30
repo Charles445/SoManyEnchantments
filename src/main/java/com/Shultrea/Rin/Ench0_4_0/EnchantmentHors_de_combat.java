@@ -33,7 +33,7 @@ public class EnchantmentHors_de_combat extends EnchantmentBase implements IPotio
 	@Override
 	public int getMaxLevel()
 	{
-		return 4;
+		return ModConfig.level.Hors_de_combat;
 	}
 		
 	@Override

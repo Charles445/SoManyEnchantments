@@ -31,7 +31,7 @@ public class EnchantmentAdvancedSharpness extends EnchantmentBase implements IEn
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.AdvancedSharpness;
     }
 	
 	@Override

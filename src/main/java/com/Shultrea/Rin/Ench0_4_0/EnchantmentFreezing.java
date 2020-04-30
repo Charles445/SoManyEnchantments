@@ -5,6 +5,7 @@ import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IPotionDebuffer;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
+import com.Shultrea.Rin.Utility_Sector.DebugUtil;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
@@ -42,7 +43,7 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Freezing;
     }
 	@Override
     public int getMinEnchantability(int par1)
@@ -64,7 +65,6 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public void onEntityDamaged(LivingDamageEvent fEvent){
-    	
     	if(fEvent.getSource().damageType != "player" && fEvent.getSource().damageType != "mob")
 			return;
     	

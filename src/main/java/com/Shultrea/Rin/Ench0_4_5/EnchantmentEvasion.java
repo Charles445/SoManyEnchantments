@@ -36,7 +36,7 @@ public class EnchantmentEvasion extends EnchantmentBase
 	@Override
 	public int getMaxLevel()
 	{
-		return 3;
+		return ModConfig.level.Evasion;
 	}
 		
 	@Override

@@ -34,7 +34,7 @@ public class EnchantmentUnsheathing extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.Unsheathing;
     }
 	
 	@Override

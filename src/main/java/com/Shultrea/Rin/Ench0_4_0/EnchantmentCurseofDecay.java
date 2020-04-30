@@ -30,12 +30,6 @@ public class EnchantmentCurseofDecay extends EnchantmentBase implements IEnchant
 	}
 	
 	@Override
-	public int getMaxLevel()
-    {
-        return 1;
-    }
-	
-	@Override
     public int getMinEnchantability(int par1)
     {
         return 45;

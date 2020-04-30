@@ -27,7 +27,7 @@ public class EnchantmentScytheDamage extends EnchantmentBase {
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.ScytheDamage;
     }
 	
 	@Override

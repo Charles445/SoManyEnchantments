@@ -39,7 +39,7 @@ public class EnchantmentQuarrying extends EnchantmentBase{
 	@Override
 	public int getMaxLevel()
     {
-        return 3;
+        return ModConfig.level.Quarrying;
     }
 	
 	@Override

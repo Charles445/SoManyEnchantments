@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Utility_Sector;
 
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
+import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesHandler;
 import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
@@ -32,6 +33,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class OtherHandler {
 
+	//TODO relocate
 	
 	@SubscribeEvent
 	public void dealwithit(EntityJoinWorldEvent fEvent){
@@ -60,9 +62,9 @@ public class OtherHandler {
 				
 				  IArrowProperties properties = arrow.getCapability(ArrowPropertiesProvider.ARROWPROPERTIES_CAP, null);
 
-				  int p = EnchantmentHelper.getEnchantmentLevel(Smc_040.supremeflame, bow);
+				  int p = ModConfig.enabled.SupremeFlame ? EnchantmentHelper.getEnchantmentLevel(Smc_040.supremeflame, bow) : 0;
 				  
-				  int l = EnchantmentHelper.getEnchantmentLevel(Smc_030.Strafe, bow);
+				  int l = ModConfig.enabled.StrafeEnable ? EnchantmentHelper.getEnchantmentLevel(Smc_030.Strafe, bow) : 0;
 				  
 				  if(Math.random() < 0.125f * l && l > 0)
 				  properties.setArrowRapidDamage(true);
@@ -73,13 +75,13 @@ public class OtherHandler {
 					  arrow.setFire(400);
 				  } 
 					 
-				  int s = EnchantmentHelper.getEnchantmentLevel(Smc_040.advancedflame, bow);
+				  int s = ModConfig.enabled.AdvancedFlame ? EnchantmentHelper.getEnchantmentLevel(Smc_040.advancedflame, bow) : 0;
                    if(s > 0){
                 	  properties.setFlameLevel(2);
 					  arrow.setFire(200);
 				  } 
                    
-                  int t = EnchantmentHelper.getEnchantmentLevel(Smc_040.lesserflame, bow);
+                  int t = ModConfig.enabled.LesserFlame ? EnchantmentHelper.getEnchantmentLevel(Smc_040.lesserflame, bow) : 0;
                   if(t > 0){
                 	  properties.setFlameLevel(1);
 					  arrow.setFire(50);
@@ -115,9 +117,9 @@ public class OtherHandler {
 		
 		
 		
-		float levelmath = EnchantmentHelper.getEnchantmentLevel(Smc_040.Mathematics, dmgSource);
-		float levelhistory = EnchantmentHelper.getEnchantmentLevel(Smc_040.History, dmgSource);
-		float english = EnchantmentHelper.getEnchantmentLevel(Smc_040.English, dmgSource);
+		float levelmath =  ModConfig.enabled.Mathematics ? EnchantmentHelper.getEnchantmentLevel(Smc_040.Mathematics, dmgSource) : 0;
+		float levelhistory = ModConfig.enabled.History ? EnchantmentHelper.getEnchantmentLevel(Smc_040.History, dmgSource) : 0;
+		float english = ModConfig.enabled.English ? EnchantmentHelper.getEnchantmentLevel(Smc_040.English, dmgSource) : 0;
 		
 		
 		
@@ -256,16 +258,6 @@ public class OtherHandler {
     
     }
     */
-    public static void enchHandler(){
-    	MinecraftForge.EVENT_BUS.register(new OtherHandler());
-    	//TODO remove register if not enabled.
-    	MinecraftForge.EVENT_BUS.register(new ArrowPropertiesHandler());
-    	
-    	MinecraftForge.EVENT_BUS.register(new AdditionalProtectionEnchantmentsEffects());
-    	
-		MinecraftForge.EVENT_BUS.register(new ExtraEvent());
-
-    }  
     
 	@SubscribeEvent(priority=EventPriority.HIGHEST, receiveCanceled=true)
 	public void onArrowCapAttach(AttachCapabilitiesEvent<Entity> event)

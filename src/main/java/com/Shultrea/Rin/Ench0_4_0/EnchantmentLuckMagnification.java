@@ -39,7 +39,7 @@ public class EnchantmentLuckMagnification extends EnchantmentBase implements IDa
 	@Override
 	public int getMaxLevel()
     {
-        return 2;
+        return ModConfig.level.LuckMagnification;
     }
 	
 	@Override

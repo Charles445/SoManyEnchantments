@@ -45,7 +45,7 @@ public class EnchantmentPurification extends EnchantmentBase implements IPotionD
 	@Override
 	public int getMaxLevel()
     {
-        return 5;
+        return ModConfig.level.Purification;
     }
 	
 	@Override
