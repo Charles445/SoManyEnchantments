@@ -90,6 +90,10 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     	int numb = 0;
     	
     	
+    	//Capping at 3 (previously was 7) for Roguelike Dungeons compatibility
+    	int numbCap = 3;
+    	
+    	int iceCap = 7;
         	
     	if(victim.isPotionActive(MobEffects.SLOWNESS) == true & victim.isPotionActive(MobEffects.MINING_FATIGUE) == true){
     
@@ -100,10 +104,10 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     	numb = pot2.getAmplifier() + 1;
     	
     	
-    	if(ice > 7)
-        	ice = 7;
-        if(numb > 7)
-        	numb = 7;
+    	if(ice > iceCap)
+        	ice = iceCap;
+        if(numb > numbCap)
+        	numb = numbCap;
     	
         if(victim instanceof EntityPlayer){
     	victim.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 30 * level + 40, ice));
@@ -115,10 +119,10 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
         	ice += 1;
         	numb += 1;
         	
-        	if(ice > 7)
-            	ice = 7;
-            if(numb > 7)
-            	numb = 7;	
+        	if(ice > iceCap)
+            	ice = iceCap;
+            if(numb > numbCap)
+            	numb = numbCap;	
         	
         victim.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 30 * level + 40, ice));    	  
         victim.addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, 30 * level + 40, numb));
@@ -138,7 +142,7 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     	
     	
     	
-    	if(ice >= 7 && numb >= 7 && victim.getEntityWorld().getGameRules().getBoolean("mobGriefing") == true){
+    	if(ice >= iceCap && numb >= numbCap && victim.getEntityWorld().getGameRules().getBoolean("mobGriefing") == true){
     	
     	float chance = (float) Math.random() * 100f;
     		

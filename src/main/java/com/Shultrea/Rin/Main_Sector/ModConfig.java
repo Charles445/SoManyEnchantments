@@ -25,6 +25,14 @@ public class ModConfig
 	
 	public static class MiscellaneousConfig
 	{
+		@Config.Comment("Allow enchantments to change the weather")
+		@Config.Name("Allow Weather Change")
+		public boolean EnableWeatherChange = true;
+		
+		@Config.Comment("XP Orbs give double XP (this is a bug present in older versions)")
+		@Config.Name("Double XP Orbs")
+		public boolean EnableDoubleXPBug = false;
+		
 		@Config.Comment("Fixes enchantment that doesn't deal damage when damage is 0 (E.g having weakness while hitting with a wood sword doesn't let the enchantment deal the damage because negative damage cancels damage calculation.)")
 		@Config.Name("Fix Zero Damage Enchantments")
 	    public boolean EnableFixEnchantment = false;
@@ -44,7 +52,7 @@ public class ModConfig
 		@Config.Comment("Unregister disabled enchantments")
 		@Config.Name("Unregister Disabled Enchants")
 		@Config.RequiresMcRestart
-		public boolean unregisterDisabled = false;
+		public boolean unregisterDisabled = true;
 	}
 	
 	

@@ -60,6 +60,8 @@ public class EnchantmentMastery extends EnchantmentBase {
 	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void HandleEnchant(LivingDamageEvent e)
     {
+		//TODO fix recursion
+		
     	if(e.getSource().damageType != "player" && e.getSource().damageType != "mob")
 			return;
  	
@@ -77,14 +79,14 @@ public class EnchantmentMastery extends EnchantmentBase {
 		EntityLivingBase victim = e.getEntityLiving();
 		if(victim == null)
 			return;
-
-		if(!stack.hasTagCompound())
-			stack.setTagCompound(new NBTTagCompound());
 		
 		int level = EnchantmentHelper.getEnchantmentLevel(this, stack);
 		
 		if(EnchantmentHelper.getEnchantmentLevel(this, stack) <= 0)
 			return;
+		
+		if(!stack.hasTagCompound())
+			stack.setTagCompound(new NBTTagCompound());
 		
 		if(stack.getTagCompound().getBoolean("flag")) {
 			stack.getTagCompound().setBoolean("flag", false);

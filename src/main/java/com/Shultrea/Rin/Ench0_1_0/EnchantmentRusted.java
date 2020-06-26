@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Ench0_1_0;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 
 import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
@@ -24,8 +25,12 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCurse {
-
+public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCurse 
+{
+	//Delay in ticks for each run
+	int delayFactor = 10;
+	int divisorMin = 75 / delayFactor;
+	
 	public EnchantmentRusted()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.BREAKABLE , new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -81,7 +86,8 @@ public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCu
     }
     
     @SubscribeEvent
-    public void rustEvent(PlayerTickEvent e){
+    public void rustEvent(PlayerTickEvent e)
+    {
     	
     	if(e.phase != Phase.END)
     		return;
@@ -94,49 +100,62 @@ public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCu
     	if(e.side == Side.CLIENT)
     		return;
     	
-    	p.inventory.mainInventory.stream().forEach(is -> fireRustItemDamage(is,p));
-    	p.inventory.armorInventory.stream().forEach(is -> fireRustItemDamage(is,p));
-    	p.inventory.offHandInventory.stream().forEach(is -> fireRustItemDamage(is,p));
+    	//Run every 10 ticks
+    	if(p.getEntityWorld().getTotalWorldTime() % delayFactor == 0L)
+    	{
+	    	p.inventory.mainInventory.stream().forEach(is -> fireRustItemDamage(is,p));
+	    	p.inventory.armorInventory.stream().forEach(is -> fireRustItemDamage(is,p));
+	    	p.inventory.offHandInventory.stream().forEach(is -> fireRustItemDamage(is,p));
+    	}
+    	
   	
     }
     
-    private void fireRustItemDamage(ItemStack is, EntityPlayer e) {
-		if (!is.isEmpty()) {
-			Map<Enchantment,Integer> enchs = EnchantmentHelper.getEnchantments(is);
-			Map<Enchantment,Integer> newEnchs = new HashMap<Enchantment,Integer>();
-			for (Enchantment en:enchs.keySet()) {
-			   if(en == Smc_010.Rusted){
-					if (enchs.get(en)>1) {
-						int l = enchs.get(en);
+    private void fireRustItemDamage(ItemStack is, EntityPlayer player)
+    {
+    	//Reworked to (hopefully) prevent the crashes and run a little bit faster
+    	
+    	if(is == null || player == null)
+    		return;
+    	
+		if (!is.isEmpty() && is.isItemStackDamageable() && is.getMaxDamage()>0)
+		{
+			//Stack exists, is damageable, and max damage is greater than zero
+			
+			for(Entry<Enchantment, Integer> entry : EnchantmentHelper.getEnchantments(is).entrySet())
+			{
+				if(entry.getKey() == Smc_010.Rusted)
+				{
+					int lvl = entry.getValue();
+					if(lvl >= 1)
+					{
 						//System.out.print(l + " - Level");
-						Random rand = new Random();
-					
-						int divisor = 100 - l;
-						if(divisor <= 75)
-					    divisor = 75;
+						Random rand = player.getRNG();
+						
+						//This isn't mathematically accurate, but it's quite close
+						int divisor = 100 - (lvl*delayFactor);
+						if(divisor < divisorMin)
+							divisor = divisorMin;
 				    	
-				    	if(rand.nextInt(100) > divisor) {
+				    	if(rand.nextInt(100) > divisor)
+				    	{
 				    		double percentage = is.getMaxDamage() - is.getItemDamage();
 				    		percentage = percentage / is.getMaxDamage();
-				    		if(is.isItemStackDamageable() && percentage > 0.15f * l + 0.05f)
-				    		is.damageItem(rand.nextInt(l * 2 + 2), e);
-						
+				    		if(percentage > 0.15f * lvl + 0.05f)
+				    			is.damageItem(rand.nextInt(lvl * 2 + 2), player);
 				    	}
 						//System.out.println("End, damaged!");
-				
+					}
 				}
 			}
-		
 		}
-		}
-		
-		}
+	}
    
     private int getLevel(ItemStack is, Enchantment enchantment) {
 			int c = 0;
 			if(!is.isEmpty()) {
 				Map<Enchantment,Integer> enchs = EnchantmentHelper.getEnchantments(is);
-				Map<Enchantment,Integer> newEnchs = new HashMap<Enchantment,Integer>();
+				//Map<Enchantment,Integer> newEnchs = new HashMap<Enchantment,Integer>();
 				for (Enchantment en:enchs.keySet()) {
 					if(en == enchantment && enchs.get(en) > 1){
 						if(c<enchs.get(en))

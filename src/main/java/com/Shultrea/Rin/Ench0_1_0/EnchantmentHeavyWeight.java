@@ -25,6 +25,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantmentCurse
 {
+	public static final UUID CACHED_UUID = UUID.fromString("e2765897-134f-4c14-a535-29c3ae5c7a21");
+	
 	public EnchantmentHeavyWeight()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -104,11 +106,11 @@ public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantm
 	    	int level = EnchantmentHelper.getEnchantmentLevel(Smc_010.HeavyWeight, weapon);
 			IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 			
-			AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e2765897-134f-4c14-a535-29c3ae5c7a21"),"attackSpeed", (((double)level * 0.10D + 0.20D) *-1), 1);
+			AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"attackSpeed", (((double)level * 0.10D + 0.20D) *-1), 1);
 			speedAttr.removeModifier(modSpeed);
 			speedAttr.applyModifier(modSpeed);
 		
-			  if(speedAttr.getModifier(UUID.fromString("e2765897-134f-4c14-a535-29c3ae5c7a21")) != null)
+			  if(speedAttr.getModifier(CACHED_UUID) != null)
 				    return;
 		
 			
@@ -120,10 +122,10 @@ public class EnchantmentHeavyWeight extends EnchantmentBase implements IEnchantm
 	    	int level = EnchantmentHelper.getEnchantmentLevel(Smc_010.HeavyWeight, weapon);
 			IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 					
-			if(speedAttr.getModifier(UUID.fromString("e2765897-134f-4c14-a535-29c3ae5c7a21")) == null)
+			if(speedAttr.getModifier(CACHED_UUID) == null)
 				return;
 				
-			    AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e2765897-134f-4c14-a535-29c3ae5c7a21"),"attackSpeed",(((double)level * 0.10D + 0.20D) *-1), 1);
+			    AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"attackSpeed",(((double)level * 0.10D + 0.20D) *-1), 1);
 			    speedAttr.removeModifier(modSpeed);
 
 		}

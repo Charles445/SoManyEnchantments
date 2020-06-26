@@ -31,6 +31,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentSwifterSlashes extends EnchantmentBase
 {
+	public static final UUID CACHED_UUID = UUID.fromString("e6109481-134f-4c54-a535-29c3ae5c7a21");
+	
 	public EnchantmentSwifterSlashes()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -193,11 +195,11 @@ public class EnchantmentSwifterSlashes extends EnchantmentBase
 	    	int level = EnchantmentHelper.getEnchantmentLevel(Smc_010.SwifterSlashes, weapon);
 			IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 			
-			AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e6109481-134f-4c54-a535-29c3ae5c7a21"),"attackSpeed", ((double)level * 0.45D + (0.04D * level)), 1);
+			AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"attackSpeed", ((double)level * 0.45D + (0.04D * level)), 1);
 			speedAttr.removeModifier(modSpeed);
 			speedAttr.applyModifier(modSpeed);
 		
-			  if(speedAttr.getModifier(UUID.fromString("e6109481-134f-4c54-a535-29c3ae5c7a21")) != null)
+			  if(speedAttr.getModifier(CACHED_UUID) != null)
 				    return;
 		
 			
@@ -209,12 +211,12 @@ public class EnchantmentSwifterSlashes extends EnchantmentBase
 	    	int level = EnchantmentHelper.getEnchantmentLevel(Smc_010.SwifterSlashes, weapon);
 			IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_SPEED);
 					
-			if(speedAttr.getModifier(UUID.fromString("e6109481-134f-4c54-a535-29c3ae5c7a21")) == null)
+			if(speedAttr.getModifier(CACHED_UUID) == null)
 				return;
 		
 			
 			
-			    AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e6109481-134f-4c54-a535-29c3ae5c7a21"),"attackSpeed",((double)level * 0.45D + (0.04D * level)), 1);
+			    AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"attackSpeed",((double)level * 0.45D + (0.04D * level)), 1);
 			    speedAttr.removeModifier(modSpeed);
 			   
 			

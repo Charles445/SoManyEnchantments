@@ -47,21 +47,23 @@ public class EnchantmentCounterAttack extends EnchantmentBase {
     }
     
     @Override
-    public void onUserHurt(EntityLivingBase user, Entity target, int level){
+    public void onUserHurt(EntityLivingBase user, Entity target, int level)
+    {	
+    	//TODO figure out how the crash works
     	
-    	if(target == null)
-    		return;
-    	
-    	if(!(target instanceof EntityLivingBase))
-    		return;
-    	
-    	EntityLivingBase attacker = (EntityLivingBase) target;
-    	
-    	if(attacker.getRNG().nextInt(100) < 20 + (level * 5))
-    	if(user instanceof EntityPlayer){
-    		EntityPlayer player = (EntityPlayer) user;
-    		player.hurtResistantTime = 20;
-    		player.attackTargetEntityWithCurrentItem(attacker);
+    	if(target instanceof EntityLivingBase)
+    	{
+    		EntityLivingBase attacker = (EntityLivingBase) target;
+        	
+    		if(user instanceof EntityPlayer)
+    		{
+	        	if(attacker.getRNG().nextInt(100) < 20 + (level * 5))
+	        	{
+	        		EntityPlayer player = (EntityPlayer) user;
+	        		player.hurtResistantTime = 20;
+	        		player.attackTargetEntityWithCurrentItem(attacker);
+	        	}
+    		}
     	}
     }
     /*

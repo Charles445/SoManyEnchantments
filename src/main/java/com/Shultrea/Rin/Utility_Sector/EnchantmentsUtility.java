@@ -122,22 +122,21 @@ public class EnchantmentsUtility {
 	}
     
     		
-    public static void Raining(World world) {
-    		    		 {
-    		    		
-    		    		world.getWorldInfo().setRainTime(0);
-    		    		world.getWorldInfo().setRaining(true);
-    		    		
-    		    		}
-    		    		
-    		    		
-    		    		
-    		    	
-    		    		}
+    public static void Raining(World world)
+    {
+    	if(!ModConfig.miscellaneous.EnableWeatherChange)
+    		return;
+    	
+		world.getWorldInfo().setRainTime(0);
+		world.getWorldInfo().setRaining(true);
+    }
     		    		
 
     public static void setThunderstorm(World world) 
     {
+    	if(!ModConfig.miscellaneous.EnableWeatherChange)
+    		return;
+    	
 		world.getWorldInfo().setThunderTime(0);
 		world.getWorldInfo().setRaining(true);
 		world.getWorldInfo().setThundering(true);
@@ -461,23 +460,20 @@ public class EnchantmentsUtility {
     }
     */
     
-	public static void clearSky(World world) {
-		if((world.getWorldInfo().isRaining() == true)){
-    		world.getWorldInfo().setRaining(false);
-    		
-		}
+	public static void clearSky(World world)
+	{
+		if(!ModConfig.miscellaneous.EnableWeatherChange)
+    		return;
+		
+		if(world.getWorldInfo().isRaining())
+			world.getWorldInfo().setRaining(false);
 				
-		if((world.getWorldInfo().isThundering() == true)){
+		if(world.getWorldInfo().isThundering())
+		{
 			world.getWorldInfo().setThundering(false);
 			world.getWorldInfo().setRaining(false);
-			
 		}
-	
-	
-		
-		
-			
-		}
+	}
 	
 	  public static ItemStack getEnchantedItemInInventory(Enchantment p_92099_0_, EntityLivingBase p_92099_1_)
 	    {
@@ -512,24 +508,24 @@ public class EnchantmentsUtility {
 	}
 
 	  
-	public static boolean isInColdTemperature(EntityLivingBase attacker, Biome biome, boolean isColder){
-		
+	public static boolean isInColdTemperature(EntityLivingBase attacker, Biome biome, boolean isColder)
+	{	
 		BlockPos pos = new BlockPos(attacker.posX ,attacker.posY,attacker.posZ);
 		float temperature = biome.getTemperature(pos);
 	
-	
 		if(isColder == true)
-		if(temperature <= 0.05){
-		return true;
+		{
+			if(temperature <= 0.05)
+			{
+				return true;
+			}
+			else if(temperature < 1.51f)
+			{
+				return true;
+			}
 		}
-		
-		else if(temperature < 1.51f)
-		return true;
-		
         return false;
-
-
-}
+	}
 	
 		public static  Vec3d Cleave(double i, double j, double y){
 			

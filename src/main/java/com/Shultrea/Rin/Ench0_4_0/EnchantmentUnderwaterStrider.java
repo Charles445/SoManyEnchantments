@@ -25,6 +25,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 public class EnchantmentUnderwaterStrider extends EnchantmentBase{
 
+	public static final UUID CACHED_UUID = UUID.fromString("a612fe81-132f-4c58-a335-13c4ae5cba21");
+	
 	public EnchantmentUnderwaterStrider()
 	{
 	super(Rarity.RARE, EnumEnchantmentType.ARMOR_FEET, new EntityEquipmentSlot[]{EntityEquipmentSlot.FEET});
@@ -96,10 +98,10 @@ public class EnchantmentUnderwaterStrider extends EnchantmentBase{
 	{
     	int level = EnchantmentHelper.getMaxEnchantmentLevel(this, p);
     
-    	  if(s.getModifier(UUID.fromString("a612fe81-132f-4c58-a335-13c4ae5cba21")) != null)
+    	  if(s.getModifier(CACHED_UUID) != null)
 			    return;
     	
-		AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("a612fe81-132f-4c58-a335-13c4ae5cba21"),"moveSpeed", 1.30 + ((double)level * 0.4D), 1);
+		AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"moveSpeed", 1.30 + ((double)level * 0.4D), 1);
 		s.removeModifier(modSpeed);
 		s.applyModifier(modSpeed);
 	}
@@ -108,10 +110,10 @@ public class EnchantmentUnderwaterStrider extends EnchantmentBase{
 	{
 		int level = EnchantmentHelper.getMaxEnchantmentLevel(this, p);
 		
-		if(s.getModifier(UUID.fromString("a612fe81-132f-4c58-a335-13c4ae5cba21")) == null)
+		if(s.getModifier(CACHED_UUID) == null)
 			return;
 
-		AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("a612fe81-132f-4c58-a335-13c4ae5cba21"),"moveSpeed", 1.30 + ((double)level * 0.4D), 1);
+		AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"moveSpeed", 1.30 + ((double)level * 0.4D), 1);
 		s.removeModifier(modSpeed);
 	}
 	

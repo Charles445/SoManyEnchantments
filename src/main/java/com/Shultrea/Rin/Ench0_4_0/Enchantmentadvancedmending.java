@@ -65,8 +65,7 @@ public class Enchantmentadvancedmending extends EnchantmentBase{
     	EntityPlayer player = event.getEntityPlayer();
     	EntityXPOrb orb = event.getOrb();
     	
-    	//TODO config for double XP glitch
-    	if(orb.xpValue > 0)
+    	if(orb.xpValue > 0 && ModConfig.miscellaneous.EnableDoubleXPBug)
     	{
     		player.addExperience(orb.xpValue);
     	}

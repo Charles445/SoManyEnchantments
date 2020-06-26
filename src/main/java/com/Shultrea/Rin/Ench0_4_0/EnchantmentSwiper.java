@@ -88,7 +88,8 @@ public class EnchantmentSwiper extends EnchantmentBase
 		if(dmgSource == null)
 			return;
 		
-		int levelCleave = EnchantmentHelper.getEnchantmentLevel(Smc_040.Swiper, dmgSource);
+		//Cap out cleave level to avoid large AABB checks
+		int levelCleave = Math.min(10, EnchantmentHelper.getEnchantmentLevel(Smc_040.Swiper, dmgSource));
 		
 		int lf = EnchantmentHelper.getEnchantmentLevel(Smc_010.FieryEdge, dmgSource) * 5;
 		lf += EnchantmentHelper.getEnchantmentLevel(Enchantments.FIRE_ASPECT, dmgSource) * 3;

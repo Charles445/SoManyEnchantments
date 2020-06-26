@@ -7,7 +7,6 @@ import com.Shultrea.Rin.Enum.EnumList;
 import com.Shultrea.Rin.Interfaces.IEnchantmentCurse;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -15,8 +14,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
@@ -26,6 +23,8 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
 	
 	//TODO proper routing and delay handling
 	int interval;
+	
+	public static final UUID CACHED_UUID = UUID.fromString("e2125897-134f-4c14-a535-19c2ae4c7a21");
 	
 	public EnchantmentCurseofHolding()
 	{
@@ -115,11 +114,11 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
 	{
 		IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.LUCK);
 	
-		AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e2125897-134f-4c14-a535-19c2ae4c7a21"),"luckModifier", (((double)level) *-1), 0);
+		AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"luckModifier", (((double)level) *-1), 0);
 		speedAttr.removeModifier(modSpeed);
 		speedAttr.applyModifier(modSpeed);
 		
-		if(speedAttr.getModifier(UUID.fromString("e2125897-134f-4c14-a535-19c2ae4c7a21")) != null)
+		if(speedAttr.getModifier(CACHED_UUID) != null)
 			return;
 
 	
@@ -129,10 +128,10 @@ public class EnchantmentCurseofHolding extends EnchantmentBase implements IEncha
 	{
 		IAttributeInstance speedAttr = fEntity.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.LUCK);
 			
-		if(speedAttr.getModifier(UUID.fromString("e2125897-134f-4c14-a535-19c2ae4c7a21")) == null)
+		if(speedAttr.getModifier(CACHED_UUID) == null)
 			return;
 		
-		AttributeModifier modSpeed = new AttributeModifier(UUID.fromString("e2125897-134f-4c14-a535-19c2ae4c7a21"),"luckModifier",(((double)level) *-1), 1);
+		AttributeModifier modSpeed = new AttributeModifier(CACHED_UUID,"luckModifier",(((double)level) *-1), 1);
 	    speedAttr.removeModifier(modSpeed);
 }
 	  }
