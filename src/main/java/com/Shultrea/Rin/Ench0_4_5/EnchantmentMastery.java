@@ -16,11 +16,14 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class EnchantmentMastery extends EnchantmentBase {
+public class EnchantmentMastery extends EnchantmentBase
+{
+	public static String nbtFlag = "smeFlag";
+	
 	public EnchantmentMastery(){
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("SwordMastery");
@@ -58,9 +61,10 @@ public class EnchantmentMastery extends EnchantmentBase {
     }
     
 	@SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
-    public void HandleEnchant(LivingDamageEvent e)
-    {
-		//TODO fix recursion
+    //public void HandleEnchant(LivingDamageEvent e)
+    public void HandleEnchant(LivingHurtEvent e)
+	{
+		//Moved to LivingHurtEvent to avoid recursion
 		
     	if(e.getSource().damageType != "player" && e.getSource().damageType != "mob")
 			return;
@@ -88,34 +92,64 @@ public class EnchantmentMastery extends EnchantmentBase {
 		if(!stack.hasTagCompound())
 			stack.setTagCompound(new NBTTagCompound());
 		
-		if(stack.getTagCompound().getBoolean("flag")) {
-			stack.getTagCompound().setBoolean("flag", false);
+		if(stack.getTagCompound().getBoolean(nbtFlag)) {
+			stack.getTagCompound().setBoolean(nbtFlag, false);
 			return;
 		}
 		
-		stack.getTagCompound().setBoolean("flag", true);
+		stack.getTagCompound().setBoolean(nbtFlag, true);
 		
-		if(EnchantmentsUtility.isLevelMax(stack, this) || EnchantmentsUtility.RANDOM.nextInt(3) < level - 1)
-		if(stack.getItem() instanceof ItemSword && attacker instanceof EntityPlayer) {
-			ItemSword sword = (ItemSword) stack.getItem();
-			sword.onLeftClickEntity(stack, (EntityPlayer)attacker, victim);
-			sword.hitEntity(stack, victim, attacker);
-			
-			NBTTagList nbt = stack.getEnchantmentTagList();
-			for(int x = 0; x < nbt.tagCount(); x++) {
-				NBTTagCompound tag = nbt.getCompoundTagAt(x);
-				int enchId = tag.getShort("id");
-				int currEnchLevel = tag.getShort("lvl");
-				Enchantment enchantment = Enchantment.getEnchantmentByID(enchId);
-				if(enchantment == null)
-					continue;
-				//System.out.println(enchantment);
-				enchantment.onEntityDamaged(attacker, victim, currEnchLevel);
-				//System.out.println("is IT WORKING");
+		//if(EnchantmentsUtility.isLevelMax(stack, this) || EnchantmentsUtility.RANDOM.nextInt(3) < level - 1)
+		if(level >= 3 || EnchantmentsUtility.RANDOM.nextInt(3) < level - 1)
+		{
+			if(stack.getItem() instanceof ItemSword && attacker instanceof EntityPlayer)
+			{
+				ItemSword sword = (ItemSword) stack.getItem();
+				sword.onLeftClickEntity(stack, (EntityPlayer)attacker, victim);
+				sword.hitEntity(stack, victim, attacker);
+				
+				NBTTagList nbt = stack.getEnchantmentTagList();
+				for(int x = 0; x < nbt.tagCount(); x++) {
+					NBTTagCompound tag = nbt.getCompoundTagAt(x);
+					int enchId = tag.getShort("id");
+					int currEnchLevel = tag.getShort("lvl");
+					Enchantment enchantment = Enchantment.getEnchantmentByID(enchId);
+					if(enchantment == null)
+						continue;
+					//System.out.println(enchantment);
+					enchantment.onEntityDamaged(attacker, victim, currEnchLevel);
+					//System.out.println("is IT WORKING");
+				}
 			}
 		}
 		
-		if(EnchantmentsUtility.isLevelMax(stack, this)) {
+		//Magical Blessing and Piercing Capabilites run on LivingHurt
+		//They both call LivingDamage, which means they aren't recursive on their own
+		
+		//This however runs on LivingDamage, and calls LivingHurt, which can and will cause the recursion
+		
+		// H of P
+		//  D0 of M
+		//   H of P
+		//     D1 of M
+		//   D0 of M
+		//   and so on
+		
+		//If it was Living hurt
+		// H of P
+		//  D
+		// H0 of M
+		//  H of P
+		//   D
+		//  H1 of M
+		//  D
+		//
+		
+		
+
+		//if(EnchantmentsUtility.isLevelMax(stack, this))
+		if(level >= 3)
+		{
 			float damage = net.minecraftforge.common.ForgeHooks.onLivingHurt(e.getEntityLiving(), e.getSource(), 1);
 			damage += net.minecraftforge.common.ForgeHooks.onLivingDamage(e.getEntityLiving(), e.getSource(), 1);
 		

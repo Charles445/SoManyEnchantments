@@ -86,7 +86,7 @@ public class EnchantmentCriticalStrike extends EnchantmentBase implements IDamag
     	
     	int counter = stack.getTagCompound().getInteger("failedCritCount");
     	
-    	int maxReduction = EnchantmentsUtility.isLevelMax(stack, this) ? 200 : 0;
+    	int maxReduction = level >= 4 ? 200 : 0;
     	
     	if(player.getRNG().nextInt(1000 - maxReduction) >= 32 * (counter + 1)){
     		stack.getTagCompound().setInteger("failedCritCount", counter + 1);

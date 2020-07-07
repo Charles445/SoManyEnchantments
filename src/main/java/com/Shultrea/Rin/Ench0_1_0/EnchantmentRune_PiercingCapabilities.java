@@ -67,7 +67,8 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
     public void HandleEnchant(LivingHurtEvent fEvent)
     {
     	//System.out.println("Piercing Capabilities");   	
-    	if(!(EnchantmentsUtility.checkEventCondition(fEvent, this))) return;
+    	if(!(EnchantmentsUtility.checkEventCondition(fEvent, this)))
+    		return;
     	
     	if(fEvent.getSource().isUnblockable())
     		return;
@@ -86,9 +87,9 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
 		fEvent.setAmount(fEvent.getAmount() - (fEvent.getAmount() * pierceLevel * 0.25f));
 		
 		if(attacker instanceof EntityPlayer)
-		UtilityAccessor.damageTargetEvent(fEvent.getEntityLiving(), new EntityDamageSource("player", attacker).setDamageBypassesArmor(), damage);
-		
-		else UtilityAccessor.damageTargetEvent(fEvent.getEntityLiving(), new EntityDamageSource("mob", attacker).setDamageBypassesArmor(), damage);
+			UtilityAccessor.damageTargetEvent(fEvent.getEntityLiving(), new EntityDamageSource("player", attacker).setDamageBypassesArmor(), damage);
+		else
+			UtilityAccessor.damageTargetEvent(fEvent.getEntityLiving(), new EntityDamageSource("mob", attacker).setDamageBypassesArmor(), damage);
 	
 	
     }

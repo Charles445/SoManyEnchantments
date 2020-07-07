@@ -75,14 +75,19 @@ public class EnchantmentNaturalBlocking extends EnchantmentBase{
 			
 		float damage = fEvent.getAmount() - fEvent.getAmount() * (level * 0.1f + 0.1f);
 		
-		if(shield.getItem().isShield(shield, victim) && victim.getActiveItemStack() != shield){
+		if(shield.getItem().isShield(shield, victim) && victim.getActiveItemStack() != shield)
+		{
 			float percentage = damage / fEvent.getAmount();
 			percentage = 1 - percentage;
     		fEvent.setAmount(damage);	
-    		if(EnchantmentsUtility.isLevelMax(shield, this)){
+    		if(level >= 3)
+    		{
     			 shield.damageItem((int) (1.25f * fEvent.getAmount() * percentage) + 1, victim);
     		}
-    		else shield.damageItem((int) (1.75f * fEvent.getAmount() * percentage) + 1, victim);
+    		else
+    		{
+    			shield.damageItem((int) (1.75f * fEvent.getAmount() * percentage) + 1, victim);
+    		}
     	}
 		
     }

@@ -748,6 +748,7 @@ public class EnchantmentsUtility {
 		   return damage;
 	   }
 	   
+	   @Deprecated
 	   public static boolean isLevelMax(ItemStack stack, Enchantment ench){
 		   if(EnchantmentHelper.getEnchantmentLevel(ench, stack) >= ench.getMaxLevel())
 			   return true;

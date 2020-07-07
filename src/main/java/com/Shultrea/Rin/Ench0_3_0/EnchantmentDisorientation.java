@@ -7,6 +7,7 @@ import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Utility_Sector.EnchantmentsUtility;
 
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.Entity;
@@ -18,8 +19,10 @@ import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-public class EnchantmentDisorientation extends EnchantmentBase implements IPotionDebuffer{
-	public EnchantmentDisorientation(){
+public class EnchantmentDisorientation extends EnchantmentBase implements IPotionDebuffer
+{
+	public EnchantmentDisorientation()
+	{
 		super(Rarity.RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
 		this.setName("Disorientation");
 		this.setRegistryName("Disorientation");
@@ -64,8 +67,13 @@ public class EnchantmentDisorientation extends EnchantmentBase implements IPotio
 		EntityLivingBase eb = (EntityLivingBase) e.getTarget();
 		
 		if(eb.isPotionActive(MobEffects.SLOWNESS) && eb.isPotionActive(MobEffects.NAUSEA))
-			if(EnchantmentsUtility.isLevelMax(e.getEntityPlayer().getHeldItemMainhand(), Smc_030.Disorientation))
+		{
+			//if(EnchantmentsUtility.isLevelMax(e.getEntityPlayer().getHeldItemMainhand(), Smc_030.Disorientation))
+			if(EnchantmentHelper.getEnchantmentLevel(this, e.getEntityPlayer().getHeldItemMainhand()) >= 4)
+			{
 				e.setDamageModifier(e.getDamageModifier() + 0.25f);
+			}
+		}
 	}
 
 	    	
@@ -76,20 +84,24 @@ public class EnchantmentDisorientation extends EnchantmentBase implements IPotio
 	    		return;
 	    	
 	    	EntityLivingBase entity = (EntityLivingBase) entiti;
-	    			
-	    	if(entity.getRNG().nextInt(100) < 10)
 	    	
-	    	if(level == 1 || level == 2){
-	    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20 + (level * 10), level - 1));
-	    		entity.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 80 + (level * 10), 0));
-			}
-			
-				if(level >= 3){
-					entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20 + (level * 10), level - 1));
-					entity.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 20 + (level * 10), level - 1));
-					entity.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 25 + (level * 7), 0));
-				
-				
+	    	//TODO this RNG check may also be meant for levels 3 and above, even though it originally only surrounded 1 and 2
+	    	
+	    	if(entity.getRNG().nextInt(100) < 10)
+	    	{
+	    	
+		    	if(level == 1 || level == 2)
+		    	{
+		    		entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20 + (level * 10), level - 1));
+		    		entity.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 80 + (level * 10), 0));
+				}
+	    	}
+	    	
+			if(level >= 3)
+			{
+				entity.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20 + (level * 10), level - 1));
+				entity.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 20 + (level * 10), level - 1));
+				entity.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 25 + (level * 7), 0));
 			}	
 	    }
 }

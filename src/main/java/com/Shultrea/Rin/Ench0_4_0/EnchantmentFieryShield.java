@@ -52,7 +52,8 @@ public class EnchantmentFieryShield extends EnchantmentBase{
 	}
 	   
     @SubscribeEvent(priority = EventPriority.LOWEST) 
-    public void shieldBurn(LivingAttackEvent fEvent){
+	public void shieldBurn(LivingAttackEvent fEvent)
+    {
     	
     	if(!(fEvent.getEntity() instanceof EntityLivingBase))
     		return;
@@ -60,7 +61,8 @@ public class EnchantmentFieryShield extends EnchantmentBase{
     	EntityLivingBase victim = (EntityLivingBase)fEvent.getEntity();
 		ItemStack shield = victim.getHeldItemMainhand();
 				
-		if(shield.isEmpty() || !shield.getItem().isShield(shield, victim)){
+		if(shield.isEmpty() || !shield.getItem().isShield(shield, victim))
+		{
 			shield = victim.getHeldItemOffhand();
 			if(shield.isEmpty())
 			return;	
@@ -73,20 +75,16 @@ public class EnchantmentFieryShield extends EnchantmentBase{
 		
 		Entity attacker = fEvent.getSource().getImmediateSource();
 	
-		if(shield.getItem().isShield(shield, victim)){
-		if(fEvent.getEntityLiving().world.rand.nextInt(100) < 40 + (levelfs * 10) && EnchantmentsUtility.canBlockDamageSource(fEvent.getSource(), victim)){
-	
-		attacker.attackEntityFrom(new EntityDamageSource("player", victim).setFireDamage(), fEvent.getAmount() * (levelfs * 0.1f));
-    	attacker.setFire(4 + levelfs * 2);
-    	
-    	if(EnchantmentsUtility.isLevelMax(shield, Smc_030.EmpoweredDefence)){
-    		
-    	}
+		if(shield.getItem().isShield(shield, victim))
+		{
+			if(fEvent.getEntityLiving().world.rand.nextInt(100) < 40 + (levelfs * 10) && EnchantmentsUtility.canBlockDamageSource(fEvent.getSource(), victim))
+			{
+				attacker.attackEntityFrom(new EntityDamageSource("player", victim).setFireDamage(), fEvent.getAmount() * (levelfs * 0.1f));
+		    	attacker.setFire(4 + levelfs * 2);
+			}
+		}
 		
-    }
-    }
-		
-    }
+	}
   
 }
 
