@@ -21,7 +21,8 @@ import net.minecraft.util.math.MathHelper;
 
 
 
-public class EnchantmentAdvancedKnockback extends EnchantmentBase {
+public class EnchantmentAdvancedKnockback extends EnchantmentBase
+{
 	public EnchantmentAdvancedKnockback()
 	{
 		super(Rarity.VERY_RARE, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
@@ -113,47 +114,36 @@ public class EnchantmentAdvancedKnockback extends EnchantmentBase {
 	
     
   
-    @Override
-    public void onEntityDamaged (EntityLivingBase user, Entity target, int level) {
-        
-      
-    	 
-    	
-        {
+	@Override
+	public void onEntityDamaged (EntityLivingBase user, Entity target, int level)
+	{
+		if(target instanceof EntityLivingBase)
+		{
+			ItemStack stack = user.getHeldItemMainhand();
+			int levelknockBack = EnchantmentHelper.getEnchantmentLevel(Smc_020.AdvancedKnockback, stack);
+			int modKnockback = 1;
+			double Y = levelknockBack * 0.075D;
+			target.motionY += Y;
+			
+			
+			int Thelevel = EnchantmentHelper.getEnchantmentLevel(Smc_020.AdvancedKnockback, stack);
+			
+			int Knockback = 1;
+			Knockback += Thelevel * 4;
+			
+			double XMot = target.motionX;
+			double ZMot = target.motionZ;
+			
+			XMot += (double)(-MathHelper.sin(user.rotationYaw * (float)Math.PI / 180.0F) * (float)Knockback * 0.125F);
+			ZMot += (double)(MathHelper.cos(user.rotationYaw * (float)Math.PI / 180.0F) * (float)Knockback * 0.125F);
+			target.motionX = XMot /1.1D;
+			target.motionZ = ZMot /1.1D;
+			//System.out.println(target.motionX);
+			//System.out.println(target.motionZ);
+		}
             
-            ItemStack stack = user.getHeldItemMainhand();
-            int levelknockBack = EnchantmentHelper.getEnchantmentLevel(Smc_020.AdvancedKnockback, stack);
-            int modKnockback = 1;
-            double Y = levelknockBack * 0.075D;
-            target.motionY += Y;
-            
-            
-            int Thelevel = EnchantmentHelper.getEnchantmentLevel(Smc_020.AdvancedKnockback, stack);
-        	
-        	int Knockback = 1;
-    		Knockback += Thelevel * 4;
-        	
-        	double XMot = target.motionX;
-        	double ZMot = target.motionZ;
-        	
-        	XMot += (double)(-MathHelper.sin(user.rotationYaw * (float)Math.PI / 180.0F) * (float)Knockback * 0.125F);
-        	ZMot += (double)(MathHelper.cos(user.rotationYaw * (float)Math.PI / 180.0F) * (float)Knockback * 0.125F);
-        	target.motionX = XMot /1.1D;
-        	target.motionZ = ZMot /1.1D;
-        	//System.out.println(target.motionX);
-        	//System.out.println(target.motionZ);
-            
-            
-            
-            
-            
-            
-            
-            	
-            }
-            
-        }
-    }
+	}
+}
    
     
 

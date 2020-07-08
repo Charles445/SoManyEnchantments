@@ -173,8 +173,8 @@ public class EnchantmentRusted extends EnchantmentBase implements IEnchantmentCu
     @Override
     public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
     {
-    	EntityLivingBase entity = (EntityLivingBase) user;
-    	user.getHeldItemMainhand().damageItem(1 + user.getRNG().nextInt(level * 2), user);
+    	if(level > 0)
+    		user.getHeldItemMainhand().damageItem(1 + user.getRNG().nextInt(level * 2), user);
     }
 		
-    }
+}

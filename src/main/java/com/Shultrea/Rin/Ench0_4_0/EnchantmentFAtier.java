@@ -114,21 +114,25 @@ public class EnchantmentFAtier extends EnchantmentBase{
     	if(!isEnabled())
     		return;
     	
-	    if(this.damageType == 2)
-	    {
-	      if(level > 0)
-	    	  target.setFire(16 * level);
-	    }
-	    else if(this.damageType == 1)
-	    {
-	        if(level > 0)
-	      	  target.setFire(8 * level);
-	    }
-	    else if(this.damageType == 0 )
-	    {
-	        if(level > 0)
-	      	  target.setFire(2 * level);
-	    }
+    	//Check if target is EntityLivingBase
+    	if(target instanceof EntityLivingBase)
+    	{
+		    if(this.damageType == 2)
+		    {
+		      if(level > 0)
+		    	  target.setFire(16 * level);
+		    }
+		    else if(this.damageType == 1)
+		    {
+		        if(level > 0)
+		      	  target.setFire(8 * level);
+		    }
+		    else if(this.damageType == 0 )
+		    {
+		        if(level > 0)
+		      	  target.setFire(2 * level);
+		    }
+    	}
     }
   
     

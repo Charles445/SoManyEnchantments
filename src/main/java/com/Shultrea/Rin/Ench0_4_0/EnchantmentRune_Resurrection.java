@@ -252,10 +252,13 @@ public class EnchantmentRune_Resurrection extends EnchantmentBase{
     }
     
     @SubscribeEvent
-    public void teleportLastDeathLocation(PlayerRespawnEvent e){
+    public void teleportLastDeathLocation(PlayerRespawnEvent e)
+    {
     	if(e.isEndConquered())
     		return;
 
+    	
+    	
     	EntityPlayer player = e.player;
     	
     	regenerateItems(player);
@@ -270,7 +273,11 @@ public class EnchantmentRune_Resurrection extends EnchantmentBase{
 		inv = player.inventory;
 		list = inv.mainInventory;
 		
-		if(p.isResurrecting() && inv != null){	
+		boolean resurrect = p.isResurrecting();
+		if(resurrect)
+			p.setResurrecting(false);
+		
+		if(resurrect && inv != null){	
 			
 			if(!player.world.getGameRules().getBoolean("keepInventory")){
 			if(EnchantmentHelper.getEnchantmentLevel(Smc_040.Rune_Resurrection, player.getHeldItemOffhand()) > 0)

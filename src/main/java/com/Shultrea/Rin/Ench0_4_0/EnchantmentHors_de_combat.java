@@ -55,9 +55,10 @@ public class EnchantmentHors_de_combat extends EnchantmentBase implements IPotio
 	}
 	
 	@Override
-	public void onEntityDamaged(EntityLivingBase user, Entity victims, int level){
+	public void onEntityDamaged(EntityLivingBase user, Entity victims, int level)
+	{
 		
-		if(!ModConfig.enabled.Hors_de_combat)
+		if(!isEnabled())
 			return;
 		
 		if(!(victims instanceof EntityLivingBase))
