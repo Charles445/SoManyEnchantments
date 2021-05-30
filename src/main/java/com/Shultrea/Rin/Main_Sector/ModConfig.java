@@ -1,5 +1,8 @@
 package com.Shultrea.Rin.Main_Sector;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -25,6 +28,7 @@ public class ModConfig
 	
 	public static class MiscellaneousConfig
 	{
+		
 		@Config.Comment("Allow enchantments to change the weather")
 		@Config.Name("Allow Weather Change")
 		public boolean EnableWeatherChange = true;
@@ -53,9 +57,23 @@ public class ModConfig
 		@Config.Name("Unregister Disabled Enchants")
 		@Config.RequiresMcRestart
 		public boolean unregisterDisabled = true;
+		
+		@Config.Comment("Specify what potion effects are blacklisted from enchantments that add potion effects (use the full registry name, I.E. minecraft:")
+		@Config.Name("Potion Blacklist")
+		@Config.RequiresMcRestart
+		public List<String> potionBlacklist;
+		
+		@Config.Comment("Whether the blacklist should be treated as a whitelist")
+		@Config.Name("Potin Blacklist as Whitelist")
+		@Config.RequiresMcRestart
+		public boolean potionBlacklistAsWhitelist = false;
+		
+		public MiscellaneousConfig()
+		{
+			potionBlacklist = new ArrayList<String>();
+			potionBlacklist.add("examplemod:registryname");
+		}
 	}
-	
-	
 	
 	@Mod.EventBusSubscriber(modid = somanyenchantments.MODID)
 	private static class EventHandler

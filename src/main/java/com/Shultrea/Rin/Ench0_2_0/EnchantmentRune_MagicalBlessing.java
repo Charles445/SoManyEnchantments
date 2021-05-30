@@ -82,6 +82,9 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
     		return;
     	
     	EntityLivingBase entity = (EntityLivingBase)fEvent.getEntity();
+    	
+    	if(entity == null)
+    		return;
 	
     	ItemStack stack = ((EntityLivingBase)fEvent.getSource().getTrueSource()).getHeldItemMainhand();
 		if(stack == null)

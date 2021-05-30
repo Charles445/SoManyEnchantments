@@ -121,8 +121,12 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
             return this.damageType == 2 && creatureType == EnumCreatureAttribute.ARTHROPOD ? (float)level * 2.5F : 0.0F;
         }
         */
+		
+		if(!isConfigEnabled())
+			return 0.0f;
+			
     	if(damageType == 5)
-    	return 0.75f + level * 0.25f;
+    		return 0.75f + level * 0.25f;
     	
     	return 0.80f + level * 0.30f;
     }
@@ -153,7 +157,7 @@ public class EnchantmentSubjectEnchantments extends EnchantmentBase implements I
         {
             EntityLivingBase entitylivingbase = (EntityLivingBase)target;
 
-            if (this.damageType == 1 && ModConfig.enabled.Mathematics)
+            if (this.damageType == 1 && ModConfig.enabled.Science)
             {
             	if(user.getRNG().nextDouble() * 100D < 20){
                user.getEntityWorld().newExplosion(user, target.posX, target.posY - 1.5D, target.posZ, 1.1f + (level * 0.4f), false, false);

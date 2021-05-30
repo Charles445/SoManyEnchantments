@@ -61,7 +61,8 @@ public class EnchantmentStrengthenedVitality extends EnchantmentBase{
     @Override
     public boolean canApplyTogether(Enchantment e)
     {
-    	return super.canApplyTogether(e) && !(e instanceof IEnchantmentProtection) && !(e instanceof EnchantmentProtection);
+    	return super.canApplyTogether(e);
+    	//return super.canApplyTogether(e) && !(e instanceof IEnchantmentProtection) && !(e instanceof EnchantmentProtection);
     }
 		  
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
