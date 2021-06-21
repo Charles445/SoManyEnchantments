@@ -89,27 +89,35 @@ public class EnchantmentParry extends EnchantmentBase {
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_020.Parry, weaponSword) <= 0)
 			return;
 		
+		//0.5.1 Rollback, remove True Strike nerf
+		/*
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_040.TrueStrike, attacker.getHeldItemMainhand()) > 0 && victim.getRNG().nextInt(100) < 75)
 			return;
+		*/
 		
 		int levelParry = EnchantmentHelper.getEnchantmentLevel(Smc_020.Parry, weaponSword);
 		
 		
-		if(victim.world.rand.nextInt(100) < 16 + (levelParry * 8) && EnchantmentsUtility.canBlockDamageSourceIgnoreUnblockable(e.getSource(), victim)){
+		//0.5.1 Rollback, remove canBlockDamageSourceIgnoreUnblockable nerf
+		if(victim.world.rand.nextInt(100) < 16 + (levelParry * 8) /*&& EnchantmentsUtility.canBlockDamageSourceIgnoreUnblockable(e.getSource(), victim)*/)
+		{
 			if(!attacker.world.isRemote)
 				EnchantmentsUtility.ImprovedKnockBack(attacker, 0.3F + (0.15f * levelParry), victim.posX - attacker.posX, victim.posZ - attacker.posZ);
-		attacker.getEntityWorld().playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.PLAYERS, 0.3f, 3f);
-		e.setCanceled(true);
-		if(victim instanceof EntityPlayer){
 			
-			EntityPlayer player = (EntityPlayer) victim;
-			player.hurtResistantTime = 15;
+			attacker.getEntityWorld().playSound(null, attacker.posX, attacker.posY, attacker.posZ, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.PLAYERS, 0.3f, 3f);
+			e.setCanceled(true);
+			if(victim instanceof EntityPlayer)
+			{
 			
+				EntityPlayer player = (EntityPlayer) victim;
+				player.hurtResistantTime = 15;
+			
+			}
+			else
+			{
+				e.getEntityLiving().hurtResistantTime = 15;
+			}
 		}
-		
-			
-		else e.getEntityLiving().hurtResistantTime = 15;
-    }
     }
 }
 

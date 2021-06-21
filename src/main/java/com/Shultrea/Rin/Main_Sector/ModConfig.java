@@ -61,18 +61,12 @@ public class ModConfig
 		@Config.Comment("Specify what potion effects are blacklisted from enchantments that add potion effects (use the full registry name, I.E. minecraft:")
 		@Config.Name("Potion Blacklist")
 		@Config.RequiresMcRestart
-		public List<String> potionBlacklist;
+		public String[] potionBlacklist = new String[]{"examplemod:registryname"};
 		
 		@Config.Comment("Whether the blacklist should be treated as a whitelist")
 		@Config.Name("Potin Blacklist as Whitelist")
 		@Config.RequiresMcRestart
 		public boolean potionBlacklistAsWhitelist = false;
-		
-		public MiscellaneousConfig()
-		{
-			potionBlacklist = new ArrayList<String>();
-			potionBlacklist.add("examplemod:registryname");
-		}
 	}
 	
 	@Mod.EventBusSubscriber(modid = somanyenchantments.MODID)

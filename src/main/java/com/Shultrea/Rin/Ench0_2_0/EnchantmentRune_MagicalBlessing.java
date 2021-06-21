@@ -111,7 +111,7 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
 		    
 		if(EnchantmentsUtility.RANDOM.nextBoolean()){
 			Potion negaPotion = EnchantmentsUtility.getNonInstantNegativePotion();
-			fEvent.getEntityLiving().addPotionEffect(new PotionEffect(negaPotion, (MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(6), 0, Integer.MAX_VALUE) + 1) * 20 * level, MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(level - 1), 0, Integer.MAX_VALUE)));			
+			fEvent.getEntityLiving().addPotionEffect(new PotionEffect(negaPotion, (MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(6), 0, Integer.MAX_VALUE) + 1) * 20 * level, MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(level) - 1, 0, Integer.MAX_VALUE)));			
 		}
 		
 		else {
@@ -119,7 +119,7 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
 			if(negaIPotion == MobEffects.INSTANT_DAMAGE && fEvent.getEntityLiving().isEntityUndead())
 				negaIPotion = MobEffects.INSTANT_HEALTH;
 					
-			fEvent.getEntityLiving().addPotionEffect(new PotionEffect(negaIPotion, 1, MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(level - 1), 0, Integer.MAX_VALUE)));
+			fEvent.getEntityLiving().addPotionEffect(new PotionEffect(negaIPotion, 1, MathHelper.clamp(EnchantmentsUtility.RANDOM.nextInt(level) - 1, 0, Integer.MAX_VALUE)));
 		}
 				
 }
