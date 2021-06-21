@@ -2,6 +2,7 @@ package com.Shultrea.Rin.Utility_Sector;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
@@ -33,7 +34,7 @@ public class PotionLister
 		potionBlacklist.clear();
 		for(String str : ModConfig.miscellaneous.potionBlacklist)
 		{
-			potionBlacklist.add(str.toLowerCase());
+			potionBlacklist.add(str.toLowerCase(Locale.ENGLISH));
 		}
 		
 		//Config Support in future		
@@ -43,7 +44,7 @@ public class PotionLister
 			//if(potentialPotion == null)
 			//	continue;
 			
-			String potionName = p.getRegistryName().toString().toLowerCase();
+			String potionName = p.getRegistryName().toString().toLowerCase(Locale.ENGLISH);
 			boolean listMatch = potionBlacklist.contains(potionName);
 			
 			//If there is a match and using a whitelist
@@ -83,6 +84,8 @@ public class PotionLister
 							break;
 				
 				}
+				
+				SMElogM.logger.debug("PotionLister accepting potion : "+potionName);
 			}
 			else
 			{
@@ -90,5 +93,10 @@ public class PotionLister
 				SMElogM.logger.debug("PotionLister skipping potion : "+potionName);
 			}
 		}
+		
+		SMElogM.logger.debug("PotionLister Instant Debuffs: "+debuff_instant_ids.size());
+		SMElogM.logger.debug("PotionLister Debuffs: "+debuff_ids.size());
+		
+		
 	}	
 }

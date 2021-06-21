@@ -64,7 +64,7 @@ public class ModConfig
 		public String[] potionBlacklist = new String[]{"examplemod:registryname"};
 		
 		@Config.Comment("Whether the blacklist should be treated as a whitelist")
-		@Config.Name("Potin Blacklist as Whitelist")
+		@Config.Name("Potion Blacklist as Whitelist")
 		@Config.RequiresMcRestart
 		public boolean potionBlacklistAsWhitelist = false;
 	}

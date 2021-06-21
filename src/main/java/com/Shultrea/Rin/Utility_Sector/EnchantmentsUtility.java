@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
@@ -693,31 +695,50 @@ public class EnchantmentsUtility {
 	        return damage * (1.0F - f / 80.0F);
 	    }
 	   
-	   
-	   public static Potion getNonInstantNegativePotion(){
+	   @Nullable
+	   public static Potion getNonInstantNegativePotion()
+	   {
 		   
+		   if(PotionLister.debuff_ids.size() == 0)
+			   return null;
+			   
 		   int cycles = RANDOM.nextInt(PotionLister.debuff_ids.size());
 		   
 		   return Potion.getPotionById(PotionLister.debuff_ids.get(cycles));
 		   
 	   }
 	   
+	   @Nullable
 	   public static Potion getInstantNegativePotion(){
+		   
+		   if(PotionLister.debuff_instant_ids.size() == 0)
+			   return null;
 		   
 		   int cycles = RANDOM.nextInt(PotionLister.debuff_instant_ids.size());
 		   
 		   return Potion.getPotionById(PotionLister.debuff_instant_ids.get(cycles));
 		   
 	   }
-	   public static Potion getNonInstantPositivePotion(){
 	   
+	   @Nullable
+	   public static Potion getNonInstantPositivePotion()
+	   {
+		   if(PotionLister.buff_ids.size() == 0)
+			   return null;
+		   
 		   int cycles = RANDOM.nextInt(PotionLister.buff_ids.size());
 	   
 		   return Potion.getPotionById(PotionLister.buff_ids.get(cycles));
 	   
 	   }
-	   public static Potion getInstantPositivePotion(){
 	   
+	   @Nullable
+	   public static Potion getInstantPositivePotion()
+	   {
+	   
+		   if(PotionLister.buff_instant_ids.size() == 0)
+			   return null;
+		   
 		   int cycles = RANDOM.nextInt(PotionLister.buff_instant_ids.size());
 	   
 		   return Potion.getPotionById(PotionLister.buff_instant_ids.get(cycles));
