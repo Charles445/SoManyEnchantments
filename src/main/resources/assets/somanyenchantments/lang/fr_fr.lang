@@ -1,0 +1,413 @@
+olenchantment.RinsPurity=
+
+enchantment.Rune_PiercingCapabilities=Rune: Capacités de Perçage
+enchantment.somanyenchantments.rune_piercingcapabilities.desc=Une des runes. Permet à votre attaque de percer l'armure de l'ennemi de 25% à chaque niveau.
+
+enchantment.AtomicDeconstructor=Déconstructeur Atomique
+enchantment.somanyenchantments.atomicdeconstructor.desc=Vos attaques ont très peu de chances de garantir une mort instantanée de l'ennemis.
+
+enchantment.Defusion=Désamorçage de Bordure
+enchantment.somanyenchantments.defusion.sec=Inflige des dégâts supplémentaires aux Creepers
+
+enchantment.Inefficent=Inefficacité
+enchantment.somanyenchantments.inefficent.desc=Réduit la vitesse de Minage des ressources.
+
+enchantment.HeavyWeight=Poids Lourd
+enchantment.somanyenchantments.heavyweight.desc=Réduit la vitesse d'attaque.
+
+enchantment.AdvancedBaneOfArthropods=Fléau des Arthropodes Avancé
+enchantment.somanyenchantments.advancedbaneofarthropods.desc=Version avancée de Fléau des Arthropodes.
+
+enchantment.AdvancedSharpness=Tranchant Avancé
+enchantment.somanyenchantments.advancedsharpness.desc=Version avancée du Tranchant.
+
+enchantment.AdvancedSmite=Châtiment Avancé
+enchantment.somanyenchantments.advancedsmite.desc=Version avancée de Châtiment.
+
+enchantment.AdvancedEfficency=Efficacité Avancée
+enchantment.somanyenchantments.advancedefficency.desc=Version avancée d'Efficacité.
+
+enchantment.Bluntness=Cassure
+enchantment.somanyenchantments.bluntness.desc=Réduit les dégâts d'attaque d'un objet.
+
+enchantment.Lifesteal=Sangsue
+enchantment.somanyenchantments.lifesteal.desc=Vous soigne en fonction des dégâts que vous avez infligés.
+
+enchantment.PurgingBlade=Lame Purgeante
+enchantment.somanyenchantments.purgingblade.desc=Donne à votre attaque une chance de purger l'effet d'une potion de l'ennemi. Peu importe que l'effet de la potion soit positif ou négatif.
+
+enchantment.ReviledBlade=Lame Dévergondée
+enchantment.somanyenchantments.reviledblade.desc=Vos dégâts augmentent d'autant plus que la santé de votre adversaire est faible.
+
+enchantment.Rusted=Rouillure
+enchantment.somanyenchantments.rusted.desc=Décompose (endommage) l'objet s'il reste dans l'inventaire de l'utilisateur.
+
+enchantment.SpellBreaker=Briseur de Sorts
+enchantment.somanyenchantments.spellbreaker.desc=Inflige des dégâts supplémentaires aux ennemis dotés de magie comme les Sorcières, les Evokers et les Illusionnistes.
+
+enchantment.WaterAspect=Aura de l'Eau
+enchantment.somanyenchantments.wateraspect.desc=Inflige des dégâts bonus aux Blazes, aux Enderman, au Cube de Magma et aux ennemis qui sont faible à l'eau. Vous infligez également des dégâts bonus si vous êtes également trempé dans l'eau. Les dégâts s'empilent à condition de remplir les conditions requises.
+
+enchantment.CombatRegeneration=Combattant Vétérinaire
+enchantment.somanyenchantments.combatregeneration.desc=Amplifie le taux de soins de l'utilisateur. Cela inclut les effets de soins instantanée comme les potions de soins instantanées.
+
+enchantment.Parry=Esquive Furtive
+enchantment.somanyenchantments.parry.desc=Les attaques de mêlée effectuées par les ennemis ont une chance d'être parées et elles seront assommées comme si elles étaient endommagées. En d'autres termes, les attaques des ennemis ont une chance d'être bloquées.
+
+enchantment.CounterAttack=Contre-Attaque
+enchantment.somanyenchantments.counterattack.desc=Les attaques de mêlée effectuées par les ennemis ont une chance de vous faire attaquer automatiquement.
+
+enchantment.Mortalitas=Mortalité
+enchantment.somanyenchantments.mortalitas.desc=Pour chaque mort par une arme enchantée avec cet enchantement, le tueur gagne un peu de dégâts. De même, si une victime est tuée par une arme enchantée avec cet enchantement, elle perd une fraction de ses dégâts proportionnelle au niveau de cet enchantement en fonction de l'arme du tueur.
+
+enchantment.BlessedEdge=Bordures Bénite
+enchantment.somanyenchantments.blessededge.desc=Variante de châtiment, inflige des dégâts supplémentaires aux morts-vivants et vous soigne pour un pourcentage de vos dégâts infligés.
+
+enchantment.Butchering=Boucherie
+enchantment.somanyenchantments.butchering.desc=Inflige des dégâts supplémentaires aux animaux.
+enchantment.slicing=Tranchage
+
+enchantment.CursedEdge=Bordure Maudite
+enchantment.somanyenchantments.cursededge.desc=Pendant que vous infligez des dégâts supplémentaires, vous subissez également des dégâts basés sur les dégâts de votre attaque.
+
+enchantment.Unpredictable=Imprévisibilité
+enchantment.somanyenchantments.unpredictable.desc=Rend littéralement vos dégâts imprévisibles de négatif à positif alors que les soins sont négatifs. Les dégâts qui sont aléatoires sont basés sur vos dégâts.
+
+enchantment.Purification=Purification
+enchantment.somanyenchantments.purification.desc=Purifie certaines entités si elles sont purifiables.
+
+enchantment.SwifterSlashes=Entailles Rapides
+enchantment.somanyenchantments.swifterslashes.desc=Vous confère une vitesse d'attaque supplémentaire. De plus, il vous donne une chance de percer la période d'invulnérabilité de la foule, ce qui vous permet d'attaquer rapidement, mais au prix de dégâts réduits. 
+
+enchantment.FieryEdge=Bordure Ardente
+enchantment.somanyenchantments.fieryedge.desc=Une variante de aura de feu qui brûle les monstres pendant une période de temps prolongée. Donne également à l'utilisateur une chance d'ignorer l'invulnérabilité d'une entité si elle est en feu.
+
+enchantment.Culling=Abattage
+enchantment.somanyenchantments.culling.desc=Lors de l'attaque d'ennemis à faible pv, vous bénéficiez d'une accélération du saut et avez la possibilité de tuer instantanément cet ennemi en sautant et en tombant avec une vitesse non inférieure à 0,34D dans le mouvement Y (en d'autres termes, vous devez déjà tomber avec une vitesse). Si l'acte est réussi, ce mob a une chance de laisser tomber sa tête de mob spécifique. Si l'acte échoue, en revanche, il vous donne des dégâts de type critique qui s'empilent avec les critiques, mais vous coupe la faim. Si vous en abusez, cette technique vous fera perdre rapidement votre faim.
+
+enchantment.AdvancedKnockback=Recul Advancé
+enchantment.somanyenchantments.advancedknockback.desc=Variante avancée du recul.
+
+
+enchantment.Rune_MagicalBlessing=Rune: Bénédiction Magique
+enchantment.somanyenchantments.rune_magicalblessing.desc=Convertit vos dégâts en magie (en d'autres termes, c'est comme si vous aviez infligé un dégât magique) de 25% à chaque niveau. Accorde également un dégât supplémentaire comme l'acuité.
+
+enchantment.PenetratingEdge=Bordure Pénétrante
+enchantment.somanyenchantments.penetratingedge.desc=Les adversaires ayant une armure élevée subiront des dégâts supplémentaires.
+
+enchantment.Clearsky=Faveur de Clearskies
+enchantment.somanyenchantments.clearsky.desc=Un des enchantements météorologiques. Il inflige des dégâts supplémentaires à tous si le temps est clair et des dégâts moindres s'il ne l'est pas.
+
+enchantment.Moonlight=Bénédiction Lunaire
+enchantment.somanyenchantments.moonlight.desc=L'un des deux enchantements de jour et de nuit. Il inflige des dégâts supplémentaires et rend aveugle si c'est la nuit et moins si c'est le jour.
+
+enchantment.Raining=Don Pluvieux
+enchantment.somanyenchantments.raining.desc=Un des enchantements météorologiques. Il inflige des dégâts supplémentaires à tout le monde lorsqu'il pleut et des dégâts moindres s'il ne pleut pas.
+
+enchantment.Sunshine=Bénédiction du Sol
+enchantment.somanyenchantments.sunshine.desc=L'un des deux enchantements de jour et de nuit. Il inflige des dégâts supplémentaires et s'applique à l'éclat si c'est le jour et moins si c'est la nuit.
+
+enchantment.Thunderstorm=Don d'Orage
+enchantment.somanyenchantments.thunderstorm.desc=Un des enchantements météorologiques. Fait des dégâts supplémentaires à tous pendant les orages et des dégâts moindres si ce n'est pas pendant les orages. Fait des dégâts normaux s'il pleut.
+
+enchantment.Winter=Grâce de l'Hiver
+enchantment.somanyenchantments.winter.desc=L'un des enchantements météorologiques bien qu'il fonctionne dans les biomes à basse température. Il inflige des dégâts supplémentaires à tous et applique plusieurs effets de potion négatifs à chaque coup lié à l'hypothermie.
+
+enchantment.Smelter=Fonderie
+enchantment.somanyenchantments.smelter.desc=Récolter un bloc vous donne le résultat de sa fonte. Fonctionne avec fortune.
+
+enchantment.AdvancedFortune=Fortune Avancé
+enchantment.EmpoweredDefence=Défense Renforcée
+enchantment.somanyenchantments.empowereddefence.desc=Renforce la défense du bouclier. Donne une chance d'annuler la désactivation du bouclier et de l'endommager tout en frappant l'attaquant plus loin et en l'endommageant en fonction des dégâts de son attaque.
+
+enchantment.Strafe=Frappe
+enchantment.somanyenchantments.strafe.desc=Augmente la vitesse de traction de l'arc.
+
+enchantment.AdvancedPower=Puissance Avancé
+enchantment.somanyenchantments.advancedpower.desc=Une version avancé de puissance.
+
+enchantment.CriticalStrike=Coup Critique
+enchantment.somanyenchantments.criticalstrike.desc=Donne à votre attaque une chance d'infliger des dégâts supplémentaires en fonction des dégâts de votre attaque. Utilise une distribution pseudo-aléatoire au lieu d'une véritable distribution aléatoire.
+
+enchantment.Rune_Resurrection=Rune: Résurrection
+enchantment.somanyenchantments.rune_resurrection.desc=Lorsque l'utilisateur (qui doit être un joueur) meurt, il réapparaît à son point de mort avec ses objets intacts.
+
+
+enchantment.AdvancedLooting=Butin Avancé
+enchantment.somanyenchantments.advancedlooting.desc=Une version avancé de butin.
+
+enchantment.AshDestroyer=Destructeur de Cendres
+enchantment.somanyenchantments.ashdestroyer.desc=Inflige des dégâts supplémentaires si l'ennemi est en feu.
+
+enchantment.PhysicalProtection=Physical Protection
+enchantment.somanyenchantments.physicalprotection.desc=Reduces the damage taken from melee attacks.
+
+enchantment.Viper=Vipère
+enchantment.somanyenchantments.viper.desc=Inflige des dégâts supplémentaires aux cibles empoisonnées et/ou wither.
+
+enchantment.Desolator=Désolateur
+enchantment.somanyenchantments.desolator.desc=Les attaques ont une chance d'appliquer une résistance négative. Si la cible a une résistance positive active, elle reçoit des dégâts supplémentaires à la place. Applique également une faiblesse.
+
+enchantment.Disorientation=Lame de Désorientante
+enchantment.somanyenchantments.disorientation.desc=Les attaques ont une chance de désorienter (applique l'effet de potion lié à la désorientation).
+
+enchantment.Envenomed=Envenimé
+enchantment.somanyenchantments.envenomed.desc=Les attaques appliquent du poison et du wither. Le poison dépend du fait qu'il soit applicable à un mob ou non.
+
+enchantment.MagicProtection=Protection Magique
+enchantment.somanyenchantments.magicprotection.desc=Réduit les dégâts des attaques magiques.
+
+enchantment.Levitator=Levitation
+enchantment.somanyenchantments.levitator.desc=Les attaques appliquent désormais la lévitation.
+
+enchantment.Powerless=Impuissance
+enchantment.somanyenchantments.powerless.desc=Réduit les dégâts des flèches tirées par un arc.
+
+enchantment.Rune_Revival=Rune: Renaissance
+enchantment.somanyenchantments.rune_revival.desc=Donne à l'objet une chance de ressusciter s'il est sur le point d'être détruit, en fonction du niveau. La durabilité restaurée dépend également du niveau.
+
+enchantment.AdvancedPunch=Frappe Avancé
+enchantment.somanyenchantments.advancedpunch.desc=Une version avancée de frappe.
+
+enchantment.AdvancedLure=Appât Avancé
+enchantment.somanyenchantments.advancedlure.desc=Une version avancé d'appât.
+
+enchantment.AdvancedLuckOfTheSea=Chance de la Mer Avancé
+enchantment.somanyenchantments.advancedluckofthesea.desc=Une version avancé de chance de la mer.
+
+enchantment.AdvancedFeatherFalling=Chute Amortie Avancé
+enchantment.somanyenchantments.advancedfeatherfalling.desc=Une version avancé de chute amortie.
+
+enchantment.AdvancedThorns=Épines Avancé
+enchantment.somanyenchantments.advancedthorns.desc=Une version avancé d'épines.
+
+enchantment.BurningThorns=Épines Brûlantes
+enchantment.somanyenchantments.burningthorns.desc=Lorsqu'il est déclenché, en plus de l'effet des épines, il brûle également vos adversaires.
+
+enchantment.AdvancedProtection=Protection Avancée
+enchantment.somanyenchantments.advancedprotection.desc=Une version avancé de protection.
+
+enchantment.AdvancedFireProtection=Protection Contre le Feu Avancé
+enchantment.somanyenchantments.advancedfireprotection.desc=Une version avancé de protection contre le feu.
+
+enchantment.AdvancedBlastProtection=Protection Contre les Explosions Avancé
+enchantment.somanyenchantments.advancedblastprotection.desc=Une version avancé de protection contre les explosions. Au lieu de vous donner une résistance au recul à l'explosion, elle vous donne un attribut de résistance au recul qui dépend du niveau.
+
+enchantment.AdvancedProjectileProtection=Protection Contre les Projectiles Avancé
+enchantment.somanyenchantments.advancedprojectileprotection.desc=Une version avancé de protection contre les projectiles.
+
+enchantment.CactusProtection=Protection Contre les Cactus
+enchantment.WitherProtection=Protection Contre le Wither
+
+enchantment.Mathematics=Sujet Mathématiques
+enchantment.somanyenchantments.mathematics.desc=Un des enchantements de sujet. Donne des dégâts supplémentaires à tous comme la netteté et vous donne également des dégâts supplémentaires basés sur la pv de la cible.
+
+enchantment.Science=Sujet de Science
+enchantment.somanyenchantments.science.desc=Les attaques ont une chance d'exploser ! En infligeant des dégâts massifs à la cible et aux entités proches autour d'elle. Le propriétaire ne subit pas les dégâts de l'explosion et l'explosion n'endommage pas le terrain. 
+
+enchantment.English=Sujet Anglais
+enchantment.somanyenchantments.english.desc=L'un des enchantements de sujet. En plus des premiers dégâts supplémentaires, il vous permet d'infliger des dégâts supplémentaires aux monstres plus "intelligents" (par exemple : les villageois, les loups, les zombies, les golems de neige, etc.) 
+
+enchantment.History=Sujet d'Histoire
+enchantment.somanyenchantments.history.desc=Un des enchantements du sujet. Donne des dégâts supplémentaires à tous comme l'acuité. En dehors des premiers dégâts supplémentaires, les attaques sont d'autant plus fortes que le monde existe depuis longtemps (en d'autres termes, un monde qui est joué pendant 4 jours en temps réel (temps total joué bien sûr) donne plus de dégâts supplémentaires qu'un monde nouvellement créé).
+
+enchantment.PE=Sujet P.E.
+enchantment.somanyenchantments.pe.desc=Un des enchantements du sujet. Donne des dommages supplémentaires à tous comme tranchant. Les attaques ont également une chance de déclencher plusieurs effets de potion liés à l'exercice et à la santé.
+
+enchantment.Physics=Sujet Physique
+enchantment.somanyenchantments.physics.desc=TBA
+
+enchantment.Chemistry=Subject Chemistry
+enchantment.somanyenchantments. .desc=
+
+enchantment.Biology=Subject Biology
+enchantment.somanyenchantments. .desc=
+
+enchantment.Hors_de_combat=Hors De Combat
+enchantment.somanyenchantments.hors_de_combat.desc=Les attaques ont une chance d'estropier (applique l'effet de potion lié à l'estropie).
+
+enchantment.Disarmament=Désarmement
+enchantment.somanyenchantments.disarmament.desc=Vous donne une chance de désarmer votre adversaire de deux façons : lui appliquer une faiblesse sévère ou le forcer à lâcher l'objet qu'il tient.
+
+enchantment.AdvancedRespiration=Respiration Avancé
+enchantment.somanyenchantments.advancedrespiration.desc=Une version avancé de respiration.
+
+enchantment.LesserSharpness=Faible Tranchant
+enchantment.somanyenchantments.lessersharpness.desc=Le plus bas niveau de tranchant.
+
+enchantment.LesserBaneOfArthropods=Faible Fléau des Arthropodes
+enchantment.somanyenchantments.lesserbaneofarthropods.desc=Le plus bas niveau de fléau des arthropodes.
+
+enchantment.LesserSmite=Faible Châtiment
+enchantment.somanyenchantments.lessersmite.desc=Le plus bas niveau de châtiment.
+
+enchantment.SupremeSharpness=Tranchant Suprême
+enchantment.somanyenchantments.supremesharpness.desc=Version suprême et le niveau le plus puissant de Tranchant.
+
+enchantment.SupremeBaneOfArthropods=Fléau des Arthropodes Suprême
+enchantment.somanyenchantments.supremebaneofarthropods.desc=Version suprême et le niveau le plus puissant de fléau des arthropodes.
+
+enchantment.SupremeSmite=Châtiment Suprême
+enchantment.somanyenchantments.supremesmite.desc=Version suprême et le niveau le plus puissant de châtiment.
+
+enchantment.CurseofPossession=Malédiction de Possession
+enchantment.somanyenchantments.curseofpossession.desc=Les objets ne peuvent pas quitter l'inventaire du joueur.
+
+enchantment.flinging=Vol
+enchantment.somanyenchantments.flinging.desc=Similaire au Recul, mais le recul est dans un mouvement vertical.
+
+enchantment.sharperedge=Tranchant Renforcé
+enchantment.somanyenchantments.sharperedge.desc=Augmente les dégâts des outils.
+
+enchantment.amplifiedsharpness=Tranchant Amplifiée
+enchantment.somanyenchantments.amplifiedsharpness=Augmente drastiquement les dégâts de la hache et inflige plus de dégâts si la cible a une armure inférieure.
+
+enchantment.adjuster=Ajusteur
+enchantment.somanyenchantments.adjuster.desc=Augmente la vitesse de minage lorsque de mauvais outils sont utilisés.
+
+enchantment.lfa=Faible Aura de Feu
+enchantment.somanyenchantments.lfa.desc=Le plus bas niveau d'aura de feu.
+
+enchantment.afa=Aura de Feu Avancé
+enchantment.somanyenchantments.afa.desc=Une version avancé d'aura de feu.
+
+enchantment.sfa=Aura de Feu Suprême
+enchantment.somanyenchantments.sfa.desc=Version suprême et le niveau le plus puissant d'Aura de Feu.
+
+enchantment.Swiper=Coup d'Arc
+enchantment.somanyenchantments.swiper.desc=Variante d'Affilage qui ne dépend pas du temps de recharge de l'attaque pour pouvoir fendre (attaque de zone en mêlée).
+
+enchantment.freezing=Congélation
+enchantment.somanyenchantments.freezing.desc=Applique un effet garanti de potion de lenteur et de fatigue minière à chaque coup. Chaque coup augmente également l'amplificateur de l'effet de la potion et s'il atteint VIII, il y a une chance que le mob soit encastré dans de la glace givrée. Endommage l'épée si elle se déclenche.
+
+enchantment.advancedmending=Racommodage Avancé
+enchantment.somanyenchantments.advancedmending.desc=Une version avancé de racommodage.
+
+enchantment.lfl=Faible Flamme
+enchantment.somanyenchantments.lfl.desc=Le plus bas niveau de flamme.
+
+enchantment.afl=Flamme Avancé
+enchantment.somanyenchantments.afl.desc=Une version avancé de flamme.
+
+enchantment.sfl=Flamme Suprême
+enchantment.somanyenchantments.sfl.desc=Version suprême et le niveau le plus puissant de Flamme.
+
+enchantment.rune_starfall=Rune: Chute d'Étoiles
+enchantment.somanyenchantments.rune_starfall.desc=Les flèches tirées dans le ciel créeront une petite tempête de flèches.
+
+enchantment.strengthenedvitality=Vitalité Renforcée
+enchantment.somanyenchantments.strengthenedvitality.desc=Augmente votre santé en fonction de votre santé maximale.
+
+enchantment.difficultyscaled=Difficulté Puissante
+enchantment.somanyenchantments.difficultyscaled.desc=Augmente ou diminue vos dégâts en fonction de la difficulté de votre monde.
+
+enchantment.splitshot=Mitrailleur
+enchantment.somanyenchantments.splitshot.desc=Duplique la flèche tirée par l'arc. Le nombre de flèches varie selon le niveau de l'enchantement et chaque flèche tirée endommage l'arc de 1.
+
+enchantment.meltdown=Auto-Explosion
+enchantment.somanyenchantments.meltdown.desc=Vous donne une chance d'exploser si vous êtes attaqué. L'explosion ne vous fait pas de mal mais endommage gravement votre armure.
+
+enchantment.WellTilled=Hydraté
+enchantment.somanyenchantments.welltilled.desc=Le labourage rendra la terre agricole automatiquement humide.
+
+enchantment.TillingPower=Labourage
+enchantment.somanyenchantments.tillingpower.desc=La surface de travail est augmentée tout en endommageant la houe en fonction du nombre de terre labourée.
+
+enchantment.ScytheDamage=Râteau Dentelé
+enchantment.somanyenchantments.scythedamage.desc=Augmente considérablement les dégâts de la houe.
+
+enchantment.upgrade=Amélioration Potentiels
+enchantment.somanyenchantments.upgrade.desc=Réduit le coût de l'XP dans l'enclume.
+
+enchantment.Adept=Adepte
+enchantment.somanyenchantments.adept.desc=Multiplie les gains d'XP. Le bonus d'XP multiplié est moindre lorsqu'il s'agit d'un boss.
+
+enchantment.NaturalBlocking=Blocage Naturel
+enchantment.somanyenchantments.naturalblocking.desc=Lorsqu'il brandit un bouclier, le Bouclier bloque naturellement un pourcentage des dégâts subis. Ces dégâts sont infligés au bouclier et non au porteur.
+
+enchantment.Brutality=Brutalité
+enchantment.somanyenchantments.brutality.desc=Les dégâts infligés aux armures portées par les entités sont augmentés.
+
+enchantment.MagmaWalker=Semelles de Magmatique
+enchantment.somanyenchantments.magmawalker.desc=Permet à l'utilisateur de marcher dans la lave, le transformant en blocs de magma. Comme Frost Walker, annule les dégâts infligés par les blocs de magma.
+
+enchantment.Cryogenic=Cryogénique
+enchantment.somanyenchantments.cryogenic.desc=
+
+enchantment.fieryshield=Bouclier Brûlant
+enchantment.somanyenchantments.fieryshield.desc=Réfléchit une partie des dégâts infligés par les attaquants tout en les brûlant. N'annule pas les attaques neutralisant le bouclier.
+
+enchantment.InnerBerserk=Espoir
+enchantment.somanyenchantments.innerberserk.desc=Augmente les dégâts que l'utilisateur inflige d'autant plus que sa santé est basse.
+
+enchantment.CurseofVulnerability=Malédiction de Vulnérabilité
+enchantment.somanyenchantments.curseofvulnerability.desc=Amplifie les dégâts subis par l'utilisateur.
+
+enchantment.CurseInflicter=Rune: Malédictions Scellées 
+enchantment.somanyenchantments.curseinflicter.desc=Les attaques donnent une chance d'enchanter un enchantement de malédiction à l'entité attaquée si elle porte un équipement.
+
+enchantment.CurseOfInaccuracy=Malédiction d'Imprécision
+enchantment.somanyenchantments.curseofinaccuracy.desc=Malédiction de l'utilisateur dans ses attaques, ce qui fait que les attaques de mêlée manquent et que les flèches lancées depuis un arc sont imprécises.
+
+enchantment.Inhumane=Inhumain
+enchantment.somanyenchantments.inhumane.desc=Les attaques infligent des dégâts supplémentaires aux Illagers.
+
+enchantment.DarkShadows=Ombres Noires
+enchantment.somanyenchantments.darkshadows.desc=Les attaques infligent des dégâts supplémentaires si l'utilisateur et la cible se trouvent dans des zones d'ombre. Les niveaux III et supérieurs appliquent la cécité.
+
+enchantment.Rune_ArrowPiercing=Rune: Perçage de Flèches
+enchantment.somanyenchantments.rune_arrowpiercing.desc=Les flèches transpercent maintenant les armures.
+
+enchantment.CurseAmplifier=Amplificateur de Malédiction
+enchantment.somanyenchantments.curseamplifier.desc=Amplifie les malédictions que l'utilisateur possède actuellement.
+
+enchantment.AncientCurseInflicter=Anciennes Malédictions Scellées
+enchantment.somanyenchantments.ancientcurseinflicter.desc=Un ancien enchantement qui fait que les attaques maudissent le ou les équipements détenus et portés par une entité.
+
+enchantment.CurseofHolding=Malédiction du Maintien
+enchantment.somanyenchantments.curseofholding.desc=Maudits un joueur s'il détient cet objet. Ne maudit pas les entités pour des raisons techniques comme la diminution du TPS sur un serveur.
+
+enchantment.CurseofDecay=Malédiction de Pourriture
+enchantment.somanyenchantments.curseofdecay.desc=Fait en sorte qu'un objet se décompose très rapidement s'il est laissé sur le sol.
+
+enchantment.LightWeight=Poids Léger
+enchantment.somanyenchantments.lightweight.desc=L'utilisateur (qui doit être un joueur) saute plus haut. La condition minimale pour subir des dégâts de chute est prolongée.
+
+enchantment.LuckMagnification=Manifestation de Chance
+enchantment.somanyenchantments.luckmagnification.desc=L'utilisateur (qui doit être un joueur) est soumis à une amplification de la chance.
+
+enchantment.UnderwaterStrider=Nageur Sous-Marin
+enchantment.somanyenchantments.underwaterstrider.desc=Vitesse de nage plus rapide si le joueur en question est entièrement immergé sous terre.
+
+enchantment.Quarrying=Exploitation de Carrières
+enchantment.somanyenchantments.quarrying.desc=Une variante de la fortune qui a une mécanique différente pour augmenter la quantité lâchée par une ressource non-bloquée.
+
+enchantment.Frenzy=Déraisonnable
+enchantment.somanyenchantments.frenzy.desc=Détruit le raisonnement d'une entité, la rendant furieuse contre des entités aléatoires à proximité.
+
+enchantment.Evasion=Évasion
+enchantment.somanyenchantments.evasion.desc=Donne à l'utilisateur une chance d'éviter les attaques. Si l'attaque est évitée, l'utilisateur effectue une action de type saut.
+
+enchantment.Instability=Instabilité
+enchantment.somanyenchantments.instability.desc=Une forme de malédiction qui augmente les dégâts d'un outil plus sa durabilité est faible. L'outil souffre en subissant des dégâts proportionnels à ceux qu'il a infligés.
+
+enchantment.Pulling=Traînage
+enchantment.somanyenchantments.pulling.desc=Version "Hiérarchie inversée" de Punch. En termes simples, l'opposé de Punch.
+
+enchantment.Pushing=Poussée
+enchantment.somanyenchantments.pushing.desc=Bénit l'arc avec une capacité à repousser les entités proches pendant la charge.
+
+enchantment.Unsheathing=Dégainage
+enchantment.somanyenchantments.unsheathing.desc=Lorsque vous subissez des dégâts (il doit y avoir un attaquant), l'épée change automatiquement de place avec l'objet que l'utilisateur tient actuellement. Ne fonctionne pas si l'épée n'est pas dans la barre d'outils principale.
+
+enchantment.SwordMastery=Maîtrise Ancienne de l'Épée
+enchantment.somanyenchantments.swordmastery.desc=Un ancien enchantement qui rend l'utilisateur quelque peu compétent à l'épée. Au niveau 3, il rend également les enchantements de dégâts 1,5 fois plus efficaces. Peut ne pas fonctionner sur les enchantements d'autres mods.
+
+enchantment.TrueStrike=Vraie Frappe
+enchantment.somanyenchantments.truestrike.desc=Permet à l'utilisateur de traverser l'enchantement d'évasion de 75% et empêche l'utilisateur d'obtenir l'enchantement de malédiction d'imprécision.
+
+enchantment.Pandora=Malédiction de Pandore
+
+
+death.attack.Pure=%1$s a été envoyé au paradis.
+death.attack.Silence=%1$s est mort en silence.
