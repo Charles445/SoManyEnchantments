@@ -124,7 +124,8 @@ public class EnchantmentAdvancedEfficiency extends EnchantmentBase implements IE
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.ExtremeEfficency, dmgSource) <= 0)
 			return;
 	
-		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
 		
 		int levelEE = EnchantmentHelper.getEnchantmentLevel(Smc_010.ExtremeEfficency, dmgSource);
 		

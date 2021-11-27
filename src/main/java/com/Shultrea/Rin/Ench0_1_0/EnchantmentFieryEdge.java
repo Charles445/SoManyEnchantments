@@ -53,7 +53,7 @@ public class EnchantmentFieryEdge extends EnchantmentBase {
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
     {
     	if(!(target instanceof EntityLivingBase))
         return;

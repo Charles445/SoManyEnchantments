@@ -90,6 +90,9 @@ public class EnchantmentButchering extends EnchantmentBase implements IEnchantme
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.Butchering, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelButchering = EnchantmentHelper.getEnchantmentLevel(Smc_010.Butchering, dmgSource);
 		if(fEvent.getEntity() instanceof EntityAnimal)
 		{					

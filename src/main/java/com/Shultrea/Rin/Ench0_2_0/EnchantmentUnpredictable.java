@@ -73,6 +73,9 @@ public class EnchantmentUnpredictable extends EnchantmentBase implements IEnchan
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_020.Unpredictable, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelDamageRandomizer = EnchantmentHelper.getEnchantmentLevel(Smc_020.Unpredictable, dmgSource);
 		{				
 			float random = (float) Math.random() * (fEvent.getAmount() * (levelDamageRandomizer * 1.25f));

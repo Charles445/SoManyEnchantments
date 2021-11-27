@@ -61,7 +61,7 @@ public class EnchantmentPurification extends EnchantmentBase implements IPotionD
     }
     
     @Override
-    public void onEntityDamaged (EntityLivingBase user, Entity target, int level) {
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level) {
     	
     	if(!(target instanceof EntityLivingBase))
     		return;
@@ -70,8 +70,7 @@ public class EnchantmentPurification extends EnchantmentBase implements IPotionD
     		return;
     	
     	EntityLivingBase victim = (EntityLivingBase) target;
-    	ItemStack item = user.getHeldItemMainhand();
-    	int lvl = EnchantmentHelper.getEnchantmentLevel(Smc_010.Purification, item);
+    	int lvl = EnchantmentHelper.getEnchantmentLevel(Smc_010.Purification, stack);
     	
     	if(lvl <= 0)
     		return;

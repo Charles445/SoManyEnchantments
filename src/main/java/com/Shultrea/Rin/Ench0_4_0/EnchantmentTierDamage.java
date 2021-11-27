@@ -137,7 +137,7 @@ public class EnchantmentTierDamage extends EnchantmentBase implements IEnchantme
     }
 
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
     {
         if (target instanceof EntityLivingBase)
         {

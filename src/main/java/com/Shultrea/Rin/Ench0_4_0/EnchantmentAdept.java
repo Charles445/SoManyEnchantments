@@ -87,6 +87,9 @@ public class EnchantmentAdept extends EnchantmentBase{
     	if(lvl <= 0)
     		return;
     	
+    	//Don't add experience to drops that otherwise would have no experience
+    	if(fEvent.getOriginalExperience() <= 0)
+    		return;
 
     	if(fEvent.getEntityLiving() != null && !fEvent.getEntityLiving().isNonBoss())
     		fEvent.setDroppedExperience(2 + lvl + (int)(fEvent.getOriginalExperience() * (0.75f + 0.5f * lvl)));

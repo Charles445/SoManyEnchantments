@@ -170,6 +170,8 @@ public void HandleEnchant(LivingHurtEvent fEvent){
 	if(EnchantmentHelper.getEnchantmentLevel(Smc_030.Thunderstorm, dmgSource) <= 0)
 		return;
 	
+	if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+		return;
 	
 	int levelWeather = EnchantmentHelper.getEnchantmentLevel(Smc_030.Thunderstorm, dmgSource);
 	

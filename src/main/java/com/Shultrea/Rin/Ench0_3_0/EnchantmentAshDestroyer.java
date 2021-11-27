@@ -81,6 +81,9 @@ public class EnchantmentAshDestroyer extends EnchantmentBase implements IDamageM
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_030.AshDestroyer, dmgSource) <= 0)
 			return;	
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelAshBringer = EnchantmentHelper.getEnchantmentLevel(Smc_030.AshDestroyer, dmgSource);
 		{				
 		

@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "0.5.2"
+version = "0.5.3"
 group = "com.Shultrea.Rin" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "SoManyEnchantments"
 
@@ -73,5 +73,13 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+jar {
+    manifest 
+	{
+        attributes "FMLCorePlugin": "com.Shultrea.Rin.Transformer.CoreLoader"
+		attributes "FMLCorePluginContainsFMLMod": "com.Shultrea.Rin.Main_Sector.somanyenchantments"
     }
 }

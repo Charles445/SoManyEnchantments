@@ -115,11 +115,10 @@ public class EnchantmentAdvancedKnockback extends EnchantmentBase
     
   
 	@Override
-	public void onEntityDamaged (EntityLivingBase user, Entity target, int level)
+	public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
 	{
 		if(target instanceof EntityLivingBase)
 		{
-			ItemStack stack = user.getHeldItemMainhand();
 			int levelknockBack = EnchantmentHelper.getEnchantmentLevel(Smc_020.AdvancedKnockback, stack);
 			int modKnockback = 1;
 			double Y = levelknockBack * 0.075D;

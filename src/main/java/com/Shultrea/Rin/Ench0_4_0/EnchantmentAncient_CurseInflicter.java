@@ -64,7 +64,7 @@ public class EnchantmentAncient_CurseInflicter extends EnchantmentBase implement
     }
 	
 	@Override
-	public void onEntityDamaged(EntityLivingBase user, Entity target, int level){
+	public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stackIn, int level){
 		
 		if(target instanceof EntityLivingBase){
 			EntityLivingBase entity = (EntityLivingBase) target;

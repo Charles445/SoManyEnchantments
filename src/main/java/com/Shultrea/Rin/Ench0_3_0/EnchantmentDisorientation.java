@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -78,7 +79,7 @@ public class EnchantmentDisorientation extends EnchantmentBase implements IPotio
 
 	    	
 	@Override
-	public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+	public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
 	    {
 	    	if(!(entiti instanceof EntityLivingBase))
 	    		return;

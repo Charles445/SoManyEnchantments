@@ -96,6 +96,9 @@ public class EnchantmentDifficultyScaled extends EnchantmentBase implements IDam
 		if(EnchantmentHelper.getEnchantmentLevel(this, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+    		return;
+		
 		int level = EnchantmentHelper.getEnchantmentLevel(this, dmgSource);
 		
 		if(attacker.getEntityWorld().getDifficulty() == EnumDifficulty.HARD){

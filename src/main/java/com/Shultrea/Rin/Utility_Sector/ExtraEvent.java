@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Utility_Sector;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 import com.Shultrea.Rin.Main_Sector.somanyenchantments;
@@ -35,6 +36,9 @@ public class ExtraEvent
 		
 		if(!cause.hasCapability(ArrowPropertiesProvider.ARROWPROPERTIES_CAP, null))
 			return;
+		
+		if(EnchantmentBase.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+    		return;
 		
 		IArrowProperties properties = cause.getCapability(ArrowPropertiesProvider.ARROWPROPERTIES_CAP, null);
 		

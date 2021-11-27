@@ -1,7 +1,12 @@
 package com.Shultrea.Rin.Enchantment_Base_Sector;
 
+import com.Shultrea.Rin.Main_Sector.ModConfig;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -145,5 +150,40 @@ public abstract class EnchantmentBase extends Enchantment
 	public String getPrefix()
 	{
 		return "";
+	}
+	
+	public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack weapon, int level)
+	{
+		
+	}
+	
+	/** Use onEntityDamagedAlt **/
+	@Override
+	@Deprecated
+	public final void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+	{
+		super.onEntityDamaged(user, target, level);
+	}
+
+	/** Returns whether the combination of sources is disallowed for all enchantments **/
+	public static boolean isOffensivePetDisallowed(Entity immediateSource, Entity trueSource)
+	{
+		if(immediateSource == null || trueSource == null)
+			return false;
+
+		if(!ModConfig.miscellaneous.enablePetAttacks)
+		{
+			//Immediate is not true source
+			//Immediate is a living entity
+			//True source is a player
+			//Immediate is not a player
+			if(immediateSource != trueSource && immediateSource instanceof EntityLivingBase && trueSource instanceof EntityPlayer && !(immediateSource instanceof EntityPlayer))
+			{
+				return true;
+			}
+		}
+		
+		//Passed all checks
+		return false;
 	}
 }

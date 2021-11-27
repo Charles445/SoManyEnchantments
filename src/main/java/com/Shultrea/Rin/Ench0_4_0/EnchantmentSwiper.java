@@ -99,6 +99,9 @@ public class EnchantmentSwiper extends EnchantmentBase
 		
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_040.Swiper, dmgSource) <= 0)
 			return;
+		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+    		return;
 			
 		int levitationLevel = EnchantmentHelper.getEnchantmentLevel(Smc_030.Levitator, dmgSource);
 		
@@ -125,7 +128,8 @@ public class EnchantmentSwiper extends EnchantmentBase
 			if(target == fEvent.getEntityLiving())
 				continue;
 			
-			if(target.getDistance(attacker) > 4.00f + levelCleave * 0.25f)
+			//Old value was 4.00f
+			if(target.getDistance(attacker) > 3.00f + levelCleave * 0.25f)
 				continue;
 			
 			Vec3d attackerCheck = EnchantmentsUtility.Cleave(target.posX-attacker.posX, target.posY-attacker.posY, target.posZ-attacker.posZ);
@@ -136,14 +140,14 @@ public class EnchantmentSwiper extends EnchantmentBase
 				// This is within our arc, let's deal our damage.
 				DamageSource source = null;
 				if(attacker instanceof EntityPlayer){
-					source = new EntityDamageSource("playerCleave", attacker).setDamageBypassesArmor();
+					source = new EntityDamageSource("playerCleave", attacker);//.setDamageBypassesArmor();
 				    target.attackEntityFrom(source, splashDamage);
 				    target.setFire(lf);	
 				    if(levitationLevel > 0)
 				    ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 30 + (levitationLevel * 12), 1 + levitationLevel));	
 				}
 				if(attacker instanceof EntityMob){
-					source = new EntityDamageSource("mobCleave", attacker).setDamageBypassesArmor();
+					source = new EntityDamageSource("mobCleave", attacker);//.setDamageBypassesArmor();
 				    target.attackEntityFrom(source, splashDamage);
 				    target.setFire(lf);	
 				    if(levitationLevel > 0)

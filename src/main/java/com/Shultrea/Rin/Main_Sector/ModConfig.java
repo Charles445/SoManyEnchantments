@@ -67,6 +67,14 @@ public class ModConfig
 		@Config.Name("Potion Blacklist as Whitelist")
 		@Config.RequiresMcRestart
 		public boolean potionBlacklistAsWhitelist = false;
+		
+		@Config.Comment("Whether enchantments should work with pet attacks")
+		@Config.Name("Enable Pet Attacks")
+		public boolean enablePetAttacks = false;
+		
+		@Config.Comment("Enables extra protection effects")
+		@Config.Name("Extra Protection Effects")
+		public boolean extraProtectionEffects = true;
 	}
 	
 	@Mod.EventBusSubscriber(modid = somanyenchantments.MODID)

@@ -67,6 +67,10 @@ public class EnchantmentDisarmament extends EnchantmentBase {
 		
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_040.Disarmament, dmgSource) <= 0)
 			return;
+		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int leveldisarm = EnchantmentHelper.getEnchantmentLevel(Smc_040.Disarmament, dmgSource);
 		
 		if(Math.random() * 100 < 25)

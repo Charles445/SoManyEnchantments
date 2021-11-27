@@ -111,6 +111,9 @@ public class EnchantmentSpellBreaker extends EnchantmentBase implements IEnchant
 		if(level <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+			return;
+		
 		if(e.getEntityLiving().getActivePotionEffects().size() > 0)
 			e.setAmount(e.getAmount() + (0.625f * level) * e.getEntityLiving().getActivePotionEffects().size());
 		

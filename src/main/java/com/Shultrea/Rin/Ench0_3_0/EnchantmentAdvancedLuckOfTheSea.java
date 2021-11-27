@@ -7,14 +7,9 @@ import com.Shultrea.Rin.Main_Sector.ModConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentAdvancedLuckOfTheSea extends EnchantmentBase
 {
@@ -56,6 +51,23 @@ public class EnchantmentAdvancedLuckOfTheSea extends EnchantmentBase
 		 return fTest == Enchantments.LUCK_OF_THE_SEA  ? false : super.canApplyTogether(fTest);
 	}
 	
+	public static int getValue(ItemStack stack)
+	{
+		if(!Smc_030.AdvancedLuckOfTheSea.isEnabled())
+			return 0;
+		
+		int level = EnchantmentHelper.getEnchantmentLevel(Smc_030.AdvancedLuckOfTheSea, stack);
+		if(level <= 0)
+			return 0;
+		
+		int toReturn = level * 2 + 2;
+		if(Math.random() < 0.15f)
+			toReturn = level * 3 + 3;
+		
+		return toReturn;
+	}
+	
+	/*
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void onEvent(EntityJoinWorldEvent fEvent)
 	{
@@ -83,6 +95,7 @@ public class EnchantmentAdvancedLuckOfTheSea extends EnchantmentBase
 			hook.setLuck(level * 3 + 3);
 			}
 		}
-}
 	}
+	*/
+}
 	

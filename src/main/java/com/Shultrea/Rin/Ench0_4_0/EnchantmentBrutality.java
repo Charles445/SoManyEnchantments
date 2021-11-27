@@ -44,7 +44,7 @@ public class EnchantmentBrutality extends EnchantmentBase{
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
     {
     	if(!ModConfig.enabled.Brutality)
     		return;

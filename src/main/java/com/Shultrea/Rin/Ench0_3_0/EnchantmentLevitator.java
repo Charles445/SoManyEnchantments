@@ -53,7 +53,7 @@ public class EnchantmentLevitator extends EnchantmentBase implements IPotionDebu
     }
 
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(!(entiti instanceof EntityLivingBase))
     		return;

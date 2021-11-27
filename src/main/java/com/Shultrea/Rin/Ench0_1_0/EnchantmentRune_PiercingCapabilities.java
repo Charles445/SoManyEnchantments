@@ -82,6 +82,9 @@ public class EnchantmentRune_PiercingCapabilities extends EnchantmentBase implem
 		if(pierceLevel <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		float damage = fEvent.getAmount() * 0.25f * pierceLevel;
 		
 		fEvent.setAmount(fEvent.getAmount() - (fEvent.getAmount() * pierceLevel * 0.25f));

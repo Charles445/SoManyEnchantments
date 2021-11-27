@@ -89,6 +89,12 @@ public class EnchantmentMastery extends EnchantmentBase
 		if(EnchantmentHelper.getEnchantmentLevel(this, stack) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+    		return;
+		
+		if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+			return;
+		
 		if(!stack.hasTagCompound())
 			stack.setTagCompound(new NBTTagCompound());
 		

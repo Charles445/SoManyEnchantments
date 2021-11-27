@@ -74,6 +74,9 @@ public class EnchantmentPurgingBlade extends EnchantmentBase {
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_030.PurgingBlade, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelPurging = EnchantmentHelper.getEnchantmentLevel(Smc_030.PurgingBlade, dmgSource);
 		
 		if(Math.random() <= 0.1 + (0.06f * levelPurging)){

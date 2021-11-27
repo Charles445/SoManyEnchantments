@@ -55,7 +55,7 @@ public class EnchantmentHors_de_combat extends EnchantmentBase implements IPotio
 	}
 	
 	@Override
-	public void onEntityDamaged(EntityLivingBase user, Entity victims, int level)
+	public void onEntityDamagedAlt(EntityLivingBase user, Entity victims, ItemStack stack, int level)
 	{
 		
 		if(!isEnabled())

@@ -76,7 +76,7 @@ public class EnchantmentAdvancedBaneOfArthropods extends EnchantmentBase impleme
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(entiti instanceof EntityLivingBase){
     	EntityLivingBase entity = (EntityLivingBase) entiti;

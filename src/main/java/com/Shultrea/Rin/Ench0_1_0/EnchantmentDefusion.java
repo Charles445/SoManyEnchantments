@@ -87,6 +87,9 @@ public class EnchantmentDefusion extends EnchantmentBase implements IEnchantment
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.Defusion, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelDefusing = EnchantmentHelper.getEnchantmentLevel(Smc_010.Defusion, dmgSource);
 		if(fEvent.getEntity() instanceof EntityCreeper)
 		{				

@@ -64,7 +64,7 @@ public class EnchantmentInhumanity extends EnchantmentBase implements IEnchantme
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(!ModConfig.enabled.Inhumane)
     		return;

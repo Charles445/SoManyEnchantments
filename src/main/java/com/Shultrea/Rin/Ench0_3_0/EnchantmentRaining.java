@@ -76,6 +76,9 @@ public void HandleEnchant(LivingHurtEvent fEvent){
 	if(EnchantmentHelper.getEnchantmentLevel(Smc_030.Raining, dmgSource) <= 0)
 		return;
 	
+	if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+		return;
+	
 	int levelRain = EnchantmentHelper.getEnchantmentLevel(Smc_030.Raining, dmgSource);
 	
 	float Damage = fEvent.getAmount();

@@ -56,6 +56,9 @@ public class EnchantmentInnerBerserk extends EnchantmentBase
 		
 		if(EnchantmentHelper.getMaxEnchantmentLevel(this, attacker) > 0)
 		{
+			if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+	    		return;
+			
 			float defenderHealthPercent = attacker.getHealth() / attacker.getMaxHealth();
 			int levelfinish = EnchantmentHelper.getMaxEnchantmentLevel(this, attacker);
 			float dmgMod = (1.0f - defenderHealthPercent) * ((levelfinish * 0.05f) + 1.1f);

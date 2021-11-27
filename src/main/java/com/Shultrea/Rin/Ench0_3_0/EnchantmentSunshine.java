@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -58,14 +59,14 @@ public class EnchantmentSunshine extends EnchantmentBase implements IWeatherEnch
     }
 
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(!(entiti instanceof EntityLivingBase))
     		return;
     	  	
     	EntityLivingBase entity = (EntityLivingBase) entiti;
     	
-    	float damage = EnchantmentsUtility.reduceDamage(user, true, user.getHeldItemMainhand(), this);
+    	float damage = EnchantmentsUtility.reduceDamage(user, true, stack, this);
     	
     	if(user.world.isDaytime() && EnchantmentsUtility.noBlockLight(user)){
     		if(!entity.isPotionActive(MobEffects.GLOWING))
@@ -81,6 +82,10 @@ public class EnchantmentSunshine extends EnchantmentBase implements IWeatherEnch
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onHurtEvent(LivingHurtEvent e){
     	if(!(EnchantmentsUtility.checkEventCondition(e, this))) return;
+    	
+    	if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+			return;
+    	
     	EntityLivingBase attacker = (EntityLivingBase) e.getSource().getTrueSource();
     	float damage = EnchantmentsUtility.reduceDamage(attacker, true, attacker.getHeldItemMainhand(), this);
     	e.setAmount(damage + e.getAmount());

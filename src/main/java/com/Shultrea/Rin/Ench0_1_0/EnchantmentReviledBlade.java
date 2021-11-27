@@ -65,6 +65,9 @@ public class EnchantmentReviledBlade extends EnchantmentBase implements IDamageM
 		
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.ReviledBlade, weapon) > 0)
 		{
+			if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+				return;
+			
 			float defenderHealthPercent = fEvent.getEntityLiving().getHealth() / fEvent.getEntityLiving().getMaxHealth();
 			int levelfinish = EnchantmentHelper.getEnchantmentLevel(Smc_010.ReviledBlade, weapon);
 			float dmgMod = (1.0f - defenderHealthPercent) * ((levelfinish * 0.1f) + 0.9f);

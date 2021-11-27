@@ -158,6 +158,9 @@ public class EnchantmentSwifterSlashes extends EnchantmentBase
 		int level = EnchantmentHelper.getEnchantmentLevel(Smc_010.SwifterSlashes, weapon);
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.SwifterSlashes, weapon) <= 0)
 			return;
+		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
 			
 		     if(fEvent.getEntityLiving().world.rand.nextInt(100) < 25 + (level * 4))
 	    		{       			

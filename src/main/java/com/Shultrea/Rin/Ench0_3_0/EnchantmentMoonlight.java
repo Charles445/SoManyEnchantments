@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -58,7 +59,7 @@ public class EnchantmentMoonlight extends EnchantmentBase implements IWeatherEnc
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(!(entiti instanceof EntityLivingBase))
     		return;
@@ -79,6 +80,10 @@ public class EnchantmentMoonlight extends EnchantmentBase implements IWeatherEnc
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onHurtEvent(LivingHurtEvent e){
     	if(!(EnchantmentsUtility.checkEventCondition(e, this))) return;
+    	
+    	if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+			return;
+    	
     	EntityLivingBase attacker = (EntityLivingBase) e.getSource().getTrueSource();
     	
     	e.setAmount(EnchantmentsUtility.reduceDamage(attacker, false, attacker.getHeldItemMainhand(), this) + e.getAmount());

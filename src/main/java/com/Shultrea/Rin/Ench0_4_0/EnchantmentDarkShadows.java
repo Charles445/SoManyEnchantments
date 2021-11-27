@@ -60,7 +60,7 @@ public class EnchantmentDarkShadows extends EnchantmentBase implements IConditio
     }
 
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(level >= 3 && entiti instanceof EntityLivingBase){
     		EntityLivingBase e = (EntityLivingBase) entiti;
@@ -77,6 +77,9 @@ public class EnchantmentDarkShadows extends EnchantmentBase implements IConditio
     	EntityLivingBase attacker = (EntityLivingBase) e.getSource().getTrueSource();
     	int level = EnchantmentHelper.getEnchantmentLevel(this, attacker.getHeldItemMainhand());
     	if(level <= 0) return;
+    	if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+			return;
+    	
     	if(attacker.getBrightness() <= 0.1f && e.getEntityLiving().getBrightness() <= 0.1f)
     	e.setAmount(e.getAmount() + level * 0.75f);
     	

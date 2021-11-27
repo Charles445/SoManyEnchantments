@@ -8,6 +8,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -55,6 +56,24 @@ public class EnchantmentAdvancedLooting extends EnchantmentBase
 		return fTest == Enchantments.LOOTING ? false : super.canApplyTogether(fTest);
 	}
 	
+	public static int getValue(int original, EntityLivingBase entity)
+	{
+		if(!Smc_030.AdvancedLooting.isEnabled())
+			return 0;
+		
+		int levelLooting = EnchantmentHelper.getMaxEnchantmentLevel(Smc_030.AdvancedLooting, entity);
+		
+		if(levelLooting <= 0)
+			return 0;
+		
+		int toReturn = original + 2 + ((levelLooting - 1) * 2);
+		if(Math.random() < 0.25f)
+			toReturn = toReturn + 2 + (levelLooting * 2);
+		
+		return toReturn;
+	}
+	
+	/*
 	@SubscribeEvent(priority = EventPriority.LOWEST) 
 	public void HandleEnchant(LootingLevelEvent fEvent)
 	{	
@@ -78,9 +97,6 @@ public class EnchantmentAdvancedLooting extends EnchantmentBase
 			
 		fEvent.setLootingLevel(fEvent.getLootingLevel() + 2 + (levelLooting * 2));
 		}	 
-		}
-	    
-	
-		
 	}
-
+	*/	
+}

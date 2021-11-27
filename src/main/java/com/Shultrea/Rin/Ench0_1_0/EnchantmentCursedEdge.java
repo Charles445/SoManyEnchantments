@@ -87,6 +87,9 @@ public class EnchantmentCursedEdge extends EnchantmentBase implements IEnchantme
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.CursedEdge, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelCurse = EnchantmentHelper.getEnchantmentLevel(Smc_010.CursedEdge, dmgSource);
 		
 		float Damage = fEvent.getAmount() * ((levelCurse * 0.20f) + 1.00f);

@@ -93,6 +93,9 @@ public class EnchantmentRune_MagicalBlessing extends EnchantmentBase implements 
 		if(EnchantmentHelper.getEnchantmentLevel(this, stack) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.Rune_PiercingCapabilities, stack) != 0)
 			return;
 	

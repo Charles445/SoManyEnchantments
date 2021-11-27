@@ -59,9 +59,8 @@ public class EnchantmentFlinging extends EnchantmentBase {
     }
     
     @Override
-    public void onEntityDamaged (EntityLivingBase user, Entity target, int level) {
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level) {
     	        
-    	ItemStack stack = user.getHeldItemMainhand();
     	int levelknockBack = EnchantmentHelper.getEnchantmentLevel(Smc_040.flinging, stack);
    
     	double Y = levelknockBack * 0.1875D + 0.075f;

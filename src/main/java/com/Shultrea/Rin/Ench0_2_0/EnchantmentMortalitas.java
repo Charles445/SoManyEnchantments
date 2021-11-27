@@ -74,6 +74,9 @@ public class EnchantmentMortalitas extends EnchantmentBase {
     		if(level <= 0)
     			return;
     		
+    		if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+    			return;
+    		
     		if(!stack.hasTagCompound())
     		    stack.setTagCompound(new NBTTagCompound());	
     			

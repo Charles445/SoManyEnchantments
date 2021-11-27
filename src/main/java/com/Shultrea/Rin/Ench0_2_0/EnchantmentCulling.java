@@ -100,6 +100,9 @@ public class EnchantmentCulling extends EnchantmentBase {
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_020.Culling, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int level = EnchantmentHelper.getEnchantmentLevel(Smc_020.Culling, dmgSource);
 		
 		float half = level;

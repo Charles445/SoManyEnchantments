@@ -92,6 +92,9 @@ public class EnchantmentPenetratingEdge extends EnchantmentBase implements IEnch
 		if(!(fEvent.getEntity() instanceof EntityLivingBase))
 	    	return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		float ArmorDetector;
 		
 	    EntityLivingBase entity = (EntityLivingBase)fEvent.getEntity();

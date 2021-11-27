@@ -77,6 +77,9 @@ public class EnchantmentBlessedEdge extends EnchantmentBase {
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.BlessedEdge, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelBless = EnchantmentHelper.getEnchantmentLevel(Smc_010.BlessedEdge, dmgSource);
 		
 		attacker.heal( fEvent.getAmount() * (levelBless * 0.03f));

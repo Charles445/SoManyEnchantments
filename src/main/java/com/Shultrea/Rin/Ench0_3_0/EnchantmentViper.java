@@ -79,6 +79,9 @@ public class EnchantmentViper extends EnchantmentBase implements IConditionalDam
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_030.Viper, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		int levelViper = EnchantmentHelper.getEnchantmentLevel(Smc_030.Viper, dmgSource);
 		
 		float forgeDamage = fEvent.getAmount();

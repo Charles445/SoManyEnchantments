@@ -81,6 +81,8 @@ public class EnchantmentWaterAspect extends EnchantmentBase implements IEnchantm
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_010.WaterAspect, dmgSource) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
 	
 		int levelWaterAspect = EnchantmentHelper.getEnchantmentLevel(Smc_010.WaterAspect, dmgSource);
 		

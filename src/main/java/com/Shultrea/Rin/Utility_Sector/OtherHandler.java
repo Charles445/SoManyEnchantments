@@ -1,5 +1,6 @@
 package com.Shultrea.Rin.Utility_Sector;
 
+import com.Shultrea.Rin.Enchantment_Base_Sector.EnchantmentBase;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_030;
 import com.Shultrea.Rin.Enchantments_Sector.Smc_040;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
@@ -115,7 +116,8 @@ public class OtherHandler {
 		if(dmgSource == null)
 			return;
 		
-		
+		if(EnchantmentBase.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
 		
 		float levelmath =  ModConfig.enabled.Mathematics ? EnchantmentHelper.getEnchantmentLevel(Smc_040.Mathematics, dmgSource) : 0;
 		float levelhistory = ModConfig.enabled.History ? EnchantmentHelper.getEnchantmentLevel(Smc_040.History, dmgSource) : 0;

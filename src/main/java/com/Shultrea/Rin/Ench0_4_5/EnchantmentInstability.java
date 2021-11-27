@@ -77,6 +77,9 @@ public class EnchantmentInstability extends EnchantmentBase implements IDamageMu
     		if(level <= 0)
     			return;
     		
+    		if(this.isOffensivePetDisallowed(e.getSource().getImmediateSource(), e.getSource().getTrueSource()))
+        		return;
+    		
     		float percentage = ((float)stack.getItemDamage() / (float)stack.getMaxDamage());
 
     		//System.out.println(percentage + " percentage");

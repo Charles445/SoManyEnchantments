@@ -7,7 +7,6 @@ import com.Shultrea.Rin.Interfaces.IEnchantmentDamage;
 import com.Shultrea.Rin.Main_Sector.ModConfig;
 
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentDamage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -67,7 +66,7 @@ public class EnchantmentReinforcedSharpness extends EnchantmentBase implements I
     }
     
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
     {
     	if(ModConfig.enabled.SharperEdge && target instanceof EntityLivingBase && user instanceof EntityPlayer){
     		EntityLivingBase victim = (EntityLivingBase) target;

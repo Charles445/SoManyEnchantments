@@ -77,6 +77,9 @@ public class EnchantmentDesolator extends EnchantmentBase implements IPotionDebu
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_030.Desolator, weapon) <= 0)
 			return;
 		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 			if(fEvent.getEntity().world.rand.nextInt(100) < 8 * level)
 		{
 			if(level >= 3){

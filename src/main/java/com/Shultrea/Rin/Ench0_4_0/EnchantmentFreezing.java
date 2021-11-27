@@ -84,6 +84,9 @@ public class EnchantmentFreezing extends EnchantmentBase implements IPotionDebuf
     	if(level <= 0)
     	    return;
     	
+    	if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+    		return;
+    	
     	EntityLivingBase victim = fEvent.getEntityLiving();
     	
     	int ice = 0;

@@ -78,7 +78,10 @@ public class EnchantmentLifesteal extends EnchantmentBase
 		
 		if(EnchantmentHelper.getEnchantmentLevel(Smc_020.Lifesteal, weapon) <= 0)
 			return;
-			
+		
+		if(this.isOffensivePetDisallowed(fEvent.getSource().getImmediateSource(), fEvent.getSource().getTrueSource()))
+			return;
+		
 		attacker.heal(fEvent.getAmount() * (levellifesteal * 0.025f + 0.025f));
 		UtilityAccessor.damageTarget(fEvent.getEntityLiving(), somanyenchantments.PhysicalDamage, fEvent.getAmount() * (0.05F + ((levellifesteal * 0.05F))));
 		

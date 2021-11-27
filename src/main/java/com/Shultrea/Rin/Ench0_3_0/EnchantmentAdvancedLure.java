@@ -55,6 +55,23 @@ public class EnchantmentAdvancedLure extends EnchantmentBase
 		return fTest == Enchantments.LURE  ? false : super.canApplyTogether(fTest);
 	}
 	
+	public static int getValue(ItemStack stack)
+	{
+		if(!Smc_030.AdvancedLure.isEnabled())
+			return 0;
+		
+		int level = EnchantmentHelper.getEnchantmentLevel(Smc_030.AdvancedLure, stack);
+		if(level <= 0)
+			return 0;
+		
+		int toReturn = level + 1;
+		if(Math.random() < 0.15f)
+			toReturn = level + 2;
+		
+		return toReturn;
+	}
+	
+	/*
 	@SubscribeEvent(priority=EventPriority.HIGHEST)
 	public void onEvent(EntityJoinWorldEvent fEvent)
 	{
@@ -86,6 +103,7 @@ public class EnchantmentAdvancedLure extends EnchantmentBase
 			hook.setLureSpeed(level + 2);
 			}
 		}
-}
 	}
+	 */
+}
 	

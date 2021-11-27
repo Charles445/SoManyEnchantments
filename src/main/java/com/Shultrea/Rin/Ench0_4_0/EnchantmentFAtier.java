@@ -109,7 +109,7 @@ public class EnchantmentFAtier extends EnchantmentBase{
      * Called whenever a mob is damaged with an item that has this enchantment on it.
      */
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity target, ItemStack stack, int level)
     {
     	if(!isEnabled())
     		return;

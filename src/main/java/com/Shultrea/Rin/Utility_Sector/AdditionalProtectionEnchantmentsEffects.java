@@ -14,7 +14,8 @@ public class AdditionalProtectionEnchantmentsEffects {
 
 	  @SubscribeEvent(priority=EventPriority.LOW, receiveCanceled=true)
 	    public void protectionOnly(LivingHurtEvent fEvent){
-	    		
+		  	if(!ModConfig.miscellaneous.extraProtectionEffects)
+		  		return;
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
 	    	if(!(ModConfig.enabled.AdvancedProtection))
 	    		return;
@@ -31,7 +32,8 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    
 	    @SubscribeEvent(priority=EventPriority.LOW, receiveCanceled=true)
 	    public void projprotection(LivingHurtEvent fEvent){
-	    		
+		  	if(!ModConfig.miscellaneous.extraProtectionEffects)
+		  		return;
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
 	    	if(!(ModConfig.enabled.AdvancedProjectileProtection))
 	    		return;	
@@ -48,7 +50,8 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    
 	    @SubscribeEvent(priority=EventPriority.LOW, receiveCanceled=true)
 	    public void fireprotection(LivingDamageEvent fEvent){
-	    		
+		  	if(!ModConfig.miscellaneous.extraProtectionEffects)
+		  		return;
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
 	    	if(!(ModConfig.enabled.AdvancedFireProtection))
 	    		return;	
@@ -65,7 +68,8 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    
 	    @SubscribeEvent(priority=EventPriority.LOW, receiveCanceled=true)
 	    public void blastprotection(LivingHurtEvent fEvent){
-	    		
+		  	if(!ModConfig.miscellaneous.extraProtectionEffects)
+		  		return;
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
 	    	if(!(ModConfig.enabled.AdvancedBlastProtection))
 	    		return;
@@ -82,7 +86,8 @@ public class AdditionalProtectionEnchantmentsEffects {
 	    
 	    @SubscribeEvent(priority=EventPriority.LOW, receiveCanceled=true)
 	    public void featherfall(LivingHurtEvent fEvent){
-	    		
+		  	if(!ModConfig.miscellaneous.extraProtectionEffects)
+		  		return;
 	    	//System.out.println("EVENT EEEEEEEEEEEEEEE");
 	    	if(!(ModConfig.enabled.AdvancedFeatherFalling))
 	    		return;

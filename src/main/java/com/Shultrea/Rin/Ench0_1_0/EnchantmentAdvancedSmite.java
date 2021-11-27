@@ -64,7 +64,7 @@ public class EnchantmentAdvancedSmite extends EnchantmentBase implements IEnchan
     	 return fTest.getItem() instanceof ItemAxe ? true : super.canApply(fTest);
     }
     @Override
-    public void onEntityDamaged(EntityLivingBase user, Entity entiti, int level)
+    public void onEntityDamagedAlt(EntityLivingBase user, Entity entiti, ItemStack stack, int level)
     {
     	if(!(entiti instanceof EntityLivingBase))
     		return;
