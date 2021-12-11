@@ -19,7 +19,7 @@ public class EnchantmentInnerBerserk extends EnchantmentBase
 {
 	public EnchantmentInnerBerserk()
 	{
-		super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_CHEST, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
+		super(Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_CHEST, new EntityEquipmentSlot[]{EntityEquipmentSlot.CHEST});
 		this.setName("InnerBerserk");
 		this.setRegistryName("InnerBerserk");
 	}

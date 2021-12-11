@@ -8,8 +8,6 @@ import com.Shultrea.Rin.Prop_Sector.ArrowPropertiesProvider;
 import com.Shultrea.Rin.Prop_Sector.IArrowProperties;
 import com.Shultrea.Rin.Utility_Sector.UtilityAccessor;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantment.Rarity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,9 +16,8 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -98,7 +95,7 @@ public class EnchantmentRune_ArrowPiercing extends EnchantmentBase implements IE
 }
     
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public void onArrowPierce(LivingDamageEvent e){
+    public void onArrowPierce(LivingHurtEvent e){
     	if(e.getSource().damageType != "arrow" && e.getSource().isUnblockable())
     		return;
     	
