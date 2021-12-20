@@ -47,13 +47,16 @@ public class ExtraEvent
 		switch(flameLevel){
 		case 1:
 			if(ModConfig.enabled.LesserFlame)
-			fEvent.getEntityLiving().setFire(2);
+				fEvent.getEntityLiving().setFire(2);
+			break;
 		case 2:
 			if(ModConfig.enabled.AdvancedFlame)
-			fEvent.getEntityLiving().setFire(15);
+				fEvent.getEntityLiving().setFire(15);
+			break;
 		case 3:
 			if(ModConfig.enabled.SupremeFlame)
-			fEvent.getEntityLiving().setFire(30);
+				fEvent.getEntityLiving().setFire(30);
+			break;
 		default:
 			break;
 		}
