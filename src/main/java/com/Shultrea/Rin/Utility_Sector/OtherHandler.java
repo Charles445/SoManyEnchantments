@@ -85,7 +85,7 @@ public class OtherHandler {
                   int t = ModConfig.enabled.LesserFlame ? EnchantmentHelper.getEnchantmentLevel(Smc_040.lesserflame, bow) : 0;
                   if(t > 0){
                 	  properties.setFlameLevel(1);
-					  arrow.setFire(50);
+					  //arrow.setFire(50); //Overrides the 2 seconds with 5 seconds
 				  } 
 			      //int j = EnchantmentHelper.getMaxEnchantmentLevel(Smc_030.ExtremePunch, shooter);
 			}
